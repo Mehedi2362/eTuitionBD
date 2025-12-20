@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Popover (alias)": {
+        "prefix": "i;popover",
+        "body": ["import {", "    Popover,", "    PopoverTrigger as Trigger,", "    PopoverContent as Content,", "} from '@/components/ui/popover'"],
+        "description": "Import Popover components with aliases",
+    },
+    "Import Popover (full)": {
+        "prefix": "i;fpopover",
+        "body": ["import {", "    Popover,", "    PopoverTrigger,", "    PopoverContent,", "    PopoverAnchor,", "} from '@/components/ui/popover'"],
+        "description": "Import Popover components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Popover (alias)": {
+        "prefix": ";popover",
+        "body": ["<Popover>", "    <Trigger asChild>", "        <Button variant=\"outline\">${1:Open Popover}</Button>", "    </Trigger>", "    <Content className=\"${2:w-80}\">", "        <div className=\"grid gap-4\">", "            <div className=\"space-y-2\">", "                <h4 className=\"font-medium leading-none\">${3:Title}</h4>", "                <p className=\"text-muted-foreground text-sm\">${4:Description}</p>", "            </div>", "            $0", "        </div>", "    </Content>", "</Popover>"],
+        "description": "Popover with aliased JSX",
+    },
+    "Popover Basic (alias)": {
+        "prefix": ";popoverb",
+        "body": ["<Popover>", "    <Trigger>${1:Open}</Trigger>", "    <Content>$0</Content>", "</Popover>"],
+        "description": "Basic Popover (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Popover (full)": {
+        "prefix": ";fpopover",
+        "body": ["<Popover>", "    <PopoverTrigger asChild>", "        <Button variant=\"outline\">${1:Open Popover}</Button>", "    </PopoverTrigger>", "    <PopoverContent className=\"${2:w-80}\">", "        <div className=\"grid gap-4\">", "            <div className=\"space-y-2\">", "                <h4 className=\"font-medium leading-none\">${3:Title}</h4>", "                <p className=\"text-muted-foreground text-sm\">${4:Description}</p>", "            </div>", "            $0", "        </div>", "    </PopoverContent>", "</Popover>"],
+        "description": "Popover with full component names",
+    },
+    "Popover Basic (full)": {
+        "prefix": ";fpopoverb",
+        "body": ["<Popover>", "    <PopoverTrigger>${1:Open}</PopoverTrigger>", "    <PopoverContent>$0</PopoverContent>", "</Popover>"],
+        "description": "Basic Popover (full)",
+    },
+}

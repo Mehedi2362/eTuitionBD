@@ -1,0 +1,78 @@
+{
+    "React Context": {
+        "prefix": ";rctx",
+        "body": [
+            "import { createContext, useContext, useState, type ReactNode } from 'react'",
+            "",
+            "interface ${1:Name}ContextType {",
+            "    $2",
+            "}",
+            "",
+            "const ${1:Name}Context = createContext<${1:Name}ContextType | undefined>(undefined)",
+            "",
+            "export const ${1:Name}Provider = ({ children }: { children: ReactNode }) => {",
+            "    const [${3:state}, set${3/(.*)/${1:/capitalize}/}] = useState($4)",
+            "",
+            "    return (",
+            "        <${1:Name}Context.Provider value={{ $3 }}>",
+            "            {children}",
+            "        </${1:Name}Context.Provider>",
+            "    )",
+            "}",
+            "",
+            "export const use${1:Name} = () => {",
+            "    const context = useContext(${1:Name}Context)",
+            "    if (!context) throw new Error('use${1:Name} must be used within ${1:Name}Provider')",
+            "    return context",
+            "}"
+        ],
+        "description": "React Context with Provider and Hook"
+    },
+    "React Context Simple": {
+        "prefix": ";rctxs",
+        "body": [
+            "import { createContext, useContext } from 'react'",
+            "",
+            "type ${1:Name}ContextType = {",
+            "    $2",
+            "}",
+            "",
+            "export const ${1:Name}Context = createContext<${1:Name}ContextType | null>(null)",
+            "",
+            "export const use${1:Name} = () => {",
+            "    const ctx = useContext(${1:Name}Context)",
+            "    if (!ctx) throw new Error('use${1:Name} must be within Provider')",
+            "    return ctx",
+            "}"
+        ],
+        "description": "Simple React Context"
+    },
+    "Reducer": {
+        "prefix": ";reducer",
+        "body": [
+            "type ${1:Name}State = {",
+            "    $2",
+            "}",
+            "",
+            "type ${1:Name}Action =",
+            "    | { type: 'SET_${3:FIELD}'; payload: ${4:string} }",
+            "    | { type: 'RESET' }",
+            "",
+            "const initialState: ${1:Name}State = {",
+            "    $5",
+            "}",
+            "",
+            "const ${1:name}Reducer = (state: ${1:Name}State, action: ${1:Name}Action): ${1:Name}State => {",
+            "    switch (action.type) {",
+            "        case 'SET_${3:FIELD}':",
+            "            return { ...state, ${6:field}: action.payload }",
+            "        case 'RESET':",
+            "            return initialState",
+            "        default:",
+            "            return state",
+            "    }",
+            "}"
+        ],
+        "description": "Reducer pattern"
+    }
+}

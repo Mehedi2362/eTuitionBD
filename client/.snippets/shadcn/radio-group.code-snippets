@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import RadioGroup (alias)": {
+        "prefix": "i;radio",
+        "body": ["import {", "    RadioGroup,", "    RadioGroupItem as Item,", "} from '@/components/ui/radio-group'"],
+        "description": "Import RadioGroup components with aliases",
+    },
+    "Import RadioGroup (full)": {
+        "prefix": "i;fradio",
+        "body": ["import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'"],
+        "description": "Import RadioGroup components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "RadioGroup (alias)": {
+        "prefix": ";radio",
+        "body": ["<RadioGroup defaultValue=\"${1:option-one}\" onValueChange={${2:setValue}}>", "    <div className=\"flex items-center space-x-2\">", "        <Item value=\"option-one\" id=\"option-one\" />", "        <Label htmlFor=\"option-one\">${3:Option One}</Label>", "    </div>", "    <div className=\"flex items-center space-x-2\">", "        <Item value=\"option-two\" id=\"option-two\" />", "        <Label htmlFor=\"option-two\">${4:Option Two}</Label>", "    </div>", "</RadioGroup>"],
+        "description": "RadioGroup with aliased JSX",
+    },
+    "RadioGroup Basic (alias)": {
+        "prefix": ";radiob",
+        "body": ["<RadioGroup defaultValue=\"${1:default}\">", "    <div className=\"flex items-center space-x-2\">", "        <Item value=\"${2:value}\" id=\"${3:id}\" />", "        <Label htmlFor=\"$3\">${4:Label}</Label>", "    </div>", "</RadioGroup>"],
+        "description": "Basic RadioGroup (aliased)",
+    },
+    "RadioGroup Item (alias)": {
+        "prefix": ";radioitem",
+        "body": ["<div className=\"flex items-center space-x-2\">", "    <Item value=\"${1:value}\" id=\"${2:id}\" />", "    <Label htmlFor=\"$2\">${3:Label}</Label>", "</div>"],
+        "description": "RadioGroup Item with Label (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "RadioGroup (full)": {
+        "prefix": ";fradio",
+        "body": ["<RadioGroup defaultValue=\"${1:option-one}\" onValueChange={${2:setValue}}>", "    <div className=\"flex items-center space-x-2\">", "        <RadioGroupItem value=\"option-one\" id=\"option-one\" />", "        <Label htmlFor=\"option-one\">${3:Option One}</Label>", "    </div>", "    <div className=\"flex items-center space-x-2\">", "        <RadioGroupItem value=\"option-two\" id=\"option-two\" />", "        <Label htmlFor=\"option-two\">${4:Option Two}</Label>", "    </div>", "</RadioGroup>"],
+        "description": "RadioGroup with full component names",
+    },
+    "RadioGroup Basic (full)": {
+        "prefix": ";fradiob",
+        "body": ["<RadioGroup defaultValue=\"${1:default}\">", "    <div className=\"flex items-center space-x-2\">", "        <RadioGroupItem value=\"${2:value}\" id=\"${3:id}\" />", "        <Label htmlFor=\"$3\">${4:Label}</Label>", "    </div>", "</RadioGroup>"],
+        "description": "Basic RadioGroup (full)",
+    },
+    "RadioGroup Item (full)": {
+        "prefix": ";fradioitem",
+        "body": ["<div className=\"flex items-center space-x-2\">", "    <RadioGroupItem value=\"${1:value}\" id=\"${2:id}\" />", "    <Label htmlFor=\"$2\">${3:Label}</Label>", "</div>"],
+        "description": "RadioGroup Item with Label (full)",
+    },
+}

@@ -1,0 +1,17 @@
+{
+    "useMemo": {
+        "prefix": ";um",
+        "body": ["import { useMemo } from 'react'", "", "const ${1:memoized} = useMemo(() => ${2:value}, [${3:deps}])"],
+        "description": "useMemo hook",
+    },
+    "useMemo Inline": {
+        "prefix": ";umi",
+        "body": ["const ${1:memoized} = useMemo(() => ${2:value}, [${3:deps}])"],
+        "description": "useMemo inline (without import)",
+    },
+    "useMemo Complex": {
+        "prefix": ";umc",
+        "body": ["const ${1:memoized} = useMemo(() => {", "    $0", "    return ${2:result}", "}, [${3:deps}])"],
+        "description": "useMemo with complex computation",
+    },
+}

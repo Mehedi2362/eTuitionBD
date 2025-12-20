@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Resizable (alias)": {
+        "prefix": "i;resizable",
+        "body": ["import {", "    ResizablePanelGroup as PanelGroup,", "    ResizablePanel as Panel,", "    ResizableHandle as Handle,", "} from '@/components/ui/resizable'"],
+        "description": "Import Resizable components with aliases",
+    },
+    "Import Resizable (full)": {
+        "prefix": "i;fresizable",
+        "body": ["import {", "    ResizablePanelGroup,", "    ResizablePanel,", "    ResizableHandle,", "} from '@/components/ui/resizable'"],
+        "description": "Import Resizable components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Resizable (alias)": {
+        "prefix": ";resizable",
+        "body": ["<PanelGroup direction=\"${1|horizontal,vertical|}\" className=\"${2:min-h-[200px] max-w-md rounded-lg border}\">", "    <Panel defaultSize={${3:50}}>", "        ${4:Panel 1}", "    </Panel>", "    <Handle withHandle />", "    <Panel defaultSize={${5:50}}>", "        ${6:Panel 2}", "    </Panel>", "</PanelGroup>"],
+        "description": "Resizable panels with aliased JSX",
+    },
+    "Resizable Basic (alias)": {
+        "prefix": ";resizableb",
+        "body": ["<PanelGroup direction=\"horizontal\">", "    <Panel>$1</Panel>", "    <Handle />", "    <Panel>$2</Panel>", "</PanelGroup>"],
+        "description": "Basic Resizable panels (aliased)",
+    },
+    "Resizable Three Panels (alias)": {
+        "prefix": ";resizable3",
+        "body": ["<PanelGroup direction=\"${1|horizontal,vertical|}\">", "    <Panel defaultSize={25}>", "        ${2:Sidebar}", "    </Panel>", "    <Handle withHandle />", "    <Panel defaultSize={50}>", "        ${3:Main}", "    </Panel>", "    <Handle withHandle />", "    <Panel defaultSize={25}>", "        ${4:Aside}", "    </Panel>", "</PanelGroup>"],
+        "description": "Three resizable panels (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Resizable (full)": {
+        "prefix": ";fresizable",
+        "body": ["<ResizablePanelGroup direction=\"${1|horizontal,vertical|}\" className=\"${2:min-h-[200px] max-w-md rounded-lg border}\">", "    <ResizablePanel defaultSize={${3:50}}>", "        ${4:Panel 1}", "    </ResizablePanel>", "    <ResizableHandle withHandle />", "    <ResizablePanel defaultSize={${5:50}}>", "        ${6:Panel 2}", "    </ResizablePanel>", "</ResizablePanelGroup>"],
+        "description": "Resizable panels with full component names",
+    },
+    "Resizable Basic (full)": {
+        "prefix": ";fresizableb",
+        "body": ["<ResizablePanelGroup direction=\"horizontal\">", "    <ResizablePanel>$1</ResizablePanel>", "    <ResizableHandle />", "    <ResizablePanel>$2</ResizablePanel>", "</ResizablePanelGroup>"],
+        "description": "Basic Resizable panels (full)",
+    },
+    "Resizable Three Panels (full)": {
+        "prefix": ";fresizable3",
+        "body": ["<ResizablePanelGroup direction=\"${1|horizontal,vertical|}\">", "    <ResizablePanel defaultSize={25}>", "        ${2:Sidebar}", "    </ResizablePanel>", "    <ResizableHandle withHandle />", "    <ResizablePanel defaultSize={50}>", "        ${3:Main}", "    </ResizablePanel>", "    <ResizableHandle withHandle />", "    <ResizablePanel defaultSize={25}>", "        ${4:Aside}", "    </ResizablePanel>", "</ResizablePanelGroup>"],
+        "description": "Three resizable panels (full)",
+    },
+}

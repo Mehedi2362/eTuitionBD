@@ -1,0 +1,58 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import DropdownMenu (alias)": {
+        "prefix": "i;dropdown",
+        "body": ["import {", "    DropdownMenu as Menu,", "    DropdownMenuTrigger as Trigger,", "    DropdownMenuContent as Content,", "    DropdownMenuItem as Item,", "    DropdownMenuLabel as Label,", "    DropdownMenuSeparator as Separator,", "    DropdownMenuGroup as Group,", "    DropdownMenuShortcut as Shortcut,", "} from '@/components/ui/dropdown-menu'"],
+        "description": "Import DropdownMenu components with aliases",
+    },
+    "Import DropdownMenu (full)": {
+        "prefix": "i;fdropdown",
+        "body": ["import {", "    DropdownMenu,", "    DropdownMenuTrigger,", "    DropdownMenuContent,", "    DropdownMenuItem,", "    DropdownMenuLabel,", "    DropdownMenuSeparator,", "    DropdownMenuGroup,", "    DropdownMenuShortcut,", "} from '@/components/ui/dropdown-menu'"],
+        "description": "Import DropdownMenu components with full names",
+    },
+    "Import DropdownMenu All (full)": {
+        "prefix": "i;fdropdownall",
+        "body": ["import {", "    DropdownMenu,", "    DropdownMenuTrigger,", "    DropdownMenuContent,", "    DropdownMenuItem,", "    DropdownMenuLabel,", "    DropdownMenuSeparator,", "    DropdownMenuGroup,", "    DropdownMenuShortcut,", "    DropdownMenuSub,", "    DropdownMenuSubContent,", "    DropdownMenuSubTrigger,", "    DropdownMenuPortal,", "    DropdownMenuCheckboxItem,", "    DropdownMenuRadioGroup,", "    DropdownMenuRadioItem,", "} from '@/components/ui/dropdown-menu'"],
+        "description": "Import all DropdownMenu components",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "DropdownMenu (alias)": {
+        "prefix": ";dropdown",
+        "body": ["<Menu>", "    <Trigger asChild>", "        <Button variant=\"outline\">${1:Open}</Button>", "    </Trigger>", "    <Content align=\"${2|start,center,end|}\">", "        <Label>${3:My Account}</Label>", "        <Separator />", "        <Group>", "            <Item>${4:Profile}</Item>", "            <Item>${5:Settings}</Item>", "        </Group>", "        <Separator />", "        <Item>${6:Logout}</Item>", "    </Content>", "</Menu>"],
+        "description": "DropdownMenu with aliased JSX",
+    },
+    "DropdownMenu Basic (alias)": {
+        "prefix": ";dropdownb",
+        "body": ["<Menu>", "    <Trigger asChild>", "        <Button variant=\"ghost\" size=\"icon\">", "            <MoreHorizontal />", "        </Button>", "    </Trigger>", "    <Content align=\"end\">", "        <Item>${1:Edit}</Item>", "        <Item>${2:Delete}</Item>", "    </Content>", "</Menu>"],
+        "description": "Basic DropdownMenu (aliased)",
+    },
+    "DropdownMenu Item (alias)": {
+        "prefix": ";dropdownitem",
+        "body": "<Item>${1:Item}</Item>",
+        "description": "Single DropdownMenu Item (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "DropdownMenu (full)": {
+        "prefix": ";fdropdown",
+        "body": ["<DropdownMenu>", "    <DropdownMenuTrigger asChild>", "        <Button variant=\"outline\">${1:Open}</Button>", "    </DropdownMenuTrigger>", "    <DropdownMenuContent align=\"${2|start,center,end|}\">", "        <DropdownMenuLabel>${3:My Account}</DropdownMenuLabel>", "        <DropdownMenuSeparator />", "        <DropdownMenuGroup>", "            <DropdownMenuItem>${4:Profile}</DropdownMenuItem>", "            <DropdownMenuItem>${5:Settings}</DropdownMenuItem>", "        </DropdownMenuGroup>", "        <DropdownMenuSeparator />", "        <DropdownMenuItem>${6:Logout}</DropdownMenuItem>", "    </DropdownMenuContent>", "</DropdownMenu>"],
+        "description": "DropdownMenu with full names",
+    },
+    "DropdownMenu Basic (full)": {
+        "prefix": ";fdropdownb",
+        "body": ["<DropdownMenu>", "    <DropdownMenuTrigger asChild>", "        <Button variant=\"ghost\" size=\"icon\">", "            <MoreHorizontal />", "        </Button>", "    </DropdownMenuTrigger>", "    <DropdownMenuContent align=\"end\">", "        <DropdownMenuItem>${1:Edit}</DropdownMenuItem>", "        <DropdownMenuItem>${2:Delete}</DropdownMenuItem>", "    </DropdownMenuContent>", "</DropdownMenu>"],
+        "description": "Basic DropdownMenu (full names)",
+    },
+    "DropdownMenu Item (full)": {
+        "prefix": ";fdropdownitem",
+        "body": "<DropdownMenuItem>${1:Item}</DropdownMenuItem>",
+        "description": "Single DropdownMenu Item (full names)",
+    },
+}

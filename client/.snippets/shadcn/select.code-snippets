@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Select (alias)": {
+        "prefix": "i;select",
+        "body": ["import {", "    Select,", "    SelectTrigger as Trigger,", "    SelectValue as Value,", "    SelectContent as Content,", "    SelectItem as Item,", "    SelectGroup as Group,", "    SelectLabel as Label,", "} from '@/components/ui/select'"],
+        "description": "Import Select components with aliases",
+    },
+    "Import Select (full)": {
+        "prefix": "i;fselect",
+        "body": ["import {", "    Select,", "    SelectContent,", "    SelectGroup,", "    SelectItem,", "    SelectLabel,", "    SelectSeparator,", "    SelectTrigger,", "    SelectValue,", "} from '@/components/ui/select'"],
+        "description": "Import Select components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Select (alias)": {
+        "prefix": ";select",
+        "body": ["<Select value={${1:value}} onValueChange={${2:setValue}}>", "    <Trigger className=\"${3:w-[180px]}\">", "        <Value placeholder=\"${4:Select...}\" />", "    </Trigger>", "    <Content>", "        <Item value=\"${5:option1}\">${6:Option 1}</Item>", "        <Item value=\"${7:option2}\">${8:Option 2}</Item>", "        <Item value=\"${9:option3}\">${10:Option 3}</Item>", "    </Content>", "</Select>"],
+        "description": "Select with aliased JSX",
+    },
+    "Select Basic (alias)": {
+        "prefix": ";selectb",
+        "body": ["<Select>", "    <Trigger>", "        <Value placeholder=\"${1:Select}\" />", "    </Trigger>", "    <Content>", "        <Item value=\"${2:value}\">${3:Label}</Item>", "    </Content>", "</Select>"],
+        "description": "Basic Select (aliased)",
+    },
+    "Select with Groups (alias)": {
+        "prefix": ";selectg",
+        "body": ["<Select>", "    <Trigger className=\"${1:w-[180px]}\">", "        <Value placeholder=\"${2:Select...}\" />", "    </Trigger>", "    <Content>", "        <Group>", "            <Label>${3:Group 1}</Label>", "            <Item value=\"${4:item1}\">${5:Item 1}</Item>", "            <Item value=\"${6:item2}\">${7:Item 2}</Item>", "        </Group>", "        <Group>", "            <Label>${8:Group 2}</Label>", "            <Item value=\"${9:item3}\">${10:Item 3}</Item>", "        </Group>", "    </Content>", "</Select>"],
+        "description": "Select with groups (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Select (full)": {
+        "prefix": ";fselect",
+        "body": ["<Select value={${1:value}} onValueChange={${2:setValue}}>", "    <SelectTrigger className=\"${3:w-[180px]}\">", "        <SelectValue placeholder=\"${4:Select...}\" />", "    </SelectTrigger>", "    <SelectContent>", "        <SelectItem value=\"${5:option1}\">${6:Option 1}</SelectItem>", "        <SelectItem value=\"${7:option2}\">${8:Option 2}</SelectItem>", "        <SelectItem value=\"${9:option3}\">${10:Option 3}</SelectItem>", "    </SelectContent>", "</Select>"],
+        "description": "Select with full component names",
+    },
+    "Select Basic (full)": {
+        "prefix": ";fselectb",
+        "body": ["<Select>", "    <SelectTrigger>", "        <SelectValue placeholder=\"${1:Select}\" />", "    </SelectTrigger>", "    <SelectContent>", "        <SelectItem value=\"${2:value}\">${3:Label}</SelectItem>", "    </SelectContent>", "</Select>"],
+        "description": "Basic Select (full)",
+    },
+    "Select with Groups (full)": {
+        "prefix": ";fselectg",
+        "body": ["<Select>", "    <SelectTrigger className=\"${1:w-[180px]}\">", "        <SelectValue placeholder=\"${2:Select...}\" />", "    </SelectTrigger>", "    <SelectContent>", "        <SelectGroup>", "            <SelectLabel>${3:Group 1}</SelectLabel>", "            <SelectItem value=\"${4:item1}\">${5:Item 1}</SelectItem>", "            <SelectItem value=\"${6:item2}\">${7:Item 2}</SelectItem>", "        </SelectGroup>", "        <SelectGroup>", "            <SelectLabel>${8:Group 2}</SelectLabel>", "            <SelectItem value=\"${9:item3}\">${10:Item 3}</SelectItem>", "        </SelectGroup>", "    </SelectContent>", "</Select>"],
+        "description": "Select with groups (full)",
+    },
+}

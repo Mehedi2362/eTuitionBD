@@ -1,0 +1,68 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Input": {
+        "prefix": "i;input",
+        "body": ["import { Input } from '@/components/ui/input'"],
+        "description": "Import Input component",
+    },
+    "Import Input (full)": {
+        "prefix": "i;finput",
+        "body": ["import { Input } from '@/components/ui/input'"],
+        "description": "Import Input component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Input (alias)": {
+        "prefix": ";input",
+        "body": ["<Input", "    type=\"${1|text,email,password,number,tel,url,search,date,time,datetime-local|}\"", "    placeholder=\"${2:Enter text...}\"", "    value={${3:value}}", "    onChange={(e) => ${4:setValue}(e.target.value)}", "/>"],
+        "description": "Controlled Input component",
+    },
+    "Input Basic (alias)": {
+        "prefix": ";inputb",
+        "body": ["<Input type=\"${1:text}\" placeholder=\"${2:placeholder}\" />"],
+        "description": "Basic Input component",
+    },
+    "Input with Label (alias)": {
+        "prefix": ";inputl",
+        "body": ["<div className=\"grid w-full max-w-sm items-center gap-1.5\">", "    <Label htmlFor=\"${1:input}\">${2:Label}</Label>", "    <Input type=\"${3:text}\" id=\"$1\" placeholder=\"${4:placeholder}\" />", "</div>"],
+        "description": "Input with Label",
+    },
+    "Input Disabled (alias)": {
+        "prefix": ";inputd",
+        "body": ["<Input type=\"${1:text}\" placeholder=\"${2:Disabled}\" disabled />"],
+        "description": "Disabled Input",
+    },
+    "Input File (alias)": {
+        "prefix": ";inputf",
+        "body": ["<div className=\"grid w-full max-w-sm items-center gap-1.5\">", "    <Label htmlFor=\"${1:file}\">${2:File}</Label>", "    <Input id=\"$1\" type=\"file\" />", "</div>"],
+        "description": "File Input with Label",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Input (full)": {
+        "prefix": ";finput",
+        "body": ["<Input", "    type=\"${1|text,email,password,number,tel,url,search,date,time,datetime-local|}\"", "    placeholder=\"${2:Enter text...}\"", "    value={${3:value}}", "    onChange={(e) => ${4:setValue}(e.target.value)}", "/>"],
+        "description": "Controlled Input component (full)",
+    },
+    "Input Basic (full)": {
+        "prefix": ";finputb",
+        "body": ["<Input type=\"${1:text}\" placeholder=\"${2:placeholder}\" />"],
+        "description": "Basic Input component (full)",
+    },
+    "Input with Label (full)": {
+        "prefix": ";finputl",
+        "body": ["<div className=\"grid w-full max-w-sm items-center gap-1.5\">", "    <Label htmlFor=\"${1:input}\">${2:Label}</Label>", "    <Input type=\"${3:text}\" id=\"$1\" placeholder=\"${4:placeholder}\" />", "</div>"],
+        "description": "Input with Label (full)",
+    },
+    "Input Disabled (full)": {
+        "prefix": ";finputd",
+        "body": ["<Input type=\"${1:text}\" placeholder=\"${2:Disabled}\" disabled />"],
+        "description": "Disabled Input (full)",
+    },
+}

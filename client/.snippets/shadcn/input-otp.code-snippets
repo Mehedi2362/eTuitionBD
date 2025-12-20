@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import InputOTP (alias)": {
+        "prefix": "i;otp",
+        "body": ["import {", "    InputOTP,", "    InputOTPGroup as Group,", "    InputOTPSlot as Slot,", "    InputOTPSeparator as Separator,", "} from '@/components/ui/input-otp'"],
+        "description": "Import InputOTP components with aliases",
+    },
+    "Import InputOTP (full)": {
+        "prefix": "i;fotp",
+        "body": ["import {", "    InputOTP,", "    InputOTPGroup,", "    InputOTPSlot,", "    InputOTPSeparator,", "} from '@/components/ui/input-otp'"],
+        "description": "Import InputOTP components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "InputOTP (alias)": {
+        "prefix": ";otp",
+        "body": ["<InputOTP maxLength={${1:6}} value={${2:value}} onChange={${3:setValue}}>", "    <Group>", "        <Slot index={0} />", "        <Slot index={1} />", "        <Slot index={2} />", "    </Group>", "    <Separator />", "    <Group>", "        <Slot index={3} />", "        <Slot index={4} />", "        <Slot index={5} />", "    </Group>", "</InputOTP>"],
+        "description": "InputOTP with separator (aliased)",
+    },
+    "InputOTP Basic (alias)": {
+        "prefix": ";otpb",
+        "body": ["<InputOTP maxLength={${1:6}}>", "    <Group>", "        <Slot index={0} />", "        <Slot index={1} />", "        <Slot index={2} />", "        <Slot index={3} />", "        <Slot index={4} />", "        <Slot index={5} />", "    </Group>", "</InputOTP>"],
+        "description": "Basic InputOTP without separator (aliased)",
+    },
+    "InputOTP 4 Digit (alias)": {
+        "prefix": ";otp4",
+        "body": ["<InputOTP maxLength={4} value={${1:value}} onChange={${2:setValue}}>", "    <Group>", "        <Slot index={0} />", "        <Slot index={1} />", "        <Slot index={2} />", "        <Slot index={3} />", "    </Group>", "</InputOTP>"],
+        "description": "4-digit InputOTP (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "InputOTP (full)": {
+        "prefix": ";fotp",
+        "body": ["<InputOTP maxLength={${1:6}} value={${2:value}} onChange={${3:setValue}}>", "    <InputOTPGroup>", "        <InputOTPSlot index={0} />", "        <InputOTPSlot index={1} />", "        <InputOTPSlot index={2} />", "    </InputOTPGroup>", "    <InputOTPSeparator />", "    <InputOTPGroup>", "        <InputOTPSlot index={3} />", "        <InputOTPSlot index={4} />", "        <InputOTPSlot index={5} />", "    </InputOTPGroup>", "</InputOTP>"],
+        "description": "InputOTP with separator (full)",
+    },
+    "InputOTP Basic (full)": {
+        "prefix": ";fotpb",
+        "body": ["<InputOTP maxLength={${1:6}}>", "    <InputOTPGroup>", "        <InputOTPSlot index={0} />", "        <InputOTPSlot index={1} />", "        <InputOTPSlot index={2} />", "        <InputOTPSlot index={3} />", "        <InputOTPSlot index={4} />", "        <InputOTPSlot index={5} />", "    </InputOTPGroup>", "</InputOTP>"],
+        "description": "Basic InputOTP without separator (full)",
+    },
+    "InputOTP 4 Digit (full)": {
+        "prefix": ";fotp4",
+        "body": ["<InputOTP maxLength={4} value={${1:value}} onChange={${2:setValue}}>", "    <InputOTPGroup>", "        <InputOTPSlot index={0} />", "        <InputOTPSlot index={1} />", "        <InputOTPSlot index={2} />", "        <InputOTPSlot index={3} />", "    </InputOTPGroup>", "</InputOTP>"],
+        "description": "4-digit InputOTP (full)",
+    },
+}

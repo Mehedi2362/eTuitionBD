@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Table (alias)": {
+        "prefix": "i;table",
+        "body": ["import {", "    Table,", "    TableBody as Body,", "    TableCaption as Caption,", "    TableCell as Cell,", "    TableHead as Head,", "    TableHeader as Header,", "    TableRow as Row,", "    TableFooter as Footer,", "} from '@/components/ui/table'"],
+        "description": "Import Table components with aliases",
+    },
+    "Import Table (full)": {
+        "prefix": "i;ftable",
+        "body": ["import {", "    Table,", "    TableBody,", "    TableCaption,", "    TableCell,", "    TableFooter,", "    TableHead,", "    TableHeader,", "    TableRow,", "} from '@/components/ui/table'"],
+        "description": "Import Table components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Table (alias)": {
+        "prefix": ";table",
+        "body": ["<Table>", "    <Caption>${1:Table caption}</Caption>", "    <Header>", "        <Row>", "            <Head>${2:Column 1}</Head>", "            <Head>${3:Column 2}</Head>", "            <Head>${4:Column 3}</Head>", "        </Row>", "    </Header>", "    <Body>", "        <Row>", "            <Cell>${5:Cell 1}</Cell>", "            <Cell>${6:Cell 2}</Cell>", "            <Cell>${7:Cell 3}</Cell>", "        </Row>", "    </Body>", "</Table>"],
+        "description": "Table with aliased JSX",
+    },
+    "Table Basic (alias)": {
+        "prefix": ";tableb",
+        "body": ["<Table>", "    <Header>", "        <Row>", "            <Head>$1</Head>", "        </Row>", "    </Header>", "    <Body>", "        <Row>", "            <Cell>$2</Cell>", "        </Row>", "    </Body>", "</Table>"],
+        "description": "Basic Table (aliased)",
+    },
+    "Table Row (alias)": {
+        "prefix": ";tablerow",
+        "body": ["<Row>", "    <Cell>${1:Cell}</Cell>", "</Row>"],
+        "description": "Table Row (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Table (full)": {
+        "prefix": ";ftable",
+        "body": ["<Table>", "    <TableCaption>${1:Table caption}</TableCaption>", "    <TableHeader>", "        <TableRow>", "            <TableHead>${2:Column 1}</TableHead>", "            <TableHead>${3:Column 2}</TableHead>", "            <TableHead>${4:Column 3}</TableHead>", "        </TableRow>", "    </TableHeader>", "    <TableBody>", "        <TableRow>", "            <TableCell>${5:Cell 1}</TableCell>", "            <TableCell>${6:Cell 2}</TableCell>", "            <TableCell>${7:Cell 3}</TableCell>", "        </TableRow>", "    </TableBody>", "</Table>"],
+        "description": "Table with full component names",
+    },
+    "Table Basic (full)": {
+        "prefix": ";ftableb",
+        "body": ["<Table>", "    <TableHeader>", "        <TableRow>", "            <TableHead>$1</TableHead>", "        </TableRow>", "    </TableHeader>", "    <TableBody>", "        <TableRow>", "            <TableCell>$2</TableCell>", "        </TableRow>", "    </TableBody>", "</Table>"],
+        "description": "Basic Table (full)",
+    },
+    "Table Row (full)": {
+        "prefix": ";ftablerow",
+        "body": ["<TableRow>", "    <TableCell>${1:Cell}</TableCell>", "</TableRow>"],
+        "description": "Table Row (full)",
+    },
+}

@@ -1,0 +1,93 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Field (alias)": {
+        "prefix": "i;field",
+        "body": ["import {", "    Field,", "    FieldLabel as Label,", "    FieldDescription as Description,", "    FieldError as Error,", "    FieldGroup as Group,", "    FieldLegend as Legend,", "    FieldSeparator as Separator,", "    FieldSet as Set,", "    FieldContent as Content,", "    FieldTitle as Title,", "} from '@/components/ui/field'"],
+        "description": "Import Field components with aliases",
+    },
+    "Import Field (full)": {
+        "prefix": "i;ffield",
+        "body": ["import {", "    Field,", "    FieldLabel,", "    FieldDescription,", "    FieldError,", "    FieldGroup,", "    FieldLegend,", "    FieldSeparator,", "    FieldSet,", "    FieldContent,", "    FieldTitle,", "} from '@/components/ui/field'"],
+        "description": "Import Field components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Field (alias)": {
+        "prefix": ";field",
+        "body": ["<Field orientation=\"${1|vertical,horizontal,responsive|}\">", "    <Label>${2:Label}</Label>", "    <Content>", "        ${3:<Input />}", "        <Description>${4:Description text}</Description>", "        <Error>${5:Error message}</Error>", "    </Content>", "</Field>$0"],
+        "description": "Field with aliased JSX",
+    },
+    "Field Basic (alias)": {
+        "prefix": ";fieldb",
+        "body": ["<Field>", "    <Label>${1:Label}</Label>", "    ${2:<Input />}", "</Field>$0"],
+        "description": "Basic Field (aliased)",
+    },
+    "FieldSet (alias)": {
+        "prefix": ";fieldset",
+        "body": ["<Set>", "    <Legend>${1:Legend}</Legend>", "    ${0}", "</Set>"],
+        "description": "FieldSet (aliased)",
+    },
+    "FieldGroup (alias)": {
+        "prefix": ";fieldgroup",
+        "body": ["<Group>", "    ${0}", "</Group>"],
+        "description": "FieldGroup (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Field (full)": {
+        "prefix": ";ffield",
+        "body": ["<Field orientation=\"${1|vertical,horizontal,responsive|}\">", "    <FieldLabel>${2:Label}</FieldLabel>", "    <FieldContent>", "        ${3:<Input />}", "        <FieldDescription>${4:Description text}</FieldDescription>", "        <FieldError>${5:Error message}</FieldError>", "    </FieldContent>", "</Field>$0"],
+        "description": "Field with full component names",
+    },
+    "Field Basic (full)": {
+        "prefix": ";ffieldb",
+        "body": ["<Field>", "    <FieldLabel>${1:Label}</FieldLabel>", "    ${2:<Input />}", "</Field>$0"],
+        "description": "Basic Field (full)",
+    },
+    "FieldSet (full)": {
+        "prefix": ";ffieldset",
+        "body": ["<FieldSet>", "    <FieldLegend>${1:Legend}</FieldLegend>", "    ${0}", "</FieldSet>"],
+        "description": "FieldSet (full)",
+    },
+    "FieldGroup (full)": {
+        "prefix": ";ffieldgroup",
+        "body": ["<FieldGroup>", "    ${0}", "</FieldGroup>"],
+        "description": "FieldGroup (full)",
+    },
+    "FieldLabel (full)": {
+        "prefix": ";ffieldlabel",
+        "body": ["<FieldLabel>${1:Label}</FieldLabel>$0"],
+        "description": "FieldLabel (full)",
+    },
+    "FieldDescription (full)": {
+        "prefix": ";ffielddesc",
+        "body": ["<FieldDescription>${1:Description text}</FieldDescription>$0"],
+        "description": "FieldDescription (full)",
+    },
+    "FieldError (full)": {
+        "prefix": ";ffielderror",
+        "body": ["<FieldError>${1:Error message}</FieldError>$0"],
+        "description": "FieldError (full)",
+    },
+    "FieldContent (full)": {
+        "prefix": ";ffieldcontent",
+        "body": ["<FieldContent>", "    ${0}", "</FieldContent>"],
+        "description": "FieldContent (full)",
+    },
+    "FieldTitle (full)": {
+        "prefix": ";ffieldtitle",
+        "body": ["<FieldTitle>${1:Title}</FieldTitle>$0"],
+        "description": "FieldTitle (full)",
+    },
+    "FieldSeparator (full)": {
+        "prefix": ";ffieldsep",
+        "body": ["<FieldSeparator />$0"],
+        "description": "FieldSeparator (full)",
+    },
+}

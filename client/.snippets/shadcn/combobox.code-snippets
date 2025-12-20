@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Combobox (alias)": {
+        "prefix": "i;combobox",
+        "body": ["import {", "    Popover,", "    PopoverTrigger as Trigger,", "    PopoverContent as Content,", "} from '@/components/ui/popover'", "import {", "    Command,", "    CommandInput as Input,", "    CommandList as List,", "    CommandEmpty as Empty,", "    CommandGroup as Group,", "    CommandItem as Item,", "} from '@/components/ui/command'", "import { Button } from '@/components/ui/button'", "import { Check, ChevronsUpDown } from 'lucide-react'", "import { cn } from '@/lib/utils'"],
+        "description": "Import Combobox components with aliases",
+    },
+    "Import Combobox (full)": {
+        "prefix": "i;fcombobox",
+        "body": ["import {", "    Popover,", "    PopoverContent,", "    PopoverTrigger,", "} from '@/components/ui/popover'", "import {", "    Command,", "    CommandEmpty,", "    CommandGroup,", "    CommandInput,", "    CommandItem,", "    CommandList,", "} from '@/components/ui/command'", "import { Button } from '@/components/ui/button'", "import { Check, ChevronsUpDown } from 'lucide-react'", "import { cn } from '@/lib/utils'"],
+        "description": "Import Combobox components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Combobox (alias)": {
+        "prefix": ";combobox",
+        "body": ["const [open, setOpen] = React.useState(false)", "const [value, setValue] = React.useState('')", "", "const ${1:items} = [", "    { value: '${2:item1}', label: '${3:Item 1}' },", "    { value: '${4:item2}', label: '${5:Item 2}' },", "]", "", "<Popover open={open} onOpenChange={setOpen}>", "    <Trigger asChild>", "        <Button", "            variant=\"outline\"", "            role=\"combobox\"", "            aria-expanded={open}", "            className=\"w-[200px] justify-between\"", "        >", "            {value", "                ? ${1:items}.find((item) => item.value === value)?.label", "                : '${6:Select item...}'}", "            <ChevronsUpDown className=\"opacity-50\" />", "        </Button>", "    </Trigger>", "    <Content className=\"w-[200px] p-0\">", "        <Command>", "            <Input placeholder=\"${7:Search...}\" className=\"h-9\" />", "            <List>", "                <Empty>${8:No item found.}</Empty>", "                <Group>", "                    {${1:items}.map((item) => (", "                        <Item", "                            key={item.value}", "                            value={item.value}", "                            onSelect={(currentValue) => {", "                                setValue(currentValue === value ? '' : currentValue)", "                                setOpen(false)", "                            }}", "                        >", "                            {item.label}", "                            <Check", "                                className={cn(", "                                    'ml-auto',", "                                    value === item.value ? 'opacity-100' : 'opacity-0'", "                                )}", "                            />", "                        </Item>", "                    ))}", "                </Group>", "            </List>", "        </Command>", "    </Content>", "</Popover>$0"],
+        "description": "Combobox with aliased JSX",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Combobox (full)": {
+        "prefix": ";fcombobox",
+        "body": ["const [open, setOpen] = React.useState(false)", "const [value, setValue] = React.useState(\"\")", "", "const ${1:items} = [", "  { value: \"${2:item1}\", label: \"${3:Item 1}\" },", "  { value: \"${4:item2}\", label: \"${5:Item 2}\" },", "]", "", "<Popover open={open} onOpenChange={setOpen}>", "  <PopoverTrigger asChild>", "    <Button", "      variant=\"outline\"", "      role=\"combobox\"", "      aria-expanded={open}", "      className=\"w-[200px] justify-between\"", "    >", "      {value", "        ? ${1:items}.find((item) => item.value === value)?.label", "        : \"${6:Select item...}\"}", "      <ChevronsUpDown className=\"opacity-50\" />", "    </Button>", "  </PopoverTrigger>", "  <PopoverContent className=\"w-[200px] p-0\">", "    <Command>", "      <CommandInput placeholder=\"${7:Search...}\" className=\"h-9\" />", "      <CommandList>", "        <CommandEmpty>${8:No item found.}</CommandEmpty>", "        <CommandGroup>", "          {${1:items}.map((item) => (", "            <CommandItem", "              key={item.value}", "              value={item.value}", "              onSelect={(currentValue) => {", "                setValue(currentValue === value ? \"\" : currentValue)", "                setOpen(false)", "              }}", "            >", "              {item.label}", "              <Check", "                className={cn(", "                  \"ml-auto\",", "                  value === item.value ? \"opacity-100\" : \"opacity-0\"", "                )}", "              />", "            </CommandItem>", "          ))}", "        </CommandGroup>", "      </CommandList>", "    </Command>", "  </PopoverContent>", "</Popover>$0"],
+        "description": "Combobox with state and items",
+    },
+    "Combobox (basic)": {
+        "prefix": ";comboboxb",
+        "body": ["<Popover open={open} onOpenChange={setOpen}>", "  <PopoverTrigger asChild>", "    <Button variant=\"outline\" role=\"combobox\" className=\"w-[200px] justify-between\">", "      {value || \"${1:Select...}\"}", "      <ChevronsUpDown className=\"opacity-50\" />", "    </Button>", "  </PopoverTrigger>", "  <PopoverContent className=\"w-[200px] p-0\">", "    <Command>", "      <CommandInput placeholder=\"Search...\" />", "      <CommandList>", "        <CommandEmpty>No results.</CommandEmpty>", "        <CommandGroup>", "          <CommandItem value=\"${2:option1}\">${3:Option 1}</CommandItem>", "          <CommandItem value=\"${4:option2}\">${5:Option 2}</CommandItem>", "        </CommandGroup>", "      </CommandList>", "    </Command>", "  </PopoverContent>", "</Popover>$0"],
+        "description": "Basic Combobox structure",
+    },
+    "Combobox State": {
+        "prefix": ";comboboxstate",
+        "body": ["const [open, setOpen] = React.useState(false)", "const [value, setValue] = React.useState(\"\")"],
+        "description": "Combobox state hooks",
+    },
+}

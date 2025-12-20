@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Skeleton": {
+        "prefix": "i;skeleton",
+        "body": ["import { Skeleton } from '@/components/ui/skeleton'"],
+        "description": "Import Skeleton component",
+    },
+    "Import Skeleton (full)": {
+        "prefix": "i;fskeleton",
+        "body": ["import { Skeleton } from '@/components/ui/skeleton'"],
+        "description": "Import Skeleton component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Skeleton (alias)": {
+        "prefix": ";skeleton",
+        "body": ["<Skeleton className=\"${1:h-4 w-[250px]}\" />"],
+        "description": "Skeleton component",
+    },
+    "Skeleton Card (alias)": {
+        "prefix": ";skeletoncard",
+        "body": ["<div className=\"flex flex-col space-y-3\">", "    <Skeleton className=\"h-[125px] w-[250px] rounded-xl\" />", "    <div className=\"space-y-2\">", "        <Skeleton className=\"h-4 w-[250px]\" />", "        <Skeleton className=\"h-4 w-[200px]\" />", "    </div>", "</div>"],
+        "description": "Skeleton card placeholder",
+    },
+    "Skeleton Avatar (alias)": {
+        "prefix": ";skeletonavatar",
+        "body": ["<div className=\"flex items-center space-x-4\">", "    <Skeleton className=\"size-12 rounded-full\" />", "    <div className=\"space-y-2\">", "        <Skeleton className=\"h-4 w-[250px]\" />", "        <Skeleton className=\"h-4 w-[200px]\" />", "    </div>", "</div>"],
+        "description": "Skeleton with avatar placeholder",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Skeleton (full)": {
+        "prefix": ";fskeleton",
+        "body": ["<Skeleton className=\"${1:h-4 w-[250px]}\" />"],
+        "description": "Skeleton component (full)",
+    },
+    "Skeleton Card (full)": {
+        "prefix": ";fskeletoncard",
+        "body": ["<div className=\"flex flex-col space-y-3\">", "    <Skeleton className=\"h-[125px] w-[250px] rounded-xl\" />", "    <div className=\"space-y-2\">", "        <Skeleton className=\"h-4 w-[250px]\" />", "        <Skeleton className=\"h-4 w-[200px]\" />", "    </div>", "</div>"],
+        "description": "Skeleton card placeholder (full)",
+    },
+    "Skeleton Avatar (full)": {
+        "prefix": ";fskeletonavatar",
+        "body": ["<div className=\"flex items-center space-x-4\">", "    <Skeleton className=\"size-12 rounded-full\" />", "    <div className=\"space-y-2\">", "        <Skeleton className=\"h-4 w-[250px]\" />", "        <Skeleton className=\"h-4 w-[200px]\" />", "    </div>", "</div>"],
+        "description": "Skeleton with avatar placeholder (full)",
+    },
+}

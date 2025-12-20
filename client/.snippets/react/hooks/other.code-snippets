@@ -1,0 +1,42 @@
+{
+    "useContext": {
+        "prefix": ";uctx",
+        "body": ["import { useContext } from 'react'", "", "const ${1:context} = useContext(${2:Context})"],
+        "description": "useContext hook",
+    },
+    "useContext Inline": {
+        "prefix": ";uctxi",
+        "body": ["const ${1:context} = useContext(${2:Context})"],
+        "description": "useContext inline",
+    },
+    "useReducer": {
+        "prefix": ";ured",
+        "body": ["import { useReducer } from 'react'", "", "const [${1:state}, dispatch] = useReducer(${2:reducer}, ${3:initialState})"],
+        "description": "useReducer hook",
+    },
+    "useReducer Inline": {
+        "prefix": ";uredi",
+        "body": ["const [${1:state}, dispatch] = useReducer(${2:reducer}, ${3:initialState})"],
+        "description": "useReducer inline",
+    },
+    "useId": {
+        "prefix": ";uid",
+        "body": ["import { useId } from 'react'", "", "const ${1:id} = useId()"],
+        "description": "useId hook",
+    },
+    "useId Inline": {
+        "prefix": ";uidi",
+        "body": ["const ${1:id} = useId()"],
+        "description": "useId inline",
+    },
+    "useTransition": {
+        "prefix": ";utr",
+        "body": ["import { useTransition } from 'react'", "", "const [isPending, startTransition] = useTransition()"],
+        "description": "useTransition hook",
+    },
+    "useDeferredValue": {
+        "prefix": ";udf",
+        "body": ["import { useDeferredValue } from 'react'", "", "const deferredValue = useDeferredValue(${1:value})"],
+        "description": "useDeferredValue hook",
+    },
+}

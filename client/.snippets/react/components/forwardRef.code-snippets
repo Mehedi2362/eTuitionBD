@@ -1,0 +1,25 @@
+{
+    "React ForwardRef": {
+        "prefix": ";rfwd",
+        "body": [
+            "import { forwardRef } from 'react'",
+            "",
+            "interface ${1:${TM_FILENAME_BASE}}Props {",
+            "    $2",
+            "}",
+            "",
+            "export const ${1:${TM_FILENAME_BASE}} = forwardRef<HTML${3:Div}Element, ${1:${TM_FILENAME_BASE}}Props>(",
+            "    ({ $4 }, ref) => {",
+            "        return (",
+            "            <${5:div} ref={ref}>",
+            "                $0",
+            "            </${5:div}>",
+            "        )",
+            "    }",
+            ")",
+            "",
+            "${1:${TM_FILENAME_BASE}}.displayName = '${1:${TM_FILENAME_BASE}}'"
+        ],
+        "description": "React ForwardRef Component"
+    }
+}

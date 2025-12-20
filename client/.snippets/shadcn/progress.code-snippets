@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Progress": {
+        "prefix": "i;progress",
+        "body": ["import { Progress } from '@/components/ui/progress'"],
+        "description": "Import Progress component",
+    },
+    "Import Progress (full)": {
+        "prefix": "i;fprogress",
+        "body": ["import { Progress } from '@/components/ui/progress'"],
+        "description": "Import Progress component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Progress (alias)": {
+        "prefix": ";progress",
+        "body": ["<Progress value={${1:33}} className=\"${2:w-[60%]}\" />"],
+        "description": "Progress component",
+    },
+    "Progress with State (alias)": {
+        "prefix": ";progresss",
+        "body": ["const [progress, setProgress] = React.useState(${1:13})", "", "React.useEffect(() => {", "    const timer = setTimeout(() => setProgress(${2:66}), ${3:500})", "    return () => clearTimeout(timer)", "}, [])", "", "<Progress value={progress} className=\"${4:w-[60%]}\" />"],
+        "description": "Progress with useState and animation",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Progress (full)": {
+        "prefix": ";fprogress",
+        "body": ["<Progress value={${1:33}} className=\"${2:w-[60%]}\" />"],
+        "description": "Progress component (full)",
+    },
+    "Progress with State (full)": {
+        "prefix": ";fprogresss",
+        "body": ["const [progress, setProgress] = React.useState(${1:13})", "", "React.useEffect(() => {", "    const timer = setTimeout(() => setProgress(${2:66}), ${3:500})", "    return () => clearTimeout(timer)", "}, [])", "", "<Progress value={progress} className=\"${4:w-[60%]}\" />"],
+        "description": "Progress with useState and animation (full)",
+    },
+}

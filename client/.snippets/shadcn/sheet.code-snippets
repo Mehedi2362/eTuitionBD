@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Sheet (alias)": {
+        "prefix": "i;sheet",
+        "body": ["import {", "    Sheet,", "    SheetTrigger as Trigger,", "    SheetContent as Content,", "    SheetHeader as Header,", "    SheetTitle as Title,", "    SheetDescription as Description,", "    SheetFooter as Footer,", "    SheetClose as Close,", "} from '@/components/ui/sheet'"],
+        "description": "Import Sheet components with aliases",
+    },
+    "Import Sheet (full)": {
+        "prefix": "i;fsheet",
+        "body": ["import {", "    Sheet,", "    SheetClose,", "    SheetContent,", "    SheetDescription,", "    SheetFooter,", "    SheetHeader,", "    SheetTitle,", "    SheetTrigger,", "} from '@/components/ui/sheet'"],
+        "description": "Import Sheet components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Sheet (alias)": {
+        "prefix": ";sheet",
+        "body": ["<Sheet>", "    <Trigger asChild>", "        <Button variant=\"outline\">${1:Open Sheet}</Button>", "    </Trigger>", "    <Content side=\"${2|right,left,top,bottom|}\">", "        <Header>", "            <Title>${3:Sheet Title}</Title>", "            <Description>${4:Sheet description.}</Description>", "        </Header>", "        <div className=\"p-4\">", "            ${5:Content}", "        </div>", "        <Footer>", "            <Close asChild>", "                <Button type=\"button\">${6:Close}</Button>", "            </Close>", "        </Footer>", "    </Content>", "</Sheet>"],
+        "description": "Sheet with aliased JSX",
+    },
+    "Sheet Basic (alias)": {
+        "prefix": ";sheetb",
+        "body": ["<Sheet>", "    <Trigger asChild>", "        <Button variant=\"outline\">Open</Button>", "    </Trigger>", "    <Content>", "        <Header>", "            <Title>$1</Title>", "            <Description>$2</Description>", "        </Header>", "        $3", "    </Content>", "</Sheet>"],
+        "description": "Basic Sheet (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Sheet (full)": {
+        "prefix": ";fsheet",
+        "body": ["<Sheet>", "    <SheetTrigger asChild>", "        <Button variant=\"outline\">${1:Open Sheet}</Button>", "    </SheetTrigger>", "    <SheetContent side=\"${2|right,left,top,bottom|}\">", "        <SheetHeader>", "            <SheetTitle>${3:Sheet Title}</SheetTitle>", "            <SheetDescription>${4:Sheet description.}</SheetDescription>", "        </SheetHeader>", "        <div className=\"p-4\">", "            ${5:Content}", "        </div>", "        <SheetFooter>", "            <SheetClose asChild>", "                <Button type=\"button\">${6:Close}</Button>", "            </SheetClose>", "        </SheetFooter>", "    </SheetContent>", "</Sheet>"],
+        "description": "Sheet with full component names",
+    },
+    "Sheet Basic (full)": {
+        "prefix": ";fsheetb",
+        "body": ["<Sheet>", "    <SheetTrigger asChild>", "        <Button variant=\"outline\">Open</Button>", "    </SheetTrigger>", "    <SheetContent>", "        <SheetHeader>", "            <SheetTitle>$1</SheetTitle>", "            <SheetDescription>$2</SheetDescription>", "        </SheetHeader>", "        $3", "    </SheetContent>", "</Sheet>"],
+        "description": "Basic Sheet (full)",
+    },
+}

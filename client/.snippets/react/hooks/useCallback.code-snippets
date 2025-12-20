@@ -1,0 +1,17 @@
+{
+    "useCallback": {
+        "prefix": ";ucb",
+        "body": ["import { useCallback } from 'react'", "", "const ${1:callback} = useCallback(() => {", "    $0", "}, [${2:deps}])"],
+        "description": "useCallback hook",
+    },
+    "useCallback Inline": {
+        "prefix": ";ucbi",
+        "body": ["const ${1:callback} = useCallback(() => {", "    $0", "}, [${2:deps}])"],
+        "description": "useCallback inline (without import)",
+    },
+    "useCallback with Params": {
+        "prefix": ";ucbp",
+        "body": ["const ${1:callback} = useCallback((${2:param}: ${3:type}) => {", "    $0", "}, [${4:deps}])"],
+        "description": "useCallback with parameters",
+    },
+}

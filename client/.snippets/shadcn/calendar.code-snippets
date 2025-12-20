@@ -1,0 +1,73 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Calendar (alias)": {
+        "prefix": "i;calendar",
+        "body": ["import { Calendar } from '@/components/ui/calendar'"],
+        "description": "Import Calendar component",
+    },
+    "Import Calendar (full)": {
+        "prefix": "i;fcalendar",
+        "body": ["import { Calendar } from '@/components/ui/calendar'"],
+        "description": "Import Calendar component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Calendar (alias)": {
+        "prefix": ";calendar",
+        "body": ["<Calendar", "    mode=\"${1|single,range,multiple|}\"", "    selected={${2:date}}", "    onSelect={${3:setDate}}", "    className=\"${4:rounded-lg border}\"", "/>"],
+        "description": "Calendar component with common props",
+    },
+    "Calendar Basic (alias)": {
+        "prefix": ";calendarb",
+        "body": ["<Calendar", "    mode=\"single\"", "    selected={${1:date}}", "    onSelect={${2:setDate}}", "/>"],
+        "description": "Basic Calendar component",
+    },
+    "Calendar with State (alias)": {
+        "prefix": ";calendars",
+        "body": ["const [${1:date}, ${2:setDate}] = React.useState<Date | undefined>(new Date())", "", "<Calendar", "    mode=\"single\"", "    selected={$1}", "    onSelect={$2}", "    className=\"${3:rounded-lg border}\"", "/>"],
+        "description": "Calendar with useState hook",
+    },
+    "Calendar Range (alias)": {
+        "prefix": ";calendarr",
+        "body": ["const [${1:dateRange}, ${2:setDateRange}] = React.useState<DateRange | undefined>({", "    from: new Date(),", "    to: undefined,", "})", "", "<Calendar", "    mode=\"range\"", "    defaultMonth={$1?.from}", "    selected={$1}", "    onSelect={$2}", "    numberOfMonths={${3:2}}", "    className=\"${4:rounded-lg border}\"", "/>"],
+        "description": "Calendar with range selection",
+    },
+    "Calendar Dropdown (alias)": {
+        "prefix": ";calendard",
+        "body": ["<Calendar", "    mode=\"single\"", "    selected={${1:date}}", "    onSelect={${2:setDate}}", "    captionLayout=\"${3|dropdown,dropdown-months,dropdown-years|}\"", "    className=\"${4:rounded-lg border}\"", "/>"],
+        "description": "Calendar with dropdown month/year selector",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Calendar (full)": {
+        "prefix": ";fcalendar",
+        "body": ["<Calendar", "    mode=\"${1|single,range,multiple|}\"", "    selected={${2:date}}", "    onSelect={${3:setDate}}", "    className=\"${4:rounded-lg border}\"", "/>"],
+        "description": "Calendar component with common props",
+    },
+    "Calendar Basic (full)": {
+        "prefix": ";fcalendarb",
+        "body": ["<Calendar", "    mode=\"single\"", "    selected={${1:date}}", "    onSelect={${2:setDate}}", "/>"],
+        "description": "Basic Calendar component (full)",
+    },
+    "Calendar with State (full)": {
+        "prefix": ";fcalendars",
+        "body": ["const [${1:date}, ${2:setDate}] = React.useState<Date | undefined>(new Date())", "", "<Calendar", "    mode=\"single\"", "    selected={$1}", "    onSelect={$2}", "    className=\"${3:rounded-lg border}\"", "/>"],
+        "description": "Calendar with useState hook (full)",
+    },
+    "Calendar Range (full)": {
+        "prefix": ";fcalendarr",
+        "body": ["const [${1:dateRange}, ${2:setDateRange}] = React.useState<DateRange | undefined>({", "    from: new Date(),", "    to: undefined,", "})", "", "<Calendar", "    mode=\"range\"", "    defaultMonth={$1?.from}", "    selected={$1}", "    onSelect={$2}", "    numberOfMonths={${3:2}}", "    className=\"${4:rounded-lg border}\"", "/>"],
+        "description": "Calendar with range selection (full)",
+    },
+    "Calendar Dropdown (full)": {
+        "prefix": ";fcalendard",
+        "body": ["<Calendar", "    mode=\"single\"", "    selected={${1:date}}", "    onSelect={${2:setDate}}", "    captionLayout=\"${3|dropdown,dropdown-months,dropdown-years|}\"", "    className=\"${4:rounded-lg border}\"", "/>"],
+        "description": "Calendar with dropdown month/year selector (full)",
+    },
+}

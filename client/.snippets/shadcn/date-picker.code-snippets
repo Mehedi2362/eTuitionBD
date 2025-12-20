@@ -1,0 +1,57 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import DatePicker (alias)": {
+        "prefix": "i;datepicker",
+        "body": ["import { format } from 'date-fns'", "import { CalendarIcon } from 'lucide-react'", "import { cn } from '@/lib/utils'", "import { Button } from '@/components/ui/button'", "import { Calendar } from '@/components/ui/calendar'", "import {", "    Popover,", "    PopoverTrigger as Trigger,", "    PopoverContent as Content,", "} from '@/components/ui/popover'"],
+        "description": "Import DatePicker components with aliases",
+    },
+    "Import DatePicker (full)": {
+        "prefix": "i;fdatepicker",
+        "body": ["import { format } from 'date-fns'", "import { CalendarIcon } from 'lucide-react'", "import { cn } from '@/lib/utils'", "import { Button } from '@/components/ui/button'", "import { Calendar } from '@/components/ui/calendar'", "import {", "    Popover,", "    PopoverContent,", "    PopoverTrigger,", "} from '@/components/ui/popover'"],
+        "description": "Import DatePicker components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "DatePicker (alias)": {
+        "prefix": ";datepicker",
+        "body": ["const [date, setDate] = React.useState<Date>()", "", "<Popover>", "    <Trigger asChild>", "        <Button", "            variant=\"outline\"", "            className={cn(", "                'w-[280px] justify-start text-left font-normal',", "                !date && 'text-muted-foreground'", "            )}", "        >", "            <CalendarIcon className=\"mr-2 h-4 w-4\" />", "            {date ? format(date, 'PPP') : <span>${1:Pick a date}</span>}", "        </Button>", "    </Trigger>", "    <Content className=\"w-auto p-0\">", "        <Calendar", "            mode=\"single\"", "            selected={date}", "            onSelect={setDate}", "            initialFocus", "        />", "    </Content>", "</Popover>$0"],
+        "description": "DatePicker with aliased JSX",
+    },
+    "DatePicker Basic (alias)": {
+        "prefix": ";datepickerb",
+        "body": ["<Popover>", "    <Trigger asChild>", "        <Button variant=\"outline\">", "            <CalendarIcon className=\"mr-2 h-4 w-4\" />", "            {date ? format(date, 'PPP') : 'Pick a date'}", "        </Button>", "    </Trigger>", "    <Content className=\"w-auto p-0\">", "        <Calendar mode=\"single\" selected={date} onSelect={setDate} />", "    </Content>", "</Popover>$0"],
+        "description": "Basic DatePicker (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "DatePicker (full)": {
+        "prefix": ";fdatepicker",
+        "body": ["const [date, setDate] = React.useState<Date>()", "", "<Popover>", "    <PopoverTrigger asChild>", "        <Button", "            variant=\"outline\"", "            className={cn(", "                'w-[280px] justify-start text-left font-normal',", "                !date && 'text-muted-foreground'", "            )}", "        >", "            <CalendarIcon className=\"mr-2 h-4 w-4\" />", "            {date ? format(date, 'PPP') : <span>${1:Pick a date}</span>}", "        </Button>", "    </PopoverTrigger>", "    <PopoverContent className=\"w-auto p-0\">", "        <Calendar", "            mode=\"single\"", "            selected={date}", "            onSelect={setDate}", "            initialFocus", "        />", "    </PopoverContent>", "</Popover>$0"],
+        "description": "DatePicker with full component names",
+    },
+    "DatePicker Basic (full)": {
+        "prefix": ";fdatepickerb",
+        "body": ["<Popover>", "    <PopoverTrigger asChild>", "        <Button variant=\"outline\">", "            <CalendarIcon className=\"mr-2 h-4 w-4\" />", "            {date ? format(date, 'PPP') : 'Pick a date'}", "        </Button>", "    </PopoverTrigger>", "    <PopoverContent className=\"w-auto p-0\">", "        <Calendar mode=\"single\" selected={date} onSelect={setDate} />", "    </PopoverContent>", "</Popover>$0"],
+        "description": "Basic DatePicker (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // UTILITIES
+    // ─────────────────────────────────────────────────────────────────────────────
+    "DatePicker State": {
+        "prefix": ";datepickerstate",
+        "body": ["const [date, setDate] = React.useState<Date>()"],
+        "description": "DatePicker state hook",
+    },
+    "DatePicker Range (full)": {
+        "prefix": ";fdatepickerrange",
+        "body": ["const [dateRange, setDateRange] = React.useState<DateRange | undefined>({", "    from: new Date(),", "    to: addDays(new Date(), 7),", "})", "", "<Popover>", "    <PopoverTrigger asChild>", "        <Button variant=\"outline\" className=\"w-[300px] justify-start text-left\">", "            <CalendarIcon className=\"mr-2 h-4 w-4\" />", "            {dateRange?.from ? (", "                dateRange.to ? (", "                    <>", "                        {format(dateRange.from, 'LLL dd, y')} - {format(dateRange.to, 'LLL dd, y')}", "                    </>", "                ) : (", "                    format(dateRange.from, 'LLL dd, y')", "                )", "            ) : (", "                <span>Pick a date range</span>", "            )}", "        </Button>", "    </PopoverTrigger>", "    <PopoverContent className=\"w-auto p-0\" align=\"start\">", "        <Calendar", "            mode=\"range\"", "            defaultMonth={dateRange?.from}", "            selected={dateRange}", "            onSelect={setDateRange}", "            numberOfMonths={2}", "        />", "    </PopoverContent>", "</Popover>$0"],
+        "description": "DatePicker with date range",
+    },
+}

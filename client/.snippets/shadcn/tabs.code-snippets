@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Tabs (alias)": {
+        "prefix": "i;tabs",
+        "body": ["import {", "    Tabs,", "    TabsList as List,", "    TabsTrigger as Trigger,", "    TabsContent as Content,", "} from '@/components/ui/tabs'"],
+        "description": "Import Tabs components with aliases",
+    },
+    "Import Tabs (full)": {
+        "prefix": "i;ftabs",
+        "body": ["import {", "    Tabs,", "    TabsContent,", "    TabsList,", "    TabsTrigger,", "} from '@/components/ui/tabs'"],
+        "description": "Import Tabs components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Tabs (alias)": {
+        "prefix": ";tabs",
+        "body": ["<Tabs defaultValue=\"${1:tab1}\" className=\"${2:w-[400px]}\">", "    <List>", "        <Trigger value=\"${1:tab1}\">${3:Tab 1}</Trigger>", "        <Trigger value=\"${4:tab2}\">${5:Tab 2}</Trigger>", "    </List>", "    <Content value=\"${1:tab1}\">", "        ${6:Content for tab 1}", "    </Content>", "    <Content value=\"${4:tab2}\">", "        ${7:Content for tab 2}", "    </Content>", "</Tabs>"],
+        "description": "Tabs with aliased JSX",
+    },
+    "Tabs Basic (alias)": {
+        "prefix": ";tabsb",
+        "body": ["<Tabs defaultValue=\"tab1\">", "    <List>", "        <Trigger value=\"tab1\">$1</Trigger>", "    </List>", "    <Content value=\"tab1\">$2</Content>", "</Tabs>"],
+        "description": "Basic Tabs (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Tabs (full)": {
+        "prefix": ";ftabs",
+        "body": ["<Tabs defaultValue=\"${1:tab1}\" className=\"${2:w-[400px]}\">", "    <TabsList>", "        <TabsTrigger value=\"${1:tab1}\">${3:Tab 1}</TabsTrigger>", "        <TabsTrigger value=\"${4:tab2}\">${5:Tab 2}</TabsTrigger>", "    </TabsList>", "    <TabsContent value=\"${1:tab1}\">", "        ${6:Content for tab 1}", "    </TabsContent>", "    <TabsContent value=\"${4:tab2}\">", "        ${7:Content for tab 2}", "    </TabsContent>", "</Tabs>"],
+        "description": "Tabs with full component names",
+    },
+    "Tabs Basic (full)": {
+        "prefix": ";ftabsb",
+        "body": ["<Tabs defaultValue=\"tab1\">", "    <TabsList>", "        <TabsTrigger value=\"tab1\">$1</TabsTrigger>", "    </TabsList>", "    <TabsContent value=\"tab1\">$2</TabsContent>", "</Tabs>"],
+        "description": "Basic Tabs (full)",
+    },
+}

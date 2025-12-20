@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import ScrollArea (alias)": {
+        "prefix": "i;scrollarea",
+        "body": ["import {", "    ScrollArea,", "    ScrollBar as Bar,", "} from '@/components/ui/scroll-area'"],
+        "description": "Import ScrollArea components with aliases",
+    },
+    "Import ScrollArea (full)": {
+        "prefix": "i;fscrollarea",
+        "body": ["import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'"],
+        "description": "Import ScrollArea components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "ScrollArea (alias)": {
+        "prefix": ";scrollarea",
+        "body": ["<ScrollArea className=\"${1:h-[200px] w-[350px] rounded-md border p-4}\">", "    ${2:Content}", "</ScrollArea>"],
+        "description": "ScrollArea component (aliased)",
+    },
+    "ScrollArea with Horizontal (alias)": {
+        "prefix": ";scrollareah",
+        "body": ["<ScrollArea className=\"${1:w-96 whitespace-nowrap rounded-md border}\">", "    <div className=\"flex w-max space-x-4 p-4\">", "        ${2:Content}", "    </div>", "    <Bar orientation=\"horizontal\" />", "</ScrollArea>"],
+        "description": "ScrollArea with horizontal scroll (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "ScrollArea (full)": {
+        "prefix": ";fscrollarea",
+        "body": ["<ScrollArea className=\"${1:h-[200px] w-[350px] rounded-md border p-4}\">", "    ${2:Content}", "</ScrollArea>"],
+        "description": "ScrollArea component (full)",
+    },
+    "ScrollArea with Horizontal (full)": {
+        "prefix": ";fscrollareah",
+        "body": ["<ScrollArea className=\"${1:w-96 whitespace-nowrap rounded-md border}\">", "    <div className=\"flex w-max space-x-4 p-4\">", "        ${2:Content}", "    </div>", "    <ScrollBar orientation=\"horizontal\" />", "</ScrollArea>"],
+        "description": "ScrollArea with horizontal scroll (full)",
+    },
+}

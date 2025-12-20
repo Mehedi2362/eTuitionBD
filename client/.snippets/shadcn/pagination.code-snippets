@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Pagination (alias)": {
+        "prefix": "i;pagination",
+        "body": ["import {", "    Pagination,", "    PaginationContent as Content,", "    PaginationItem as Item,", "    PaginationLink as Link,", "    PaginationPrevious as Previous,", "    PaginationNext as Next,", "    PaginationEllipsis as Ellipsis,", "} from '@/components/ui/pagination'"],
+        "description": "Import Pagination components with aliases",
+    },
+    "Import Pagination (full)": {
+        "prefix": "i;fpagination",
+        "body": ["import {", "    Pagination,", "    PaginationContent,", "    PaginationLink,", "    PaginationItem,", "    PaginationPrevious,", "    PaginationNext,", "    PaginationEllipsis,", "} from '@/components/ui/pagination'"],
+        "description": "Import Pagination components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Pagination (alias)": {
+        "prefix": ";pagination",
+        "body": ["<Pagination>", "    <Content>", "        <Item>", "            <Previous href=\"${1:#}\" />", "        </Item>", "        <Item>", "            <Link href=\"${2:#}\" isActive>${3:1}</Link>", "        </Item>", "        <Item>", "            <Link href=\"${4:#}\">${5:2}</Link>", "        </Item>", "        <Item>", "            <Link href=\"${6:#}\">${7:3}</Link>", "        </Item>", "        <Item>", "            <Ellipsis />", "        </Item>", "        <Item>", "            <Next href=\"${8:#}\" />", "        </Item>", "    </Content>", "</Pagination>"],
+        "description": "Pagination with aliased JSX",
+    },
+    "Pagination Basic (alias)": {
+        "prefix": ";paginationb",
+        "body": ["<Pagination>", "    <Content>", "        <Item>", "            <Previous href=\"#\" />", "        </Item>", "        <Item>", "            <Link href=\"#\" isActive>1</Link>", "        </Item>", "        <Item>", "            <Next href=\"#\" />", "        </Item>", "    </Content>", "</Pagination>"],
+        "description": "Basic Pagination (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Pagination (full)": {
+        "prefix": ";fpagination",
+        "body": ["<Pagination>", "    <PaginationContent>", "        <PaginationItem>", "            <PaginationPrevious href=\"${1:#}\" />", "        </PaginationItem>", "        <PaginationItem>", "            <PaginationLink href=\"${2:#}\" isActive>${3:1}</PaginationLink>", "        </PaginationItem>", "        <PaginationItem>", "            <PaginationLink href=\"${4:#}\">${5:2}</PaginationLink>", "        </PaginationItem>", "        <PaginationItem>", "            <PaginationLink href=\"${6:#}\">${7:3}</PaginationLink>", "        </PaginationItem>", "        <PaginationItem>", "            <PaginationEllipsis />", "        </PaginationItem>", "        <PaginationItem>", "            <PaginationNext href=\"${8:#}\" />", "        </PaginationItem>", "    </PaginationContent>", "</Pagination>"],
+        "description": "Pagination with full component names",
+    },
+    "Pagination Basic (full)": {
+        "prefix": ";fpaginationb",
+        "body": ["<Pagination>", "    <PaginationContent>", "        <PaginationItem>", "            <PaginationPrevious href=\"#\" />", "        </PaginationItem>", "        <PaginationItem>", "            <PaginationLink href=\"#\" isActive>1</PaginationLink>", "        </PaginationItem>", "        <PaginationItem>", "            <PaginationNext href=\"#\" />", "        </PaginationItem>", "    </PaginationContent>", "</Pagination>"],
+        "description": "Basic Pagination (full)",
+    },
+}

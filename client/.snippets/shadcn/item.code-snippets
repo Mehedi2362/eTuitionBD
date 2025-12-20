@@ -1,0 +1,103 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Item (alias)": {
+        "prefix": "i;item",
+        "body": ["import {", "    Item,", "    ItemMedia as Media,", "    ItemContent as Content,", "    ItemActions as Actions,", "    ItemGroup as Group,", "    ItemSeparator as Separator,", "    ItemTitle as Title,", "    ItemDescription as Description,", "    ItemHeader as Header,", "    ItemFooter as Footer,", "} from '@/components/ui/item'"],
+        "description": "Import Item components with aliases",
+    },
+    "Import Item (full)": {
+        "prefix": "i;fitem",
+        "body": ["import {", "    Item,", "    ItemMedia,", "    ItemContent,", "    ItemActions,", "    ItemGroup,", "    ItemSeparator,", "    ItemTitle,", "    ItemDescription,", "    ItemHeader,", "    ItemFooter,", "} from '@/components/ui/item'"],
+        "description": "Import Item components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Item (alias)": {
+        "prefix": ";item",
+        "body": ["<Item variant=\"${1|default,outline,muted|}\" size=\"${2|default,sm|}\">", "    <Media variant=\"${3|default,icon|}\">", "        ${4:<Icon />}", "    </Media>", "    <Content>", "        <Title>${5:Title}</Title>", "        <Description>${6:Description}</Description>", "    </Content>", "    <Actions>", "        ${7:<Button>Action</Button>}", "    </Actions>", "</Item>$0"],
+        "description": "Item with aliased JSX",
+    },
+    "Item Basic (alias)": {
+        "prefix": ";itemb",
+        "body": ["<Item>", "    <Media>", "        ${1:<Icon />}", "    </Media>", "    <Content>", "        <Title>${2:Title}</Title>", "        <Description>${3:Description}</Description>", "    </Content>", "</Item>$0"],
+        "description": "Basic Item (aliased)",
+    },
+    "Item with Media (alias)": {
+        "prefix": ";itemm",
+        "body": ["<Item>", "    <Media variant=\"icon\">", "        <${1:Icon} />", "    </Media>", "    <Content>", "        <Title>${2:Title}</Title>", "        <Description>${3:Description}</Description>", "    </Content>", "</Item>$0"],
+        "description": "Item with media (aliased)",
+    },
+    "Item with Actions (alias)": {
+        "prefix": ";itema",
+        "body": ["<Item>", "    <Content>", "        <Title>${1:Title}</Title>", "        <Description>${2:Description}</Description>", "    </Content>", "    <Actions>", "        <Button>${3:Action}</Button>", "    </Actions>", "</Item>$0"],
+        "description": "Item with actions (aliased)",
+    },
+    "ItemGroup (alias)": {
+        "prefix": ";itemg",
+        "body": ["<Group>", "    ${0}", "</Group>"],
+        "description": "ItemGroup (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Item (full)": {
+        "prefix": ";fitem",
+        "body": ["<Item variant=\"${1|default,outline,muted|}\" size=\"${2|default,sm|}\">", "    <ItemMedia variant=\"${3|default,icon|}\">", "        ${4:<Icon />}", "    </ItemMedia>", "    <ItemContent>", "        <ItemTitle>${5:Title}</ItemTitle>", "        <ItemDescription>${6:Description}</ItemDescription>", "    </ItemContent>", "    <ItemActions>", "        ${7:<Button>Action</Button>}", "    </ItemActions>", "</Item>$0"],
+        "description": "Item with full component names",
+    },
+    "Item Basic (full)": {
+        "prefix": ";fitemb",
+        "body": ["<Item>", "    <ItemMedia>", "        ${1:<Icon />}", "    </ItemMedia>", "    <ItemContent>", "        <ItemTitle>${2:Title}</ItemTitle>", "        <ItemDescription>${3:Description}</ItemDescription>", "    </ItemContent>", "</Item>$0"],
+        "description": "Basic Item (full)",
+    },
+    "Item with Media (full)": {
+        "prefix": ";fitemm",
+        "body": ["<Item>", "    <ItemMedia variant=\"icon\">", "        <${1:Icon} />", "    </ItemMedia>", "    <ItemContent>", "        <ItemTitle>${2:Title}</ItemTitle>", "        <ItemDescription>${3:Description}</ItemDescription>", "    </ItemContent>", "</Item>$0"],
+        "description": "Item with media (full)",
+    },
+    "Item with Actions (full)": {
+        "prefix": ";fitema",
+        "body": ["<Item>", "    <ItemContent>", "        <ItemTitle>${1:Title}</ItemTitle>", "        <ItemDescription>${2:Description}</ItemDescription>", "    </ItemContent>", "    <ItemActions>", "        <Button>${3:Action}</Button>", "    </ItemActions>", "</Item>$0"],
+        "description": "Item with actions (full)",
+    },
+    "ItemGroup (full)": {
+        "prefix": ";fitemgroup",
+        "body": ["<ItemGroup>", "    ${0}", "</ItemGroup>"],
+        "description": "ItemGroup (full)",
+    },
+    "ItemMedia (full)": {
+        "prefix": ";fitemmedia",
+        "body": ["<ItemMedia variant=\"${1|default,icon|}\">", "    ${2:<Icon />}", "</ItemMedia>$0"],
+        "description": "ItemMedia (full)",
+    },
+    "ItemContent (full)": {
+        "prefix": ";fitemcontent",
+        "body": ["<ItemContent>", "    <ItemTitle>${1:Title}</ItemTitle>", "    <ItemDescription>${2:Description}</ItemDescription>", "</ItemContent>$0"],
+        "description": "ItemContent (full)",
+    },
+    "ItemActions (full)": {
+        "prefix": ";fitemactions",
+        "body": ["<ItemActions>", "    ${0}", "</ItemActions>"],
+        "description": "ItemActions (full)",
+    },
+    "ItemSeparator (full)": {
+        "prefix": ";fitemsep",
+        "body": ["<ItemSeparator />$0"],
+        "description": "ItemSeparator (full)",
+    },
+    "ItemHeader (full)": {
+        "prefix": ";fitemheader",
+        "body": ["<ItemHeader>${0}</ItemHeader>"],
+        "description": "ItemHeader (full)",
+    },
+    "ItemFooter (full)": {
+        "prefix": ";fitemfooter",
+        "body": ["<ItemFooter>${0}</ItemFooter>"],
+        "description": "ItemFooter (full)",
+    },
+}

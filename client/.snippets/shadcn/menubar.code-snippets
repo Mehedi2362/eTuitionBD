@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Menubar (alias)": {
+        "prefix": "i;menubar",
+        "body": ["import {", "    Menubar,", "    MenubarMenu as Menu,", "    MenubarTrigger as Trigger,", "    MenubarContent as Content,", "    MenubarItem as Item,", "    MenubarSeparator as Separator,", "    MenubarShortcut as Shortcut,", "} from '@/components/ui/menubar'"],
+        "description": "Import Menubar components with aliases",
+    },
+    "Import Menubar (full)": {
+        "prefix": "i;fmenubar",
+        "body": ["import {", "    Menubar,", "    MenubarMenu,", "    MenubarTrigger,", "    MenubarContent,", "    MenubarItem,", "    MenubarSeparator,", "    MenubarShortcut,", "    MenubarCheckboxItem,", "    MenubarRadioGroup,", "    MenubarRadioItem,", "    MenubarSub,", "    MenubarSubContent,", "    MenubarSubTrigger,", "} from '@/components/ui/menubar'"],
+        "description": "Import Menubar components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Menubar (alias)": {
+        "prefix": ";menubar",
+        "body": ["<Menubar>", "    <Menu>", "        <Trigger>${1:File}</Trigger>", "        <Content>", "            <Item>${2:New Tab}<Shortcut>${3:⌘T}</Shortcut></Item>", "            <Item>${4:New Window}<Shortcut>${5:⌘N}</Shortcut></Item>", "            <Separator />", "            <Item>${6:Share}</Item>", "            <Separator />", "            <Item>${7:Print}<Shortcut>${8:⌘P}</Shortcut></Item>", "        </Content>", "    </Menu>", "    <Menu>", "        <Trigger>${9:Edit}</Trigger>", "        <Content>", "            <Item>${10:Undo}<Shortcut>${11:⌘Z}</Shortcut></Item>", "            <Item>${12:Redo}<Shortcut>${13:⇧⌘Z}</Shortcut></Item>", "        </Content>", "    </Menu>", "</Menubar>"],
+        "description": "Menubar with aliased JSX",
+    },
+    "Menubar Basic (alias)": {
+        "prefix": ";menubarb",
+        "body": ["<Menubar>", "    <Menu>", "        <Trigger>${1:Menu}</Trigger>", "        <Content>", "            <Item>$0</Item>", "        </Content>", "    </Menu>", "</Menubar>"],
+        "description": "Basic Menubar with aliased JSX",
+    },
+    "Menubar Menu (alias)": {
+        "prefix": ";menubarmenu",
+        "body": ["<Menu>", "    <Trigger>${1:Menu}</Trigger>", "    <Content>", "        <Item>${2:Item 1}</Item>", "        <Item>${3:Item 2}</Item>", "    </Content>", "</Menu>"],
+        "description": "Menubar Menu (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Menubar (full)": {
+        "prefix": ";fmenubar",
+        "body": ["<Menubar>", "    <MenubarMenu>", "        <MenubarTrigger>${1:File}</MenubarTrigger>", "        <MenubarContent>", "            <MenubarItem>${2:New Tab}<MenubarShortcut>${3:⌘T}</MenubarShortcut></MenubarItem>", "            <MenubarItem>${4:New Window}<MenubarShortcut>${5:⌘N}</MenubarShortcut></MenubarItem>", "            <MenubarSeparator />", "            <MenubarItem>${6:Share}</MenubarItem>", "            <MenubarSeparator />", "            <MenubarItem>${7:Print}<MenubarShortcut>${8:⌘P}</MenubarShortcut></MenubarItem>", "        </MenubarContent>", "    </MenubarMenu>", "    <MenubarMenu>", "        <MenubarTrigger>${9:Edit}</MenubarTrigger>", "        <MenubarContent>", "            <MenubarItem>${10:Undo}<MenubarShortcut>${11:⌘Z}</MenubarShortcut></MenubarItem>", "            <MenubarItem>${12:Redo}<MenubarShortcut>${13:⇧⌘Z}</MenubarShortcut></MenubarItem>", "        </MenubarContent>", "    </MenubarMenu>", "</Menubar>"],
+        "description": "Menubar with full component names",
+    },
+    "Menubar Basic (full)": {
+        "prefix": ";fmenubarb",
+        "body": ["<Menubar>", "    <MenubarMenu>", "        <MenubarTrigger>${1:Menu}</MenubarTrigger>", "        <MenubarContent>", "            <MenubarItem>$0</MenubarItem>", "        </MenubarContent>", "    </MenubarMenu>", "</Menubar>"],
+        "description": "Basic Menubar with full names",
+    },
+    "Menubar with Sub (full)": {
+        "prefix": ";fmenubarsub",
+        "body": ["<Menubar>", "    <MenubarMenu>", "        <MenubarTrigger>${1:File}</MenubarTrigger>", "        <MenubarContent>", "            <MenubarItem>${2:New}</MenubarItem>", "            <MenubarSub>", "                <MenubarSubTrigger>${3:Share}</MenubarSubTrigger>", "                <MenubarSubContent>", "                    <MenubarItem>${4:Email}</MenubarItem>", "                    <MenubarItem>${5:Messages}</MenubarItem>", "                </MenubarSubContent>", "            </MenubarSub>", "        </MenubarContent>", "    </MenubarMenu>", "</Menubar>"],
+        "description": "Menubar with Submenu (full)",
+    },
+}

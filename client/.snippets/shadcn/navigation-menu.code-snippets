@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import NavigationMenu (alias)": {
+        "prefix": "i;navmenu",
+        "body": ["import {", "    NavigationMenu,", "    NavigationMenuList as List,", "    NavigationMenuItem as Item,", "    NavigationMenuTrigger as Trigger,", "    NavigationMenuContent as Content,", "    NavigationMenuLink as Link,", "    navigationMenuTriggerStyle,", "} from '@/components/ui/navigation-menu'"],
+        "description": "Import NavigationMenu components with aliases",
+    },
+    "Import NavigationMenu (full)": {
+        "prefix": "i;fnavmenu",
+        "body": ["import {", "    NavigationMenu,", "    NavigationMenuList,", "    NavigationMenuItem,", "    NavigationMenuContent,", "    NavigationMenuTrigger,", "    NavigationMenuLink,", "    NavigationMenuIndicator,", "    NavigationMenuViewport,", "    navigationMenuTriggerStyle,", "} from '@/components/ui/navigation-menu'"],
+        "description": "Import NavigationMenu components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "NavigationMenu (alias)": {
+        "prefix": ";navmenu",
+        "body": ["<NavigationMenu>", "    <List>", "        <Item>", "            <Trigger>${1:Getting Started}</Trigger>", "            <Content>", "                <ul className=\"grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]\">", "                    <li>", "                        <Link href=\"${2:#}\">${3:Introduction}</Link>", "                    </li>", "                    <li>", "                        <Link href=\"${4:#}\">${5:Installation}</Link>", "                    </li>", "                </ul>", "            </Content>", "        </Item>", "        <Item>", "            <Link className={navigationMenuTriggerStyle()} href=\"${6:#}\">", "                ${7:Documentation}", "            </Link>", "        </Item>", "    </List>", "</NavigationMenu>"],
+        "description": "NavigationMenu with aliased JSX",
+    },
+    "NavigationMenu Basic (alias)": {
+        "prefix": ";navmenub",
+        "body": ["<NavigationMenu>", "    <List>", "        <Item>", "            <Link className={navigationMenuTriggerStyle()} href=\"${1:#}\">", "                ${2:Home}", "            </Link>", "        </Item>", "        <Item>", "            <Link className={navigationMenuTriggerStyle()} href=\"${3:#}\">", "                ${4:About}", "            </Link>", "        </Item>", "    </List>", "</NavigationMenu>"],
+        "description": "Basic NavigationMenu with links (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "NavigationMenu (full)": {
+        "prefix": ";fnavmenu",
+        "body": ["<NavigationMenu>", "    <NavigationMenuList>", "        <NavigationMenuItem>", "            <NavigationMenuTrigger>${1:Getting Started}</NavigationMenuTrigger>", "            <NavigationMenuContent>", "                <ul className=\"grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]\">", "                    <li>", "                        <NavigationMenuLink href=\"${2:#}\">${3:Introduction}</NavigationMenuLink>", "                    </li>", "                    <li>", "                        <NavigationMenuLink href=\"${4:#}\">${5:Installation}</NavigationMenuLink>", "                    </li>", "                </ul>", "            </NavigationMenuContent>", "        </NavigationMenuItem>", "        <NavigationMenuItem>", "            <NavigationMenuLink className={navigationMenuTriggerStyle()} href=\"${6:#}\">", "                ${7:Documentation}", "            </NavigationMenuLink>", "        </NavigationMenuItem>", "    </NavigationMenuList>", "</NavigationMenu>"],
+        "description": "NavigationMenu with full component names",
+    },
+    "NavigationMenu Basic (full)": {
+        "prefix": ";fnavmenub",
+        "body": ["<NavigationMenu>", "    <NavigationMenuList>", "        <NavigationMenuItem>", "            <NavigationMenuLink className={navigationMenuTriggerStyle()} href=\"${1:#}\">", "                ${2:Home}", "            </NavigationMenuLink>", "        </NavigationMenuItem>", "        <NavigationMenuItem>", "            <NavigationMenuLink className={navigationMenuTriggerStyle()} href=\"${3:#}\">", "                ${4:About}", "            </NavigationMenuLink>", "        </NavigationMenuItem>", "    </NavigationMenuList>", "</NavigationMenu>"],
+        "description": "Basic NavigationMenu with links (full)",
+    },
+}

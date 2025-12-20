@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Card (alias)": {
+        "prefix": "i;card",
+        "body": ["import {", "    Card,", "    CardHeader as Header,", "    CardTitle as Title,", "    CardDescription as Description,", "    CardContent as Content,", "    CardFooter as Footer,", "    CardAction as Action,", "} from '@/components/ui/card'"],
+        "description": "Import Card components with aliases",
+    },
+    "Import Card (full)": {
+        "prefix": "i;fcard",
+        "body": ["import {", "    Card,", "    CardHeader,", "    CardTitle,", "    CardDescription,", "    CardContent,", "    CardFooter,", "    CardAction,", "} from '@/components/ui/card'"],
+        "description": "Import Card components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Card (alias)": {
+        "prefix": ";card",
+        "body": ["<Card>", "    <Header>", "        <Title>${1:Card Title}</Title>", "        <Description>${2:Card Description}</Description>", "    </Header>", "    <Content>", "        $0", "    </Content>", "    <Footer>", "        <Button variant=\"outline\">Cancel</Button>", "        <Button>Save</Button>", "    </Footer>", "</Card>"],
+        "description": "Card with aliased JSX",
+    },
+    "Card Basic (alias)": {
+        "prefix": ";cardb",
+        "body": ["<Card>", "    <Header>", "        <Title>${1:Title}</Title>", "    </Header>", "    <Content>", "        $0", "    </Content>", "</Card>"],
+        "description": "Basic Card (aliased)",
+    },
+    "Card with Action (alias)": {
+        "prefix": ";cardaction",
+        "body": ["<Card>", "    <Header>", "        <Title>${1:Title}</Title>", "        <Description>${2:Description}</Description>", "        <Action>", "            <Button variant=\"link\">${3:Action}</Button>", "        </Action>", "    </Header>", "    <Content>", "        $0", "    </Content>", "</Card>"],
+        "description": "Card with Action button (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Card (full)": {
+        "prefix": ";fcard",
+        "body": ["<Card>", "    <CardHeader>", "        <CardTitle>${1:Card Title}</CardTitle>", "        <CardDescription>${2:Card Description}</CardDescription>", "    </CardHeader>", "    <CardContent>", "        $0", "    </CardContent>", "    <CardFooter>", "        <Button variant=\"outline\">Cancel</Button>", "        <Button>Save</Button>", "    </CardFooter>", "</Card>"],
+        "description": "Card with full names",
+    },
+    "Card Basic (full)": {
+        "prefix": ";fcardb",
+        "body": ["<Card>", "    <CardHeader>", "        <CardTitle>${1:Title}</CardTitle>", "    </CardHeader>", "    <CardContent>", "        $0", "    </CardContent>", "</Card>"],
+        "description": "Basic Card (full names)",
+    },
+    "Card with Action (full)": {
+        "prefix": ";fcardaction",
+        "body": ["<Card>", "    <CardHeader>", "        <CardTitle>${1:Title}</CardTitle>", "        <CardDescription>${2:Description}</CardDescription>", "        <CardAction>", "            <Button variant=\"link\">${3:Action}</Button>", "        </CardAction>", "    </CardHeader>", "    <CardContent>", "        $0", "    </CardContent>", "</Card>"],
+        "description": "Card with Action button (full names)",
+    },
+}

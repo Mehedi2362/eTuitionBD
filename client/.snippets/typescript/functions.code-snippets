@@ -1,0 +1,20 @@
+{
+    "Generic Function": {
+        "prefix": ";gfn",
+        "body": [
+            "const ${1:name} = <T>(${2:arg}: T): T => {",
+            "    $0",
+            "}"
+        ],
+        "description": "TypeScript Generic Function"
+    },
+    "Async Function Typed": {
+        "prefix": ";afnt",
+        "body": [
+            "const ${1:name} = async (${2:params}): Promise<${3:void}> => {",
+            "    $0",
+            "}"
+        ],
+        "description": "Async Function with Return Type"
+    }
+}

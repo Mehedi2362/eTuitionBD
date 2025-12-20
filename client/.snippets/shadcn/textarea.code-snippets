@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Textarea": {
+        "prefix": "i;textarea",
+        "body": ["import { Textarea } from '@/components/ui/textarea'"],
+        "description": "Import Textarea component",
+    },
+    "Import Textarea (full)": {
+        "prefix": "i;ftextarea",
+        "body": ["import { Textarea } from '@/components/ui/textarea'"],
+        "description": "Import Textarea component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Textarea (alias)": {
+        "prefix": ";textarea",
+        "body": ["<Textarea", "    id=\"${1:textarea-id}\"", "    placeholder=\"${2:Type your message here.}\"", "    value={${3:value}}", "    onChange={${4:(e) => setValue(e.target.value)}}", "    className=\"${5:min-h-[100px]}\"", "/>"],
+        "description": "Textarea component",
+    },
+    "Textarea Basic (alias)": {
+        "prefix": ";textareab",
+        "body": ["<Textarea placeholder=\"${1:Type here...}\" />"],
+        "description": "Basic Textarea",
+    },
+    "Textarea with Label (alias)": {
+        "prefix": ";textareal",
+        "body": ["<div className=\"grid w-full gap-1.5\">", "    <Label htmlFor=\"${1:textarea-id}\">${2:Label}</Label>", "    <Textarea id=\"${1:textarea-id}\" placeholder=\"${3:Type here...}\" />", "</div>"],
+        "description": "Textarea with Label",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Textarea (full)": {
+        "prefix": ";ftextarea",
+        "body": ["<Textarea", "    id=\"${1:textarea-id}\"", "    placeholder=\"${2:Type your message here.}\"", "    value={${3:value}}", "    onChange={${4:(e) => setValue(e.target.value)}}", "    className=\"${5:min-h-[100px]}\"", "/>"],
+        "description": "Textarea component (full)",
+    },
+    "Textarea Basic (full)": {
+        "prefix": ";ftextareab",
+        "body": ["<Textarea placeholder=\"${1:Type here...}\" />"],
+        "description": "Basic Textarea (full)",
+    },
+    "Textarea with Label (full)": {
+        "prefix": ";ftextareal",
+        "body": ["<div className=\"grid w-full gap-1.5\">", "    <Label htmlFor=\"${1:textarea-id}\">${2:Label}</Label>", "    <Textarea id=\"${1:textarea-id}\" placeholder=\"${3:Type here...}\" />", "</div>"],
+        "description": "Textarea with Label (full)",
+    },
+}

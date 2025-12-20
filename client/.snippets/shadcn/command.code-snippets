@@ -1,0 +1,73 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Command (alias)": {
+        "prefix": "i;command",
+        "body": ["import {", "    Command,", "    CommandInput as Input,", "    CommandList as List,", "    CommandEmpty as Empty,", "    CommandGroup as Group,", "    CommandItem as Item,", "    CommandShortcut as Shortcut,", "    CommandSeparator as Separator,", "} from '@/components/ui/command'"],
+        "description": "Import Command components with aliases",
+    },
+    "Import Command (full)": {
+        "prefix": "i;fcommand",
+        "body": ["import {", "    Command,", "    CommandDialog,", "    CommandInput,", "    CommandList,", "    CommandEmpty,", "    CommandGroup,", "    CommandItem,", "    CommandShortcut,", "    CommandSeparator,", "} from '@/components/ui/command'"],
+        "description": "Import Command components with full names",
+    },
+    "Import Command Dialog": {
+        "prefix": "i;commanddialog",
+        "body": ["import { CommandDialog } from '@/components/ui/command'"],
+        "description": "Import CommandDialog component",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Command (alias)": {
+        "prefix": ";command",
+        "body": ["<Command className=\"${1:rounded-lg border shadow-md}\">", "    <Input placeholder=\"${2:Type a command or search...}\" />", "    <List>", "        <Empty>${3:No results found.}</Empty>", "        <Group heading=\"${4:Suggestions}\">", "            <Item>${5:Calendar}</Item>", "            <Item>${6:Search}</Item>", "            <Item>${7:Settings}</Item>", "        </Group>", "    </List>", "</Command>"],
+        "description": "Command with aliased JSX",
+    },
+    "Command Basic (alias)": {
+        "prefix": ";commandb",
+        "body": ["<Command>", "    <Input placeholder=\"${1:Search...}\" />", "    <List>", "        <Empty>No results.</Empty>", "        <Group heading=\"${2:Items}\">", "            <Item>$0</Item>", "        </Group>", "    </List>", "</Command>"],
+        "description": "Basic Command with aliased JSX",
+    },
+    "Command Item (alias)": {
+        "prefix": ";commanditem",
+        "body": ["<Item onSelect={() => ${1:console.log('selected')}}>", "    ${2:Item Label}", "    <Shortcut>${3:⌘K}</Shortcut>", "</Item>"],
+        "description": "Command Item with Shortcut (aliased)",
+    },
+    "Command Group (alias)": {
+        "prefix": ";commandgroup",
+        "body": ["<Group heading=\"${1:Group Title}\">", "    <Item>${2:Item 1}</Item>", "    <Item>${3:Item 2}</Item>", "</Group>"],
+        "description": "Command Group (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Command (full)": {
+        "prefix": ";fcommand",
+        "body": ["<Command className=\"${1:rounded-lg border shadow-md}\">", "    <CommandInput placeholder=\"${2:Type a command or search...}\" />", "    <CommandList>", "        <CommandEmpty>${3:No results found.}</CommandEmpty>", "        <CommandGroup heading=\"${4:Suggestions}\">", "            <CommandItem>${5:Calendar}</CommandItem>", "            <CommandItem>${6:Search}</CommandItem>", "            <CommandItem>${7:Settings}</CommandItem>", "        </CommandGroup>", "    </CommandList>", "</Command>"],
+        "description": "Command with full component names",
+    },
+    "Command Basic (full)": {
+        "prefix": ";fcommandb",
+        "body": ["<Command>", "    <CommandInput placeholder=\"${1:Search...}\" />", "    <CommandList>", "        <CommandEmpty>No results.</CommandEmpty>", "        <CommandGroup heading=\"${2:Items}\">", "            <CommandItem>$0</CommandItem>", "        </CommandGroup>", "    </CommandList>", "</Command>"],
+        "description": "Basic Command with full names",
+    },
+    "Command Dialog (full)": {
+        "prefix": ";fcommanddialog",
+        "body": ["<CommandDialog open={${1:open}} onOpenChange={${2:setOpen}}>", "    <CommandInput placeholder=\"${3:Type a command or search...}\" />", "    <CommandList>", "        <CommandEmpty>No results found.</CommandEmpty>", "        <CommandGroup heading=\"${4:Suggestions}\">", "            <CommandItem>${5:Calendar}</CommandItem>", "            <CommandItem>${6:Settings}</CommandItem>", "        </CommandGroup>", "    </CommandList>", "</CommandDialog>"],
+        "description": "Command Dialog (full)",
+    },
+    "Command Item (full)": {
+        "prefix": ";fcommanditem",
+        "body": ["<CommandItem onSelect={() => ${1:console.log('selected')}}>", "    ${2:Item Label}", "    <CommandShortcut>${3:⌘K}</CommandShortcut>", "</CommandItem>"],
+        "description": "Command Item with Shortcut (full)",
+    },
+    "Command Group (full)": {
+        "prefix": ";fcommandgroup",
+        "body": ["<CommandGroup heading=\"${1:Group Title}\">", "    <CommandItem>${2:Item 1}</CommandItem>", "    <CommandItem>${3:Item 2}</CommandItem>", "</CommandGroup>"],
+        "description": "Command Group (full)",
+    },
+}

@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Toggle": {
+        "prefix": "i;toggle",
+        "body": ["import { Toggle } from '@/components/ui/toggle'"],
+        "description": "Import Toggle component",
+    },
+    "Import Toggle (full)": {
+        "prefix": "i;ftoggle",
+        "body": ["import { Toggle } from '@/components/ui/toggle'"],
+        "description": "Import Toggle component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Toggle (alias)": {
+        "prefix": ";toggle",
+        "body": ["<Toggle", "    variant=\"${1|default,outline|}\"", "    size=\"${2|default,sm,lg|}\"", "    pressed={${3:pressed}}", "    onPressedChange={${4:setPressed}}", "    aria-label=\"${5:Toggle}\"", ">", "    ${6:Icon}", "</Toggle>"],
+        "description": "Toggle component",
+    },
+    "Toggle Basic (alias)": {
+        "prefix": ";toggleb",
+        "body": ["<Toggle aria-label=\"${1:Toggle}\">${2:Icon}</Toggle>"],
+        "description": "Basic Toggle",
+    },
+    "Toggle Outline (alias)": {
+        "prefix": ";toggleo",
+        "body": ["<Toggle variant=\"outline\" aria-label=\"${1:Toggle}\">", "    ${2:Icon}", "</Toggle>"],
+        "description": "Outline Toggle",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Toggle (full)": {
+        "prefix": ";ftoggle",
+        "body": ["<Toggle", "    variant=\"${1|default,outline|}\"", "    size=\"${2|default,sm,lg|}\"", "    pressed={${3:pressed}}", "    onPressedChange={${4:setPressed}}", "    aria-label=\"${5:Toggle}\"", ">", "    ${6:Icon}", "</Toggle>"],
+        "description": "Toggle component (full)",
+    },
+    "Toggle Basic (full)": {
+        "prefix": ";ftoggleb",
+        "body": ["<Toggle aria-label=\"${1:Toggle}\">${2:Icon}</Toggle>"],
+        "description": "Basic Toggle (full)",
+    },
+    "Toggle Outline (full)": {
+        "prefix": ";ftoggleo",
+        "body": ["<Toggle variant=\"outline\" aria-label=\"${1:Toggle}\">", "    ${2:Icon}", "</Toggle>"],
+        "description": "Outline Toggle (full)",
+    },
+}

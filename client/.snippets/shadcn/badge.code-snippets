@@ -1,0 +1,34 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Badge": {
+        "prefix": ["i;badge", "i;fbadge"],
+        "body": "import { Badge } from '@/components/ui/badge'",
+        "description": "Import Badge",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Badge": {
+        "prefix": [";badge", ";fbadge"],
+        "body": "<Badge variant=\"${1|default,secondary,destructive,outline|}\">${2:Badge}</Badge>",
+        "description": "Badge with variant",
+    },
+    "Badge Basic": {
+        "prefix": [";badgeb", ";fbadgeb"],
+        "body": "<Badge>${1:Badge}</Badge>",
+        "description": "Basic Badge",
+    },
+    "Badge with Icon": {
+        "prefix": [";badgeicon", ";fbadgeicon"],
+        "body": ["<Badge variant=\"${1|default,secondary,destructive,outline|}\">", "    <${2:CheckIcon} />", "    ${3:Text}", "</Badge>"],
+        "description": "Badge with icon",
+    },
+    "Badge Counter": {
+        "prefix": [";badgecount", ";fbadgecount"],
+        "body": "<Badge className=\"h-5 min-w-5 rounded-full px-1 font-mono tabular-nums\" variant=\"${1|default,secondary,destructive,outline|}\">${2:99}</Badge>",
+        "description": "Badge as counter/notification",
+    },
+}

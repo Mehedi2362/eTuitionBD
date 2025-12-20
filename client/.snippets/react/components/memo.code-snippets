@@ -1,0 +1,21 @@
+{
+    "React Memo": {
+        "prefix": ";rmemo",
+        "body": [
+            "import { memo } from 'react'",
+            "",
+            "interface ${1:${TM_FILENAME_BASE}}Props {",
+            "    $2",
+            "}",
+            "",
+            "export const ${1:${TM_FILENAME_BASE}} = memo(({ $3 }: ${1:${TM_FILENAME_BASE}}Props) => {",
+            "    return (",
+            "        <div>",
+            "            $0",
+            "        </div>",
+            "    )",
+            "})"
+        ],
+        "description": "React Memo Component"
+    }
+}

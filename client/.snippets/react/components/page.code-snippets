@@ -1,0 +1,40 @@
+{
+    "React Page": {
+        "prefix": ";rpage",
+        "body": [
+            "const ${1:${TM_FILENAME_BASE}} = () => {",
+            "    return (",
+            "        <main className=\"container mx-auto px-4 py-8\">",
+            "            <h1 className=\"text-3xl font-bold\">$0</h1>",
+            "        </main>",
+            "    )",
+            "}",
+            "",
+            "export default ${1:${TM_FILENAME_BASE}}"
+        ],
+        "description": "React Page Component"
+    },
+    "React Page with SEO": {
+        "prefix": ";rpageseo",
+        "body": [
+            "import { Helmet } from 'react-helmet-async'",
+            "",
+            "const ${1:${TM_FILENAME_BASE}} = () => {",
+            "    return (",
+            "        <>",
+            "            <Helmet>",
+            "                <title>${2:Page Title}</title>",
+            "                <meta name=\"description\" content=\"${3:description}\" />",
+            "            </Helmet>",
+            "            <main className=\"container mx-auto px-4 py-8\">",
+            "                $0",
+            "            </main>",
+            "        </>",
+            "    )",
+            "}",
+            "",
+            "export default ${1:${TM_FILENAME_BASE}}"
+        ],
+        "description": "React Page with SEO"
+    }
+}
