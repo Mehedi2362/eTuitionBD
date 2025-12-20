@@ -1,0 +1,1 @@
+export { privateAxios, publicAxios } from './api'
