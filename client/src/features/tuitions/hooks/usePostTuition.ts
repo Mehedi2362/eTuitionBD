@@ -28,13 +28,17 @@ export const usePostTuition = (options: UsePostTuitionOptions = {}) => {
     const form = useForm<CreateTuitionFormData>({
         resolver: zodResolver(createTuitionSchema),
         defaultValues: {
-            subject: '',
+            title: '',
+            description: '',
+            subjects: [],
             class: '',
             location: '',
-            budget: undefined,
-            schedule: '',
-            description: '',
+            salary: 0,
             requirements: '',
+            schedule: '',
+            duration: '',
+            preferredGender: 'any',
+            isUrgent: false,
         },
     })
 
@@ -46,7 +50,18 @@ export const usePostTuition = (options: UsePostTuitionOptions = {}) => {
         setIsSubmitting(true)
 
         try {
-            await createTuitionMutation.mutateAsync(data)
+            // Transform form data to match CreateTuitionInput interface
+            const tuitionInput = {
+                title: data.title,
+                subject: data.subjects[0] || '', // Take first subject for now
+                class: data.class,
+                location: data.location,
+                budget: data.salary,
+                schedule: data.schedule || '',
+                description: data.description,
+                requirements: data.requirements,
+            }
+            await createTuitionMutation.mutateAsync(tuitionInput)
             toast.success('Tuition posted successfully! Waiting for admin approval.')
             onSuccess?.()
             navigate(redirectTo)

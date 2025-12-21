@@ -1,0 +1,102 @@
+
+> server@1.0.0 dev /home/borni/Downloads/14/server
+> tsx watch src/index.ts
+
+✅ Firebase Admin SDK initialized successfully
+✅ Successfully connected to MongoDB!
+📦 this: B12A11
+🚀 Server running on port 5000
+🌐 Client URL: http://localhost:3000
+📡 API Base: api/v1
+3:26:46 PM [tsx] change in ./src/index.ts Restarting...
+c✅ Firebase Admin SDK initialized successfully
+3:26:50 PM [tsx] change in ./src/index.ts Restarting...
+c✅ Firebase Admin SDK initialized successfully
+✅ Successfully connected to MongoDB!
+📦 this: B12A11
+🚀 Server running on port 5000
+🌐 Client URL: http://localhost:3000
+📡 API Base: api/v1
+3:27:24 PM [tsx] change in ./src/index.ts Restarting...
+c✅ Firebase Admin SDK initialized successfully
+✅ Successfully connected to MongoDB!
+📦 this: B12A11
+🚀 Server running on port 5000
+🌐 Client URL: http://localhost:3000
+📡 API Base: api/v1
+3:27:37 PM [tsx] change in ./src/index.ts Restarting...
+c✅ Firebase Admin SDK initialized successfully
+✅ Successfully connected to MongoDB!
+📦 this: B12A11
+🚀 Server running on port 5000
+🌐 Client URL: http://localhost:3000
+📡 API Base: api/v1
+[3:27:45 PM] #1 START GET /api/v1/auth/google (1x)
+[Error] 500: stamp is not defined
+ReferenceError: stamp is not defined
+    at <anonymous> (/home/borni/Downloads/14/server/src/index.ts:60:8)
+    at Layer.handleRequest (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:342:13)
+    at /home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:297:9
+    at processParams (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:582:12)
+    at next (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:291:5)
+    at cookieParser (/home/borni/Downloads/14/node_modules/.pnpm/cookie-parser@1.4.7/node_modules/cookie-parser/index.js:71:5)
+    at Layer.handleRequest (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:342:13)
+    at /home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:297:9
+[3:27:45 PM] #1 END GET /api/v1/auth/google -> 500 (-) - 93ms
+[3:27:54 PM] #2 START GET /api/v1/auth/google (2x)
+[Error] 500: stamp is not defined
+ReferenceError: stamp is not defined
+    at <anonymous> (/home/borni/Downloads/14/server/src/index.ts:60:8)
+    at Layer.handleRequest (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:342:13)
+    at /home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:297:9
+    at processParams (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:582:12)
+    at next (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:291:5)
+    at cookieParser (/home/borni/Downloads/14/node_modules/.pnpm/cookie-parser@1.4.7/node_modules/cookie-parser/index.js:71:5)
+    at Layer.handleRequest (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:342:13)
+    at /home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:297:9
+[3:27:54 PM] #2 END GET /api/v1/auth/google -> 500 (-) - 7ms
+[3:27:54 PM] #3 START GET /api/v1/auth/google (3x)
+[Error] 500: stamp is not defined
+ReferenceError: stamp is not defined
+    at <anonymous> (/home/borni/Downloads/14/server/src/index.ts:60:8)
+    at Layer.handleRequest (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:342:13)
+    at /home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:297:9
+    at processParams (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:582:12)
+    at next (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:291:5)
+    at cookieParser (/home/borni/Downloads/14/node_modules/.pnpm/cookie-parser@1.4.7/node_modules/cookie-parser/index.js:71:5)
+    at Layer.handleRequest (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+    at trimPrefix (/home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:342:13)
+    at /home/borni/Downloads/14/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:297:9
+[3:27:54 PM] #3 END GET /api/v1/auth/google -> 500 (-) - 7ms
+3:28:14 PM [tsx] change in ./src/index.ts Restarting...
+c✅ Firebase Admin SDK initialized successfully
+✅ Successfully connected to MongoDB!
+📦 this: B12A11
+🚀 Server running on port 5000
+🌐 Client URL: http://localhost:3000
+📡 API Base: api/v1
+[3:28:24 PM] #1 START GET /api/v1/auth/google (1x)
+[3:28:25 PM] #1 END GET /api/v1/auth/google -> 403 (80) - 464ms
+[3:28:49 PM] #2 START GET /api/v1/auth/me (1x)
+[3:28:49 PM] #2 END GET /api/v1/auth/me -> 304 (-) - 286ms
+[3:28:49 PM] #3 START GET /api/v1/auth/me (2x)
+[3:28:50 PM] #3 END GET /api/v1/auth/me -> 304 (-) - 344ms
+3:29:16 PM [tsx] change in ./src/index.ts Restarting...
+c✅ Firebase Admin SDK initialized successfully
+✅ Successfully connected to MongoDB!
+📦 this: B12A11
+🚀 Server running on port 5000
+🌐 Client URL: http://localhost:3000
+📡 API Base: api/v1
+3:29:51 PM [tsx] change in ./src/index.ts Restarting...
+c✅ Firebase Admin SDK initialized successfully
+✅ Successfully connected to MongoDB!
+📦 this: B12A11
+🚀 Server running on port 5000
+🌐 Client URL: http://localhost:3000
+📡 API Base: api/v1

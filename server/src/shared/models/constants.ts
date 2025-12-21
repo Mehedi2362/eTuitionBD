@@ -1,7 +1,6 @@
 
 // ==================== User Projections ====================
 export const PUBLIC_USER_PROJECTION = {
-    uid: 1,
     email: 1,
     name: 1,
     phone: 1,
@@ -16,7 +15,6 @@ export const PUBLIC_USER_PROJECTION = {
 };
 
 export const TUTOR_LIST_PROJECTION = {
-    uid: 1,
     name: 1,
     email: 1,
     photoUrl: 1,
@@ -28,7 +26,6 @@ export const TUTOR_LIST_PROJECTION = {
 };
 
 export const TUTOR_DETAIL_PROJECTION = {
-    uid: 1,
     name: 1,
     email: 1,
     phone: 1,

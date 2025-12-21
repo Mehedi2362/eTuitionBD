@@ -20,9 +20,30 @@
     "./payments": {
       "types": "./dist/payments/index.d.ts",
       "import": "./dist/payments/index.js"
+    },
+    "./dashboard/admin": {
+      "types": "./dist/dashboard/admin.d.ts",
+      "import": "./dist/dashboard/admin.js"
+    },
+    "./dashboard/shared": {
+      "types": "./dist/dashboard/shared.d.ts",
+      "import": "./dist/dashboard/shared.js"
+    },
+    "./dashboard/student": {
+      "types": "./dist/dashboard/student.d.ts",
+      "import": "./dist/dashboard/student.js"
+    },
+    "./dashboard/tutor": {
+      "types": "./dist/dashboard/tutor.d.ts",
+      "import": "./dist/dashboard/tutor.js"
+    },
+    "./public": {
+      "types": "./dist/public/index.d.ts",
+      "import": "./dist/public/index.js"
     }
   },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

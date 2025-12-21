@@ -1,6 +1,7 @@
 import type { User } from '@/features/auth'
 import type { Dispatch, ReactNode, SetStateAction } from 'react'
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react'
+import authService from './service'
 
 // ==================== Types ====================
 type Creds = Record<string, unknown>
@@ -63,7 +64,7 @@ export const createAuthProvider = (config: AuthConfig) => {
         const [user, setUser] = useState<User | null>(null)
         const [loading, setLoading] = useState<boolean>(true)
 
-        const syncUser = async () => {
+        const syncUser = useCallback(async () => {
             try {
                 setUser(await config.fetchUser())
             } catch {
@@ -71,15 +72,17 @@ export const createAuthProvider = (config: AuthConfig) => {
             } finally {
                 setLoading(false)
             }
-        }
+        }, [config])
 
         useEffect(() => {
             syncUser()
             window.addEventListener('focus', syncUser)
             return () => window.removeEventListener('focus', syncUser)
-        }, [])
+        }, [syncUser])
 
-        return <AuthContext.Provider value={{ user, setUser, loading, setLoading, refetch: syncUser }}>{children}</AuthContext.Provider>
+        const value = useMemo(() => ({ user, setUser, loading, setLoading, refetch: syncUser }), [user, loading, syncUser])
+
+        return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
     }
 
     return AuthProvider
@@ -89,13 +92,28 @@ export const createAuthProvider = (config: AuthConfig) => {
 // Simple provider that doesn't auto-fetch user (for basic usage)
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null)
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
 
-    const refetch = async () => {
-        // No-op for basic provider - use createAuthProvider for auto-fetch
-    }
+    const refetch = useCallback(async () => {
+        setLoading(true)
+        try {
+            const profile = await authService.getUser()
+            console.table( profile)
+            setUser(profile ?? null)
+        } catch {
+            setUser(null)
+        } finally {
+            setLoading(false)
+        }
+    }, [])
 
-    return <AuthContext.Provider value={{ user, setUser, loading, setLoading, refetch }}>{children}</AuthContext.Provider>
+    useEffect(() => {
+        refetch()
+    }, [refetch])
+
+    const value = useMemo(() => ({ user, setUser, loading, setLoading, refetch }), [user, loading, refetch])
+
+    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
 // ==================== Hook Options ====================

@@ -9,4 +9,7 @@ export const PAYMENT_ROUTES = {
     SUCCESS: (sessionId) => `/payments/success/${sessionId}`,
     EARNINGS: "/payments/earnings",
 };
+// ==================== Payment Constants ====================
+export const PAYMENT_COLLECTION = "payments";
+export const DEFAULT_PAYMENT_STATUS = "pending";
 //# sourceMappingURL=api.js.map

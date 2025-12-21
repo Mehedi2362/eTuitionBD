@@ -9,4 +9,7 @@ export declare const PAYMENT_ROUTES: {
     readonly SUCCESS: (sessionId: string) => string;
     readonly EARNINGS: "/payments/earnings";
 };
+export declare const PAYMENT_COLLECTION = "payments";
+export declare const DEFAULT_PAYMENT_STATUS: "pending";
+export type PaymentStatus = "pending" | "completed" | "failed" | "refunded";
 //# sourceMappingURL=api.d.ts.map

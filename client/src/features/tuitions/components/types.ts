@@ -36,9 +36,3 @@ export interface TutorApplication {
     status: 'pending' | 'accepted' | 'rejected'
     appliedAt: string
 }
-
-export interface ApplicationFormData {
-    qualifications: string
-    experience: string
-    expectedSalary: string
-}

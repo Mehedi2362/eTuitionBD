@@ -7,14 +7,10 @@ const baseUrl = API_BASE_URL.replace(/\/$/, '') + '/api/v1'
 
 // ==================== ERROR CONFIG ====================
 export const ERROR_CONFIG = {
-    // Server errors - show toast
-    serverErrors: [500, 502, 503, 504],
-    // Validation errors - form handles (no toast)
-    validationErrors: [400, 422],
-    // Auth errors - redirect to login
-    authErrors: [401],
-    // Forbidden errors - access denied
-    forbiddenErrors: [403],
+    serverErrors: [500, 502, 503, 504], // Server errors - show toast
+    validationErrors: [400, 422],   // Validation errors - form handles (no toast)
+    authErrors: [401],  // Auth errors - redirect to login
+    forbiddenErrors: [403], // Forbidden errors - access denied
     // Bengali error messages
     messages: {
         500: 'সার্ভারে সমস্যা হয়েছে। পরে আবার চেষ্টা করুন।',
@@ -108,19 +104,19 @@ privateAxios.interceptors.response.use(
             toast.error(message)
         }
 
-        // Auth error (401) - try refresh or redirect
-        if (ERROR_CONFIG.authErrors.includes(status) && !originalRequest._retry) {
-            originalRequest._retry = true
-            try {
-                // Try to refresh token (cookie-based)
-                await publicAxios.post('/auth/refresh')
-                return privateAxios(originalRequest)
-            } catch {
-                // Refresh failed - redirect to login
-                toast.error(ERROR_CONFIG.messages[401])
-                window.location.href = '/login'
-            }
-        }
+        // // Auth error (401) - try refresh or redirect
+        // if (ERROR_CONFIG.authErrors.includes(status) && !originalRequest._retry) {
+        //     originalRequest._retry = true
+        //     try {
+        //         // Try to refresh token (cookie-based)
+        //         await publicAxios.post('/auth/refresh')
+        //         return privateAxios(originalRequest)
+        //     } catch {
+        //         // Refresh failed - redirect to login
+        //         toast.error(ERROR_CONFIG.messages[401])
+        //         // window.location.href = '/login'
+        //     }
+        // }
 
         // Forbidden (403) - show toast
         if (ERROR_CONFIG.forbiddenErrors.includes(status)) {

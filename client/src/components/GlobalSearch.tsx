@@ -51,7 +51,7 @@ export function GlobalSearch() {
     const navigate = useNavigate()
 
     // Recent searches from localStorage
-    const { value: recentSearches, setValue: setRecentSearches } = useLocalStorage<RecentSearch[]>('recent-searches', [])
+    const [recentSearches, setRecentSearches] = useLocalStorage<RecentSearch[]>('recent-searches', [])
 
     // Keyboard shortcut (Cmd+K / Ctrl+K)
     useEffect(() => {

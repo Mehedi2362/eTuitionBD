@@ -8,10 +8,12 @@ const DEFAULT_TUITION_STATUS: TuitionStatus = "pending";
 
 // ==================== Tuition Model Class ====================
 export class TuitionModel {
-    static #collection = db.getDB().collection<ITuition>('tuitions')
+    private static get collection() {
+        return db.getDB().collection<ITuition>('tuitions');
+    }
 
     // Create new tuition
-    static async create(data: ITuition): Promise<WithId<ITuition>> {
+    static async create(data: Omit<ITuition, 'status' | 'applicationsCount' | 'createdAt' | 'updatedAt'> & Partial<Pick<ITuition, 'status' | 'applicationsCount'>>): Promise<WithId<ITuition>> {
         const newTuition: ITuition = {
             studentId: data.studentId,
             studentEmail: data.studentEmail,
@@ -24,19 +26,19 @@ export class TuitionModel {
             description: data.description || "",
             requirements: data.requirements || "",
             status: data.status || DEFAULT_TUITION_STATUS,
-            applicationsCount: 0,
+            applicationsCount: data.applicationsCount || 0,
             createdAt: new Date(),
             updatedAt: new Date(),
         };
 
-        const result = await this.#collection.insertOne(newTuition);
+        const result = await this.collection.insertOne(newTuition);
         return { ...newTuition, _id: result.insertedId };
     }
 
     // Find by ID
     static async findById(id: string | ObjectId): Promise<WithId<ITuition> | null> {
         const objectId = typeof id === "string" ? new ObjectId(id) : id;
-        return this.#collection.findOne({ _id: objectId });
+        return this.collection.findOne({ _id: objectId });
     }
 
     // Find all with pagination and filters
@@ -51,13 +53,13 @@ export class TuitionModel {
         const { skip = 0, limit = 10, sort = { createdAt: -1 } } = options;
 
         const [data, total] = await Promise.all([
-            this.#collection
+            this.collection
                 .find(filter, { projection: TUITION_LIST_PROJECTION })
                 .sort(sort)
                 .skip(skip)
                 .limit(limit)
                 .toArray(),
-            this.#collection.countDocuments(filter),
+            this.collection.countDocuments(filter),
         ]);
 
         return { data, total };
@@ -81,7 +83,7 @@ export class TuitionModel {
             $set: { ...data, updatedAt: new Date() },
         };
 
-        const result = await this.#collection.findOneAndUpdate(
+        const result = await this.collection.findOneAndUpdate(
             { _id: objectId },
             updateData,
             { returnDocument: "after" }
@@ -103,7 +105,7 @@ export class TuitionModel {
         id: string | ObjectId
     ): Promise<boolean> {
         const objectId = typeof id === "string" ? new ObjectId(id) : id;
-        const result = await this.#collection.updateOne(
+        const result = await this.collection.updateOne(
             { _id: objectId },
             { $inc: { applicationsCount: 1 }, $set: { updatedAt: new Date() } }
         );
@@ -115,7 +117,7 @@ export class TuitionModel {
         id: string | ObjectId
     ): Promise<boolean> {
         const objectId = typeof id === "string" ? new ObjectId(id) : id;
-        const result = await this.#collection.updateOne(
+        const result = await this.collection.updateOne(
             { _id: objectId },
             { $inc: { applicationsCount: -1 }, $set: { updatedAt: new Date() } }
         );
@@ -125,7 +127,7 @@ export class TuitionModel {
     // Delete by ID
     static async deleteById(id: string | ObjectId): Promise<boolean> {
         const objectId = typeof id === "string" ? new ObjectId(id) : id;
-        const result = await this.#collection.deleteOne({ _id: objectId });
+        const result = await this.collection.deleteOne({ _id: objectId });
         return result.deletedCount > 0;
     }
 
@@ -135,7 +137,7 @@ export class TuitionModel {
         studentId: string
     ): Promise<boolean> {
         const objectId = typeof id === "string" ? new ObjectId(id) : id;
-        const count = await this.#collection.countDocuments({
+        const count = await this.collection.countDocuments({
             _id: objectId,
             studentId,
         });
@@ -155,5 +157,15 @@ export class TuitionModel {
             ],
         };
         return this.findAll(searchFilter, options);
+    }
+
+    // Get tuitions count grouped by status
+    static async countByStatus(): Promise<{ status: TuitionStatus; count: number }[]> {
+        return this.collection
+            .aggregate([
+                { $group: { _id: "$status", count: { $sum: 1 } } },
+                { $project: { status: "$_id", count: 1, _id: 0 } }
+            ])
+            .toArray() as Promise<{ status: TuitionStatus; count: number }[]>;
     }
 }

@@ -3,7 +3,7 @@
 
 import { useAuth } from '@/features/auth'
 import { SIGNIN } from '@/features/auth/constants'
-import { HOME } from '@/features/home/constants'
+import { HOME } from '@/pages/home/constants'
 import { Loader2 } from 'lucide-react'
 import { Navigate, useLocation } from 'react-router'
 
@@ -91,6 +91,9 @@ export const GuestRoute = ({ children, redirectTo }: GuestRouteProps) => {
 
         // Redirect based on role
         const defaultRedirect = redirectTo || getDefaultRouteByRole(user?.role as UserRole)
+
+        console.log(from, defaultRedirect);
+        
         return <Navigate to={defaultRedirect} replace />
     }
 

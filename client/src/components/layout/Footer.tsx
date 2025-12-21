@@ -11,7 +11,7 @@
 import { ABOUT } from '@/pages/about/constants'
 import { SIGNIN, SIGNUP } from '@/features/auth/constants'
 import { CONTACT } from '@/pages/contact/constants'
-import { HOME } from '@/features/home/constants'
+import { HOME } from '@/pages/home/constants'
 import { TUITIONS } from '@/features/tuitions/constants'
 import { TUTORS } from '@/features/tutors/constants'
 import { Button } from '@/components/ui/button'

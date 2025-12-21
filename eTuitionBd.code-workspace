@@ -1,0 +1,111 @@
+{
+  "folders": [
+    {
+      "name": "CLIENT",
+      "path": "client/src"
+    },
+    {
+      "name": "SERVER",
+      "path": "server/src"
+    },
+    {
+      "name": "SHARED",
+      "path": "shared/src"
+    },
+    {
+      "name": "FULL PROJECT",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/.git": true,
+      "**/pnpm-lock.yaml": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/pnpm-lock.yaml": true
+    },
+    "terminal.integrated.cwd": "${workspaceFolder:FULL PROJECT ═════════════════}",
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Client: Dev",
+        "type": "shell",
+        "command": "pnpm dev",
+        "options": {
+          "cwd": "${workspaceFolder:CLIENT════}"
+        },
+        "problemMatcher": [],
+        "group": "build"
+      },
+      {
+        "label": "Server: Dev",
+        "type": "shell",
+        "command": "pnpm dev",
+        "options": {
+          "cwd": "${workspaceFolder:SERVER════}"
+        },
+        "problemMatcher": [],
+        "group": "build"
+      },
+      {
+        "label": "Server: Build",
+        "type": "shell",
+        "command": "pnpm build",
+        "options": {
+          "cwd": "${workspaceFolder:SERVER════}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Client: Build",
+        "type": "shell",
+        "command": "pnpm build",
+        "options": {
+          "cwd": "${workspaceFolder:CLIENT════}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Client: Test",
+        "type": "shell",
+        "command": "pnpm test:run",
+        "options": {
+          "cwd": "${workspaceFolder:CLIENT════}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Shared: Build",
+        "type": "shell",
+        "command": "pnpm build",
+        "options": {
+          "cwd": "${workspaceFolder:SHARED PKG}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "🚀 Start All (Client + Server)",
+        "dependsOn": ["Client: Dev", "Server: Dev"],
+        "dependsOrder": "parallel",
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [],
+    "compounds": []
+  }
+}

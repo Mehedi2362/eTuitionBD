@@ -1,5 +1,5 @@
 import type { Express } from "express";
-import { getEnv } from "@/components/utils/getEnv.js";
+import { getEnv } from "@/shared/utils/getEnv.js";
 import { db } from "./db.js";
 
 export class Server {

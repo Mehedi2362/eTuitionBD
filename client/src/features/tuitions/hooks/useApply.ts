@@ -28,6 +28,10 @@ export const useApply = (options: UseApplyOptions) => {
             qualifications: '',
             experience: '',
             expectedSalary: 0,
+            availability: '',
+            coverLetter: '',
+            contactNumber: '',
+            tuitionId,
         },
     })
 
@@ -37,11 +41,9 @@ export const useApply = (options: UseApplyOptions) => {
     // Handle form submission
     const onSubmit = async (data: ApplicationFormData) => {
         try {
-            // tuitionId is passed in the URL path, not in body
-            const { tuitionId: _, ...applicationData } = data
             await applyMutation.mutateAsync({
                 tuitionId,
-                data: applicationData as CreateApplicationInput,
+                data: data as CreateApplicationInput,
             })
             form.reset()
             setIsOpen(false)

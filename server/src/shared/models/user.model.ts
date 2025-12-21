@@ -11,7 +11,9 @@ const DEFAULT_USER_STATUS: UserStatus = "active";
 
 // ==================== User Model Class ====================
 export class UserModel {
-    static #collection = db.getDB().collection<IUser>('users')
+    private static get collection() {
+        return db.getDB().collection<IUser>('users');
+    }
 
     // Create new user
     static async create(data: IUser): Promise<WithId<IUser>> {
@@ -31,19 +33,19 @@ export class UserModel {
             updatedAt: new Date(),
         };
 
-        const result = await this.#collection.insertOne(newUser);
+        const result = await this.collection.insertOne(newUser);
         return { ...newUser, _id: result.insertedId };
     }
 
     // Find by ID
     static async findById(id: string | ObjectId): Promise<WithId<IUser> | null> {
         const objectId = typeof id === "string" ? new ObjectId(id) : id;
-        return this.#collection.findOne({ _id: objectId });
+        return this.collection.findOne({ _id: objectId });
     }
 
     // Find by email
     static async findByEmail(email: string): Promise<WithId<IUser> | null> {
-        return this.#collection.findOne({ email });
+        return this.collection.findOne({ email });
     }
 
     // Find all with pagination
@@ -58,13 +60,13 @@ export class UserModel {
         const { skip = 0, limit = 10, sort = { createdAt: -1 } } = options;
 
         const [data, total] = await Promise.all([
-            this.#collection
+            this.collection
                 .find(filter, { projection: PUBLIC_USER_PROJECTION })
                 .sort(sort)
                 .skip(skip)
                 .limit(limit)
                 .toArray(),
-            this.#collection.countDocuments(filter),
+            this.collection.countDocuments(filter),
         ]);
 
         return { data, total };
@@ -79,13 +81,13 @@ export class UserModel {
         return this.findAll(tutorFilter, options);
     }
 
-    // Update by UID
-    static async updateByUid(uid: string, data: Partial<IUser>): Promise<WithId<IUser> | null> {
+    // Update by Email
+    static async updateByEmail(email: string, data: Partial<IUser>): Promise<WithId<IUser> | null> {
         const updateData: UpdateFilter<IUser> = {
             $set: { ...data, updatedAt: new Date() },
         };
 
-        const result = await this.#collection.findOneAndUpdate({ uid }, updateData, { returnDocument: "after" });
+        const result = await this.collection.findOneAndUpdate({ email }, updateData, { returnDocument: "after" });
         return result;
     }
 
@@ -96,34 +98,44 @@ export class UserModel {
             $set: { ...data, updatedAt: new Date() },
         };
 
-        const result = await this.#collection.findOneAndUpdate({ _id: objectId }, updateData, { returnDocument: "after" });
+        const result = await this.collection.findOneAndUpdate({ _id: objectId }, updateData, { returnDocument: "after" });
         return result;
     }
 
     // Update role
-    static async updateRole(uid: string, role: UserRole): Promise<WithId<IUser> | null> {
-        return this.updateByUid(uid, { role });
+    static async updateRole(email: string, role: UserRole): Promise<WithId<IUser> | null> {
+        return this.updateByEmail(email, { role });
     }
 
     // Ban/Unban user
-    static async updateStatus(uid: string, status: UserStatus): Promise<WithId<IUser> | null> {
-        return this.updateByUid(uid, { status });
+    static async updateStatus(email: string, status: UserStatus): Promise<WithId<IUser> | null> {
+        return this.updateByEmail(email, { status });
     }
 
-    // Delete by UID
-    static async deleteByUid(uid: string): Promise<boolean> {
-        const result = await this.#collection.deleteOne({ uid });
+    // Delete by Email
+    static async deleteByEmail(email: string): Promise<boolean> {
+        const result = await this.collection.deleteOne({ email });
         return result.deletedCount > 0;
     }
 
     // Check if user exists
-    static async exists(uid: string): Promise<boolean> {
-        const count = await this.#collection.countDocuments({ uid });
+    static async exists(email: string): Promise<boolean> {
+        const count = await this.collection.countDocuments({ email });
         return count > 0;
     }
 
     // Count users by role
     static async countByRole(role: UserRole): Promise<number> {
-        return this.#collection.countDocuments({ role });
+        return this.collection.countDocuments({ role });
+    }
+
+    // Users grouped by role with counts
+    static async usersByRole(): Promise<Array<{ role: UserRole; count: number }>> {
+        return this.collection
+            .aggregate<{ role: UserRole; count: number }>([
+                { $group: { _id: "$role", count: { $sum: 1 } } },
+                { $project: { role: "$_id", count: 1, _id: 0 } }
+            ])
+            .toArray();
     }
 }

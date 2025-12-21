@@ -8,7 +8,9 @@ const DEFAULT_PAYMENT_STATUS: PaymentStatus = "pending";
 
 // ==================== Payment Model Class ====================
 export class PaymentModel {
-    static #collection = db.getDB().collection<IPayment>('payments')
+    private static get collection() {
+        return db.getDB().collection<IPayment>('payments');
+    }
 
 
     // Calculate platform fee and tutor earnings
@@ -19,7 +21,7 @@ export class PaymentModel {
     }
 
     // Create new payment
-    static async create(data: IPayment): Promise<WithId<IPayment>> {
+    static async create(data: Omit<IPayment, 'platformFee' | 'tutorEarnings' | 'status' | 'createdAt' | 'updatedAt'> & Partial<Pick<IPayment, 'status' | 'stripePaymentIntentId' | 'stripeSessionId' | 'paidAt'>>): Promise<WithId<IPayment>> {
         const { platformFee, tutorEarnings } = this.calculateAmounts(data.amount);
 
         const newPayment: IPayment = {
@@ -38,19 +40,19 @@ export class PaymentModel {
             updatedAt: new Date(),
         };
 
-        const result = await this.#collection.insertOne(newPayment);
+        const result = await this.collection.insertOne(newPayment);
         return { ...newPayment, _id: result.insertedId };
     }
 
     // Find by ID
     static async findById(id: string | ObjectId): Promise<WithId<IPayment> | null> {
         const objectId = typeof id === "string" ? new ObjectId(id) : id;
-        return this.#collection.findOne({ _id: objectId });
+        return this.collection.findOne({ _id: objectId });
     }
 
     // Find by Stripe session ID
     static async findBySessionId(sessionId: string): Promise<WithId<IPayment> | null> {
-        return this.#collection.findOne({ stripeSessionId: sessionId });
+        return this.collection.findOne({ stripeSessionId: sessionId });
     }
 
     // Find all with pagination
@@ -58,8 +60,8 @@ export class PaymentModel {
         const { skip = 0, limit = 10, sort = { createdAt: -1 } } = options;
 
         const [data, total] = await Promise.all([
-            this.#collection.find(filter, { projection: PAYMENT_LIST_PROJECTION }).sort(sort).skip(skip).limit(limit).toArray(),
-            this.#collection.countDocuments(filter),
+            this.collection.find(filter, { projection: PAYMENT_LIST_PROJECTION }).sort(sort).skip(skip).limit(limit).toArray(),
+            this.collection.countDocuments(filter),
         ]);
 
         return { data, total };
@@ -82,7 +84,7 @@ export class PaymentModel {
             $set: { ...data, updatedAt: new Date() },
         };
 
-        const result = await this.#collection.findOneAndUpdate({ _id: objectId }, updateData, { returnDocument: "after" });
+        const result = await this.collection.findOneAndUpdate({ _id: objectId }, updateData, { returnDocument: "after" });
         return result;
     }
 
@@ -100,7 +102,7 @@ export class PaymentModel {
 
     // Get total earnings for tutor
     static async getTutorEarnings(tutorId: string): Promise<number> {
-        const result = await this.#collection
+        const result = await this.collection
             .aggregate<{ total: number }>([
                 { $match: { tutorId, status: "completed" } },
                 { $group: { _id: null, total: { $sum: "$tutorEarnings" } } },
@@ -111,10 +113,35 @@ export class PaymentModel {
 
     // Get platform total earnings
     static async getPlatformEarnings(): Promise<number> {
-        const result = await this.#collection
+        const result = await this.collection
             .aggregate<{ total: number }>([
                 { $match: { status: "completed" } },
                 { $group: { _id: null, total: { $sum: "$platformFee" } } },
+            ])
+            .toArray();
+
+        return result[0]?.total || 0;
+    }
+
+    static async revenue(
+        startDate = new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1),
+        endDate = new Date(new Date().getFullYear(), new Date().getMonth(), 1)
+    ): Promise<number> {
+
+        const result = await this.collection
+            .aggregate<{ total: number }>([
+                {
+                    $match: {
+                        status: "completed",
+                        paidAt: { $gte: startDate, $lt: endDate },
+                    },
+                },
+                {
+                    $group: {
+                        _id: null,
+                        total: { $sum: "$platformFee" },
+                    },
+                },
             ])
             .toArray();
 

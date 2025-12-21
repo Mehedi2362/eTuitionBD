@@ -22,3 +22,6 @@ export type { Class, FieldType, Location, OptionsKey, Subject, TuitionFieldConfi
 // Pages
 export { default as TuitionDetails } from './pages/TuitionDetailsPage'
 export { default as Tuitions } from './pages/TuitionsPage'
+
+// Validators
+export * from './validators'

@@ -1,7 +1,21 @@
 // ==================== User Service ====================
-import { USER_ROUTES, TUTOR_ROUTES } from '@etuitionbd/shared/'
+// import { USER_ROUTES, TUTOR_ROUTES } from '@etuitionbd/shared/api'
 import { privateAxios, publicAxios } from '@/services/api'
 import type { ApiResponse, PaginatedResponse, TutorProfile, UpdateProfileInput, User, UserRole } from '@/types'
+
+// Route constants - TODO: move to shared package
+const USER_ROUTES = {
+    ALL: '/users',
+    BY_ID: (id: string) => `/users/${id}`,
+    UPDATE_ROLE: (id: string) => `/users/${id}/role`,
+    PROFILE: '/profile/me',
+}
+
+const TUTOR_ROUTES = {
+    ALL: '/tutors',
+    FEATURED: '/tutors/featured',
+    BY_ID: (id: string) => `/tutors/${id}`,
+}
 
 // ==================== Query Params ====================
 export interface UserQueryParams {

@@ -131,7 +131,7 @@ const RegisterPage = () => {
                                         <Addon align="inline-start">
                                             <field.icon />
                                         </Addon>
-                                        <Input {...register(field.name as 'name' | 'email' | 'phone')} id={field.name} placeholder={field.placeholder} aria-invalid={!!errors.role} />
+                                        <Input {...register(field.name as 'name' | 'email' | 'phone')} id={field.name} placeholder={field.placeholder} aria-invalid={!!errors[field.name as keyof SignUpCreds]} />
                                     </InputGroup>
                                     <ErrorMessage>{errors[field.name as keyof SignUpCreds]?.message}</ErrorMessage>
                                 </React.Fragment>

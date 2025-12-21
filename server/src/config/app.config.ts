@@ -1,4 +1,4 @@
-import { getEnv } from "@/components/utils/getEnv.js";
+import { getEnv } from "@/shared/utils/getEnv.js";
 
 export const config = {
     port: getEnv.number("PORT", 5000),

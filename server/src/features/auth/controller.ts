@@ -12,7 +12,7 @@ import {
     sendSuccess,
 } from "../../shared/utils/index.js";
 import { UserModel, type IUser } from "../../shared/models/index.js";
-import type { AuthRequest} from "./types.js";
+import type { AuthRequest } from "./types.js";
 import { firebase } from "@/config/firebase.js";
 
 
@@ -42,8 +42,8 @@ export class AuthController {
         // Set HttpOnly cookie
         res.cookie("auth_token", token, {
             httpOnly: true,
-            secure: true,
-            sameSite: "strict",
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? "none" : "lax",
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
@@ -72,7 +72,7 @@ export class AuthController {
         }
 
         // Verify password (assuming bcrypt hash)
-        const isMatch =  bcrypt.compare(password, user.password!);
+        const isMatch = bcrypt.compare(password, user.password!);
         if (!isMatch) {
             sendError(res, "Invalid email or password.", HTTP_STATUS.UNAUTHORIZED);
             return;
@@ -90,8 +90,8 @@ export class AuthController {
         // Set HttpOnly cookie
         res.cookie("auth_token", token, {
             httpOnly: true,
-            secure: true,
-            sameSite: "strict",
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? "none" : "lax",
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
@@ -106,21 +106,27 @@ export class AuthController {
 
     static async signInWithGooglePopup(req: AuthRequest, res: Response): Promise<void> {
         try {
+            console.log('🔍 Google sign-in attempt started');
             // Token header থেকে বের করো
             const authHeader = req.headers.authorization;
             if (!authHeader || !authHeader.startsWith("Bearer ")) {
+                console.log('❌ No Bearer token found');
                 sendError(res, "No Google token provided.", HTTP_STATUS.BAD_REQUEST);
                 return;
             }
             const token = authHeader.split(" ")[1];
+            console.log('✅ Token extracted, verifying...');
 
             const { email, name } = await firebase.verifyToken(token);
+            console.log('✅ Token verified, email:', email, 'name:', name);
             if (!email) {
+                console.log('❌ No email in token');
                 sendError(res, "Token does not contain an email.", HTTP_STATUS.BAD_REQUEST);
                 return;
             }
             let user = await UserModel.findByEmail(email);
             if (!user) {
+                console.log('🔍 Creating new user for:', email);
                 user = await UserModel.create({
                     name,
                     email,
@@ -129,6 +135,8 @@ export class AuthController {
                     createdAt: new Date(),
                     updatedAt: new Date()
                 });
+            } else {
+                console.log('✅ Existing user found:', email);
             }
 
             // Generate JWT (minimal claims only)
@@ -137,12 +145,13 @@ export class AuthController {
                 process.env.JWT_SECRET as string,
                 { expiresIn: "7d" }
             );
+            console.log('✅ JWT generated');
 
             // Set HttpOnly cookie
             res.cookie("auth_token", jwtToken, {
                 httpOnly: true,
-                secure: true,
-                sameSite: "strict",
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: process.env.NODE_ENV === 'production' ? "none" : "lax",
                 maxAge: 7 * 24 * 60 * 60 * 1000
             });
 
@@ -150,10 +159,13 @@ export class AuthController {
             res.status(200).json({
                 success: true,
                 message: "Google sign-in successful",
-                user: { name, email, role: 'student' }
-
+                data: {
+                    user: { name, email, role: 'student' }
+                }
             });
+            console.log('✅ Response sent successfully');
         } catch (error) {
+            console.error('❌ Google sign-in error:', error);
             sendError(res, "Google sign-in failed.", HTTP_STATUS.UNAUTHORIZED);
         }
     }
@@ -162,8 +174,8 @@ export class AuthController {
     static async signOut(_req: AuthRequest, res: Response): Promise<void> {
         res.clearCookie("auth_token", {
             httpOnly: true,
-            secure: true,
-            sameSite: "strict"
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? "none" : "lax"
         });
 
         res.status(200).json({
@@ -181,7 +193,7 @@ export class AuthController {
             sendNotFound(res, "User not found");
             return;
         }
-
-        sendSuccess(res, { user }, "User fetched successfully");
+        const { name, email, phone, role } = user;
+        sendSuccess(res, { user: { name, email, phone, role } }, "User fetched successfully");
     }
 }

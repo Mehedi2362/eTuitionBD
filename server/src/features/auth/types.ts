@@ -8,6 +8,8 @@ export type UserStatus = 'active' | 'inactive' | 'banned'
 // Auth User (from token)
 export interface AuthUser {
     email: string;
+    name?: string;
+    picture?: string;
     role: TUserRole;
 }
 

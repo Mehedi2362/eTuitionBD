@@ -34,9 +34,9 @@ router.post(
 );
 
 // ==================== Token Routes ====================
-
 router.post(
   AUTH_ROUTES.SIGNOUT,
+  authMiddleware,
   asyncHandler(AuthController.signOut)
 );
 
@@ -44,7 +44,6 @@ router.post(
 router.get(
   AUTH_ROUTES.ME,
   authMiddleware,
-  anyRoleMiddleware,
   asyncHandler(AuthController.getMe)
 );
 

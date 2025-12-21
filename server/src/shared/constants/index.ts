@@ -23,7 +23,7 @@ export const ERROR_MESSAGES = {
     FORBIDDEN: "You do not have permission to perform this action.",
     NOT_FOUND: "Resource not found.",
     INVALID_TOKEN: "Invalid or expired token.",
-    NO_TOKEN: "No token provided. Authorization header must be in format: Bearer <token>",
+    NO_TOKEN: "No token provided.",
     INVALID_CREDENTIALS: "Invalid credentials.",
     USER_EXISTS: "User already exists with this email.",
     INVALID_ROLE: "Invalid role. Must be student, tutor, or admin.",

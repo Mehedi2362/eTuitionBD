@@ -14,13 +14,7 @@ interface ProfileSidebarProps {
 
 // Get initials for avatar fallback
 const getInitials = (name: string) => {
-    return name
-        .split(' ')
-        .map((n) => n[0])
-        .join('')
-        .toUpperCase()
-        .slice(0, 2)
-}
+    return name.split(' ').map((n) => n[0]).join('').toUpperCase().slice(0, 2)}
 
 // Get experience badge text
 const getExperienceText = (years: number) => {

@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import Root from "@/components/layout";
-import { Home, ErrorPage, About } from "@/pages";
+import { ErrorPage, About } from "@/pages";
 import { ABOUT } from "@/constants";
 import { homeRoutes } from "@/pages/home/router";
+import { authRoutes } from "@/features/auth/router";
+import { tuitionRoutes } from "@/features/tuitions/router";
+import { tutorRoutes } from "@/features/tutors/router";
 
 export const router = createBrowserRouter([
     {
@@ -14,7 +17,10 @@ export const router = createBrowserRouter([
             {
                 path: ABOUT,
                 element: <About />,
-            }
+            },
+            ...authRoutes,
+            ...tuitionRoutes,
+            ...tutorRoutes
 
         ],
     },

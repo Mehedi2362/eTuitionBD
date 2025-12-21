@@ -1,4 +1,4 @@
-import { getEnv } from "@/components/utils/getEnv.js";
+import { getEnv } from "@/shared/utils/getEnv.js";
 import { Db, MongoClient, ServerApiVersion } from "mongodb";
 
 export class db {

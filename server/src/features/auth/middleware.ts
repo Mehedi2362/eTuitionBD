@@ -7,7 +7,7 @@ import { ERROR_MESSAGES, HTTP_STATUS } from "../../shared/constants/index.js";
 import type { IUser } from "../../shared/models/types.js";
 import type { AuthRequest } from "./types.js";
 import { firebase } from "@/config/firebase.js";
-import { getEnv } from "@/components/utils/getEnv.js";
+import { getEnv } from "@/shared/utils/getEnv.js";
 import { db } from "@/config/db.js";
 
 // ==================== Cookie Options ====================
@@ -37,7 +37,7 @@ export const authMiddleware = async (req: AuthRequest, res: Response, next: Next
 	}
 
 	try {
-		req.user = jwt.verify(token, getEnv.string('JWT_SECRET')) as { email: string, role: "student" | "tutor" | "admin"; };
+		req.user = jwt.verify(token, getEnv.string('JWT_SECRET')) as { email: string; role: "student" | "tutor" | "admin"; };
 		return next();
 	} catch {
 		res.status(HTTP_STATUS.UNAUTHORIZED).json({ success: false, message: ERROR_MESSAGES.INVALID_TOKEN, });
@@ -105,10 +105,37 @@ export const tutorMiddleware = requireRole(ROLES.TUTOR);
 export const studentOrTutorMiddleware = requireRole(ROLES.STUDENT, ROLES.TUTOR);
 export const anyRoleMiddleware = requireRole(ROLES.STUDENT, ROLES.TUTOR, ROLES.ADMIN);
 export const guestMiddleware = (req: AuthRequest, res: Response, next: NextFunction): void => {
-	const token = extractToken(req);
-	if (token) {
-		res.status(403).json({ message: "Already authenticated users cannot access this route" });
+	const cookieToken = req.cookies?.['auth_token'];
+	if (cookieToken) {
+		res.status(403).json({ message: `Already authenticated users cannot access this route` });
 		return;
 	}
 	next();
 }
+
+// ==================== Generate JWT ====================
+export const generateJWT = (payload: { email: string; role: string }): string => {
+	return jwt.sign(payload, getEnv.string('JWT_SECRET'), { expiresIn: '7d' });
+};
+
+// ==================== Verify JWT ====================
+export const verifyJWT = (token: string): { email: string; role: string } | null => {
+	try {
+		return jwt.verify(token, getEnv.string('JWT_SECRET')) as { email: string; role: string };
+	} catch {
+		return null;
+	}
+};
+
+// ==================== Optional Auth Middleware ====================
+export const optionalAuth = async (req: AuthRequest, _res: Response, next: NextFunction): Promise<void> => {
+	const token = extractToken(req);
+	if (token) {
+		try {
+			req.user = jwt.verify(token, getEnv.string('JWT_SECRET')) as { email: string; role: "student" | "tutor" | "admin" };
+		} catch {
+			// Token invalid, continue without user
+		}
+	}
+	next();
+};

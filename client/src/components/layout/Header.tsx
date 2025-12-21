@@ -1,7 +1,7 @@
 // ==================== Enhanced Header Component ====================
 // Using shadcn NavigationMenu for desktop navigation
 
-import { ABOUT } from '@/features/about/constants'
+import { ABOUT } from '@/pages/about/constants'
 import { useAuth } from '@/features/auth'
 import { SIGNIN, SIGNUP } from '@/features/auth/constants'
 import { CONTACT } from '@/pages/contact/constants'

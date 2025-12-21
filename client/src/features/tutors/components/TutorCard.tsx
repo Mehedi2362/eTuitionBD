@@ -30,13 +30,7 @@ interface TutorCardProps {
 const TutorCard = ({ tutor }: TutorCardProps) => {
     // Get initials for avatar fallback
     const getInitials = (name: string) => {
-        return name
-            .split(' ')
-            .map((n) => n[0])
-            .join('')
-            .toUpperCase()
-            .slice(0, 2)
-    }
+        return name.split(' ').map((n) => n[0]).join('').toUpperCase().slice(0, 2)}
 
     // Format experience text
     const getExperienceText = (years: number) => {

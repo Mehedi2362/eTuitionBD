@@ -92,7 +92,7 @@ const TutorSearchFilters = ({ filters, onFiltersChange, onSearch }: TutorSearchF
             <div className="flex flex-wrap gap-4">
                 {/* Subject Filter */}
                 <Select value={filters.subject || 'all'} onValueChange={(value) => updateFilter('subject', value)}>
-                    <SelectTrigger className="w-[180px]">
+                    <SelectTrigger className="w-45">
                         <SelectValue placeholder="Select Subject" />
                     </SelectTrigger>
                     <SelectContent>
@@ -106,7 +106,7 @@ const TutorSearchFilters = ({ filters, onFiltersChange, onSearch }: TutorSearchF
 
                 {/* Location Filter */}
                 <Select value={filters.location || 'all'} onValueChange={(value) => updateFilter('location', value)}>
-                    <SelectTrigger className="w-[180px]">
+                    <SelectTrigger className="w-45">
                         <SelectValue placeholder="Select Location" />
                     </SelectTrigger>
                     <SelectContent>
@@ -120,7 +120,7 @@ const TutorSearchFilters = ({ filters, onFiltersChange, onSearch }: TutorSearchF
 
                 {/* Experience Filter */}
                 <Select value={filters.experience || 'all'} onValueChange={(value) => updateFilter('experience', value)}>
-                    <SelectTrigger className="w-[180px]">
+                    <SelectTrigger className="w-45">
                         <SelectValue placeholder="Experience" />
                     </SelectTrigger>
                     <SelectContent>

@@ -25,12 +25,8 @@ const LoginPage = () => {
             if (type === 'google') return await authService.signInWithGoogle() || null
             return null
         },
-        onSuccess() {
-            toast.success('Successfully signed in!')
-        },
-        onError() {
-            toast.error('Failed to sign in.')
-        },
+        onSuccess: () => toast.success('Successfully signed in!'),
+        onError: (err) => toast.error('Failed to sign in.') && console.error(err),
     })
 
     // Form setup
@@ -76,7 +72,7 @@ const LoginPage = () => {
                         type="button"
                         variant="outline"
                         className="w-full gap-2"
-                        disabled={isGoogleLoading || isLoading}
+                        onClick={() => signIn?.('google')} disabled={authLoading}
                     // TODO: onClick={handleGoogleLogin}
                     >
                         {isGoogleLoading ? <Loader2 className="size-5 animate-spin" /> : <GoogleIcon />}

@@ -1,6 +1,6 @@
 import admin, { ServiceAccount } from "firebase-admin";
 
-import { getEnv } from "@/components/utils/getEnv.js";
+import { getEnv } from "@/shared/utils/getEnv.js";
 
 export class firebase {
     static #app: admin.app.App | null = null;
@@ -19,10 +19,11 @@ export class firebase {
 
     static verifyToken = async (idToken: string): Promise<admin.auth.DecodedIdToken> => {
         try {
-            if (!this.#app) this.init;
+            if (!this.#app) this.init();
             const decodedIdToken = await admin.auth().verifyIdToken(idToken)
             return decodedIdToken
-        } catch {
+        } catch (error) {
+            console.error('Firebase token verification error:', error);
             throw new Error("Invalid or expired Firebase token");
         }
     }
