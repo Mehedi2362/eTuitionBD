@@ -23,6 +23,26 @@ export interface IUser {
     experience?: string;
     subjects?: string[];
     bio?: string;
+    location?: string;
+    education?: {
+        degree: string;
+        institution: string;
+        year: string;
+    }[];
+    certifications?: {
+        name: string;
+        issuer: string;
+        year: string;
+    }[];
+    rating?: number;
+    reviewCount?: number;
+    studentsCount?: number;
+    classesCount?: number;
+    isVerified?: boolean;
+    availability?: {
+        weekdays: string;
+        weekends: string;
+    };
     createdAt: Date;
     updatedAt: Date;
 }
@@ -30,9 +50,7 @@ export interface IUser {
 // ==================== Tuition Interface ====================
 export interface ITuition {
     _id?: ObjectId;
-    studentId: string;
-    studentEmail: string;
-    studentName: string;
+    student: {email:string};
     subject: string;
     class: string;
     location: string;
