@@ -8,8 +8,8 @@ const baseUrl = API_BASE_URL.replace(/\/$/, '') + '/api/v1'
 // ==================== ERROR CONFIG ====================
 export const ERROR_CONFIG = {
     serverErrors: [500, 502, 503, 504], // Server errors - show toast
-    validationErrors: [400, 422],   // Validation errors - form handles (no toast)
-    authErrors: [401],  // Auth errors - redirect to login
+    validationErrors: [400, 422], // Validation errors - form handles (no toast)
+    authErrors: [401], // Auth errors - redirect to login
     forbiddenErrors: [403], // Forbidden errors - access denied
     // Bengali error messages
     messages: {
@@ -91,7 +91,7 @@ privateAxios.interceptors.response.use(
         const status = error.response?.status
         const backendMessage = error.response?.data?.message
         const message = getErrorMessage(status, backendMessage)
-        const originalRequest = error.config
+        // const originalRequest = error.config  // Reserved for future use
 
         // Network error
         if (!error.response) {
