@@ -3,97 +3,64 @@
 // #TODO: Qualifications and experience
 // #TODO: Rating & reviews (Optional)
 
-import { AboutTab, ExperienceTab, ProfileSidebar, ReviewsTab } from '@/features/tutors'
-import type { TutorProfile, TutorReview } from '@/features/tutors/components/types'
+import { AboutTab, ExperienceTab, ProfileSidebar, ReviewsTab, AddReviewForm } from '@/features/tutors'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useParams } from 'react-router'
+import { useAuth } from '@/features/auth'
+import { useTutor, useTutorReviews } from '@/features/tutors/queries'
+import { Skeleton } from '@/components/ui/skeleton'
 
 const TutorProfilePage = () => {
     // Get tutor ID from URL params
     const { id: tutorId } = useParams<{ id: string }>()
+    const { isAuthenticated } = useAuth()
 
-    // #TODO: Fetch tutor details from backend
-    // const { data: tutor, isLoading, error } = useQuery({
-    //   queryKey: ['tutor', tutorId],
-    //   queryFn: () => fetchTutorById(tutorId),
-    // });
+    // Fetch tutor data
+    const { data: tutor, isLoading: tutorLoading, error: tutorError } = useTutor(tutorId || '')
 
-    // Mock tutor data for demonstration
-    const mockTutor: TutorProfile = {
-        _id: tutorId || '1',
-        name: 'Mohammad Rahman',
-        email: 'rahman@email.com',
-        phone: '+880 1700-000000',
-        title: 'Mathematics Specialist',
-        bio: 'I am a passionate mathematics teacher with over 5 years of experience teaching students from Class 6 to HSC level. I specialize in making complex mathematical concepts easy to understand through practical examples and interactive teaching methods. My students have consistently achieved excellent results in board examinations.',
-        location: 'Dhaka, Bangladesh',
-        subjects: ['Mathematics', 'Physics', 'Higher Mathematics', 'Calculus', 'Statistics'],
-        education: [
-            {
-                degree: 'MSc in Mathematics',
-                institution: 'University of Dhaka',
-                year: '2015 - 2017',
-            },
-            {
-                degree: 'BSc in Mathematics',
-                institution: 'University of Dhaka',
-                year: '2011 - 2015',
-            },
-        ],
-        certifications: [
-            {
-                name: 'Advanced Teaching Certification',
-                issuer: 'British Council',
-                year: '2020',
-            },
-        ],
-        experience: 5,
-        rating: 4.8,
-        reviewCount: 50,
-        studentsCount: 50,
-        classesCount: 100,
-        isVerified: true,
-        availability: {
-            weekdays: '4:00 PM - 9:00 PM',
-            weekends: '10:00 AM - 8:00 PM',
-        },
-    }
-
-    // Mock reviews data
-    const mockReviews: TutorReview[] = [
-        {
-            _id: '1',
-            student: { name: 'Anika Hossain' },
-            rating: 5,
-            comment: 'Excellent tutor! Very patient and explains concepts clearly. My grades improved significantly after taking classes.',
-            createdAt: '2025-01-10T10:00:00.000Z',
-        },
-        {
-            _id: '2',
-            student: { name: 'Rafiq Islam' },
-            rating: 5,
-            comment: 'Sir is very dedicated and makes sure students understand every topic before moving on. Highly recommended!',
-            createdAt: '2025-01-05T10:00:00.000Z',
-        },
-        {
-            _id: '3',
-            student: { name: 'Sadia Akter' },
-            rating: 4,
-            comment: 'Good teaching methods and always available to answer questions. Helped me a lot with calculus.',
-            createdAt: '2024-12-20T10:00:00.000Z',
-        },
-    ]
+    // Fetch reviews data
+    const { data: reviewsData, isLoading: reviewsLoading } = useTutorReviews(tutorId || '', 0, 10)
 
     const handleSendMessage = () => {
         // #TODO: Open messaging dialog or redirect to chat
     }
+
+    // Show loading state
+    if (tutorLoading) {
+        return (
+            <div className="container mx-auto px-4 py-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div className="lg:col-span-1">
+                        <Skeleton className="h-80 w-full rounded-lg" />
+                    </div>
+                    <div className="lg:col-span-2">
+                        <Skeleton className="h-96 w-full rounded-lg" />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    // Show error state
+    if (tutorError || !tutor) {
+        return (
+            <div className="container mx-auto px-4 py-8">
+                <div className="text-center">
+                    <h2 className="text-2xl font-bold text-red-600">Tutor not found</h2>
+                    <p className="text-muted-foreground mt-2">The tutor you're looking for doesn't exist.</p>
+                </div>
+            </div>
+        )
+    }
+
+    const reviews = reviewsData?.reviews || []
 
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Sidebar - Tutor Basic Info */}
                 <div className="lg:col-span-1">
-                    <ProfileSidebar tutor={mockTutor} onSendMessage={handleSendMessage} />
+                    <ProfileSidebar tutor={tutor} onSendMessage={handleSendMessage} />
                 </div>
 
                 {/* Main Content */}
@@ -107,17 +74,18 @@ const TutorProfilePage = () => {
 
                         {/* About Tab */}
                         <TabsContent value="about">
-                            <AboutTab tutor={mockTutor} />
+                            <AboutTab tutor={tutor} />
                         </TabsContent>
 
                         {/* Experience Tab */}
                         <TabsContent value="experience">
-                            <ExperienceTab tutor={mockTutor} />
+                            <ExperienceTab tutor={tutor} />
                         </TabsContent>
 
                         {/* Reviews Tab */}
-                        <TabsContent value="reviews">
-                            <ReviewsTab reviews={mockReviews} />
+                        <TabsContent value="reviews" className="space-y-6">
+                            <AddReviewForm tutorId={tutorId || ''} isAuthenticated={isAuthenticated} />
+                            <ReviewsTab reviews={reviews} isLoading={reviewsLoading} />
                         </TabsContent>
                     </Tabs>
                 </div>
