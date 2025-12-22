@@ -3,9 +3,11 @@ import { router } from './routes'
 import { AuthProvider } from './features/auth'
 import { Toaster } from './components'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { useTheme } from './hooks'
 const queryClient = new QueryClient()
 
 export const App = () => {
+    useTheme()
     return (
         <QueryClientProvider client={queryClient}>
             <AuthProvider>
