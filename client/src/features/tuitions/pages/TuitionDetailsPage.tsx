@@ -30,7 +30,7 @@ const TuitionDetailsPage = () => {
         schedule: '3 days per week (Saturday, Monday, Wednesday) - Evening (6:00 PM - 8:00 PM)',
         requirements: ['Experience teaching HSC Mathematics', 'Strong understanding of calculus and algebra', 'Patient and good communication skills', 'Flexible with timing'],
         status: 'approved',
-        postedAt: '2025-01-15T10:00:00.000Z', // Mock date - 2 days ago
+        postedAt: '2025-01-15T10:00:00.000Z', 
         student: {
             _id: 'student-1',
             name: 'John Doe',
