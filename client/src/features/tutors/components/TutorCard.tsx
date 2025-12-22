@@ -12,13 +12,15 @@ export interface Tutor {
     name: string
     email: string
     photo?: string
-    education: string
+    photoUrl?: string
+    education?: string
+    qualifications?: string
     subjects: string[]
-    location: string
-    experience: number // years
-    rating: number
-    reviewCount: number
-    isVerified: boolean
+    location?: string
+    experience?: number // years
+    rating?: number
+    reviewCount?: number
+    isVerified?: boolean
     bio?: string
     hourlyRate?: number
 }
@@ -30,7 +32,13 @@ interface TutorCardProps {
 const TutorCard = ({ tutor }: TutorCardProps) => {
     // Get initials for avatar fallback
     const getInitials = (name: string) => {
-        return name.split(' ').map((n) => n[0]).join('').toUpperCase().slice(0, 2)}
+        return name
+            .split(' ')
+            .map((n) => n[0])
+            .join('')
+            .toUpperCase()
+            .slice(0, 2)
+    }
 
     // Format experience text
     const getExperienceText = (years: number) => {
@@ -50,32 +58,40 @@ const TutorCard = ({ tutor }: TutorCardProps) => {
                 <CardDescription>
                     <div className="flex items-center justify-center gap-1">
                         <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                        <span className="font-medium">{tutor.rating.toFixed(1)}</span>
-                        <span className="text-muted-foreground">({tutor.reviewCount} reviews)</span>
+                        <span className="font-medium">{(tutor.rating || 0).toFixed(1)}</span>
+                        <span className="text-muted-foreground">({tutor.reviewCount || 0} reviews)</span>
                     </div>
                 </CardDescription>
             </CardHeader>
 
             <CardContent className="space-y-3">
-                <div className="flex items-center text-sm text-muted-foreground">
-                    <GraduationCap className="mr-2 h-4 w-4 shrink-0" />
-                    <span className="truncate">{tutor.education}</span>
-                </div>
+                {(tutor.education || tutor.qualifications) && (
+                    <div className="flex items-center text-sm text-muted-foreground">
+                        <GraduationCap className="mr-2 h-4 w-4 shrink-0" />
+                        <span className="truncate">{tutor.education || tutor.qualifications}</span>
+                    </div>
+                )}
 
-                <div className="flex items-center text-sm text-muted-foreground">
-                    <BookOpen className="mr-2 h-4 w-4 shrink-0" />
-                    <span className="truncate">{tutor.subjects.join(', ')}</span>
-                </div>
+                {tutor.subjects && tutor.subjects.length > 0 && (
+                    <div className="flex items-center text-sm text-muted-foreground">
+                        <BookOpen className="mr-2 h-4 w-4 shrink-0" />
+                        <span className="truncate">{tutor.subjects.join(', ')}</span>
+                    </div>
+                )}
 
-                <div className="flex items-center text-sm text-muted-foreground">
-                    <MapPin className="mr-2 h-4 w-4 shrink-0" />
-                    <span>{tutor.location}</span>
-                </div>
+                {tutor.location && (
+                    <div className="flex items-center text-sm text-muted-foreground">
+                        <MapPin className="mr-2 h-4 w-4 shrink-0" />
+                        <span>{tutor.location}</span>
+                    </div>
+                )}
 
                 <div className="flex flex-wrap gap-1 mt-2">
-                    <Badge variant="outline" className="text-xs">
-                        {getExperienceText(tutor.experience)}
-                    </Badge>
+                    {tutor.experience && (
+                        <Badge variant="outline" className="text-xs">
+                            {getExperienceText(tutor.experience)}
+                        </Badge>
+                    )}
                     {tutor.isVerified && (
                         <Badge variant="secondary" className="text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
                             Verified
