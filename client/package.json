@@ -3,10 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Mehedi2362.github.io/eTuitionBD/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && node .scripts/analyze-bundle/index.js",
-    "build:only": "tsc -b && vite build",
+    "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -15,7 +15,9 @@
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist .docs",
     "clean:all": "rm -rf dist .docs node_modules pnpm-lock.yaml",
-    "scripts": "node .scripts/script.js"
+    "scripts": "node .scripts/script.js",
+    "deploy": "pnpm build && gh-pages -d dist",
+    "deploy:github": "pnpm run deploy"
   },
   "dependencies": {
     "@etuitionbd/shared": "workspace:*",
@@ -81,6 +83,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
+    "gh-pages": "^6.3.0",
     "globals": "^16.5.0",
     "prettier": "^3.7.2",
     "tailwindcss": "^4.1.17",
