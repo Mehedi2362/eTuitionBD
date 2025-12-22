@@ -3,10 +3,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from '@/components/ui/empty'
 import { Skeleton } from '@/components/ui/skeleton'
 import { MessageSquareOff, Star } from 'lucide-react'
-import type { TutorReview } from './types'
+import type { TutorReviewResponse } from '@etuitionbd/shared/reviews'
 
 interface ReviewsTabProps {
-    reviews: TutorReview[]
+    reviews: TutorReviewResponse[]
     isLoading?: boolean
 }
 

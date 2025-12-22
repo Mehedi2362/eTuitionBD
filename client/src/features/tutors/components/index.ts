@@ -10,6 +10,7 @@ export { default as AboutTab } from './AboutTab'
 export { default as ExperienceTab } from './ExperienceTab'
 export { default as ProfileSidebar } from './ProfileSidebar'
 export { default as ReviewsTab } from './ReviewsTab'
+export { default as AddReviewForm } from './AddReviewForm'
 
 // Types
 export type * from './types'
