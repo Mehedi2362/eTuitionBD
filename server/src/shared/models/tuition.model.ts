@@ -15,9 +15,7 @@ export class TuitionModel {
     // Create new tuition
     static async create(data: Omit<ITuition, 'status' | 'applicationsCount' | 'createdAt' | 'updatedAt'> & Partial<Pick<ITuition, 'status' | 'applicationsCount'>>): Promise<WithId<ITuition>> {
         const newTuition: ITuition = {
-            studentId: data.studentId,
-            studentEmail: data.studentEmail,
-            studentName: data.studentName,
+            student: data.student,
             subject: data.subject,
             class: data.class,
             location: data.location,
