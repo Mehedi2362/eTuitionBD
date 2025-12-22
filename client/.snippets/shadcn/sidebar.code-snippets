@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Sidebar (alias)": {
+        "prefix": "i;sidebar",
+        "body": ["import {", "    Sidebar,", "    SidebarContent as Content,", "    SidebarFooter as Footer,", "    SidebarGroup as Group,", "    SidebarGroupContent as GroupContent,", "    SidebarGroupLabel as GroupLabel,", "    SidebarHeader as Header,", "    SidebarMenu as Menu,", "    SidebarMenuButton as MenuButton,", "    SidebarMenuItem as MenuItem,", "    SidebarProvider as Provider,", "    SidebarTrigger as Trigger,", "} from '@/components/ui/sidebar'"],
+        "description": "Import Sidebar components with aliases",
+    },
+    "Import Sidebar (full)": {
+        "prefix": "i;fsidebar",
+        "body": ["import {", "    Sidebar,", "    SidebarContent,", "    SidebarFooter,", "    SidebarGroup,", "    SidebarGroupAction,", "    SidebarGroupContent,", "    SidebarGroupLabel,", "    SidebarHeader,", "    SidebarInset,", "    SidebarMenu,", "    SidebarMenuAction,", "    SidebarMenuBadge,", "    SidebarMenuButton,", "    SidebarMenuItem,", "    SidebarMenuSub,", "    SidebarMenuSubButton,", "    SidebarMenuSubItem,", "    SidebarProvider,", "    SidebarRail,", "    SidebarTrigger,", "    useSidebar,", "} from '@/components/ui/sidebar'"],
+        "description": "Import Sidebar components with full names",
+    },
+    "Import useSidebar": {
+        "prefix": "i;usesidebar",
+        "body": ["import { useSidebar } from '@/components/ui/sidebar'"],
+        "description": "Import useSidebar hook",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Sidebar Provider (alias)": {
+        "prefix": ";sidebarprovider",
+        "body": ["<Provider>", "    <Sidebar>", "        <Header>", "            ${1:Header Content}", "        </Header>", "        <Content>", "            <Group>", "                <GroupLabel>${2:Menu}</GroupLabel>", "                <GroupContent>", "                    <Menu>", "                        <MenuItem>", "                            <MenuButton asChild>", "                                <a href=\"${3:#}\">${4:Item}</a>", "                            </MenuButton>", "                        </MenuItem>", "                    </Menu>", "                </GroupContent>", "            </Group>", "        </Content>", "        <Footer>", "            ${5:Footer Content}", "        </Footer>", "    </Sidebar>", "    <main>", "        <Trigger />", "        ${6:Main Content}", "    </main>", "</Provider>"],
+        "description": "Sidebar with Provider (aliased)",
+    },
+    "Sidebar Menu Item (alias)": {
+        "prefix": ";sidebarmenuitem",
+        "body": ["<MenuItem>", "    <MenuButton asChild>", "        <a href=\"${1:#}\">${2:Item}</a>", "    </MenuButton>", "</MenuItem>"],
+        "description": "Sidebar menu item (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Sidebar Provider (full)": {
+        "prefix": ";fsidebarprovider",
+        "body": ["<SidebarProvider>", "    <Sidebar>", "        <SidebarHeader>", "            ${1:Header Content}", "        </SidebarHeader>", "        <SidebarContent>", "            <SidebarGroup>", "                <SidebarGroupLabel>${2:Menu}</SidebarGroupLabel>", "                <SidebarGroupContent>", "                    <SidebarMenu>", "                        <SidebarMenuItem>", "                            <SidebarMenuButton asChild>", "                                <a href=\"${3:#}\">${4:Item}</a>", "                            </SidebarMenuButton>", "                        </SidebarMenuItem>", "                    </SidebarMenu>", "                </SidebarGroupContent>", "            </SidebarGroup>", "        </SidebarContent>", "        <SidebarFooter>", "            ${5:Footer Content}", "        </SidebarFooter>", "    </Sidebar>", "    <SidebarInset>", "        <SidebarTrigger />", "        ${6:Main Content}", "    </SidebarInset>", "</SidebarProvider>"],
+        "description": "Sidebar with Provider (full)",
+    },
+    "Sidebar Menu Item (full)": {
+        "prefix": ";fsidebarmenuitem",
+        "body": ["<SidebarMenuItem>", "    <SidebarMenuButton asChild>", "        <a href=\"${1:#}\">${2:Item}</a>", "    </SidebarMenuButton>", "</SidebarMenuItem>"],
+        "description": "Sidebar menu item (full)",
+    },
+    "Sidebar Submenu (full)": {
+        "prefix": ";fsidebarsubmenu",
+        "body": ["<SidebarMenuSub>", "    <SidebarMenuSubItem>", "        <SidebarMenuSubButton asChild>", "            <a href=\"${1:#}\">${2:Sub Item}</a>", "        </SidebarMenuSubButton>", "    </SidebarMenuSubItem>", "</SidebarMenuSub>"],
+        "description": "Sidebar submenu (full)",
+    },
+}

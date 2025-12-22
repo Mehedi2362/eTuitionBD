@@ -1,0 +1,34 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Kbd": {
+        "prefix": "i;kbd",
+        "body": ["import { Kbd, KbdGroup } from '@/components/ui/kbd'"],
+        "description": "Import Kbd components",
+    },
+    "Import Kbd (full)": {
+        "prefix": "i;fkbd",
+        "body": ["import { Kbd, KbdGroup } from '@/components/ui/kbd'"],
+        "description": "Import Kbd components (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Kbd": {
+        "prefix": ";kbd",
+        "body": ["<Kbd>${1:⌘K}</Kbd>"],
+        "description": "Keyboard key indicator",
+    },
+    "Kbd Group": {
+        "prefix": ";kbdg",
+        "body": ["<KbdGroup>", "    <Kbd>${1:⌘}</Kbd>", "    <Kbd>${2:K}</Kbd>", "</KbdGroup>"],
+        "description": "Keyboard key group",
+    },
+    "Kbd Shortcut": {
+        "prefix": ";kbds",
+        "body": ["<Kbd>${1|⌘,⌃,⇧,⌥|}${2:K}</Kbd>"],
+        "description": "Keyboard shortcut with modifier",
+    },
+}

@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Switch": {
+        "prefix": "i;switch",
+        "body": ["import { Switch } from '@/components/ui/switch'"],
+        "description": "Import Switch component",
+    },
+    "Import Switch (full)": {
+        "prefix": "i;fswitch",
+        "body": ["import { Switch } from '@/components/ui/switch'"],
+        "description": "Import Switch component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Switch (alias)": {
+        "prefix": ";switch",
+        "body": ["<Switch", "    id=\"${1:switch-id}\"", "    checked={${2:checked}}", "    onCheckedChange={${3:setChecked}}", "/>"],
+        "description": "Switch component",
+    },
+    "Switch Basic (alias)": {
+        "prefix": ";switchb",
+        "body": ["<Switch id=\"${1:switch}\" />"],
+        "description": "Basic Switch",
+    },
+    "Switch with Label (alias)": {
+        "prefix": ";switchl",
+        "body": ["<div className=\"flex items-center space-x-2\">", "    <Switch id=\"${1:switch-id}\" />", "    <Label htmlFor=\"${1:switch-id}\">${2:Label}</Label>", "</div>"],
+        "description": "Switch with Label",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Switch (full)": {
+        "prefix": ";fswitch",
+        "body": ["<Switch", "    id=\"${1:switch-id}\"", "    checked={${2:checked}}", "    onCheckedChange={${3:setChecked}}", "/>"],
+        "description": "Switch component (full)",
+    },
+    "Switch Basic (full)": {
+        "prefix": ";fswitchb",
+        "body": ["<Switch id=\"${1:switch}\" />"],
+        "description": "Basic Switch (full)",
+    },
+    "Switch with Label (full)": {
+        "prefix": ";fswitchl",
+        "body": ["<div className=\"flex items-center space-x-2\">", "    <Switch id=\"${1:switch-id}\" />", "    <Label htmlFor=\"${1:switch-id}\">${2:Label}</Label>", "</div>"],
+        "description": "Switch with Label (full)",
+    },
+}

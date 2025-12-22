@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import HoverCard (alias)": {
+        "prefix": "i;hovercard",
+        "body": ["import {", "    HoverCard,", "    HoverCardTrigger as Trigger,", "    HoverCardContent as Content,", "} from '@/components/ui/hover-card'"],
+        "description": "Import HoverCard components with aliases",
+    },
+    "Import HoverCard (full)": {
+        "prefix": "i;fhovercard",
+        "body": ["import {", "    HoverCard,", "    HoverCardTrigger,", "    HoverCardContent,", "} from '@/components/ui/hover-card'"],
+        "description": "Import HoverCard components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "HoverCard (alias)": {
+        "prefix": ";hovercard",
+        "body": ["<HoverCard>", "    <Trigger asChild>", "        <Button variant=\"link\">${1:Hover me}</Button>", "    </Trigger>", "    <Content className=\"${2:w-80}\">", "        <div className=\"flex justify-between space-x-4\">", "            ${3:Content here}", "        </div>", "    </Content>", "</HoverCard>"],
+        "description": "HoverCard with aliased JSX",
+    },
+    "HoverCard Basic (alias)": {
+        "prefix": ";hovercardb",
+        "body": ["<HoverCard>", "    <Trigger>${1:Hover}</Trigger>", "    <Content>$0</Content>", "</HoverCard>"],
+        "description": "Basic HoverCard with aliased JSX",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "HoverCard (full)": {
+        "prefix": ";fhovercard",
+        "body": ["<HoverCard>", "    <HoverCardTrigger asChild>", "        <Button variant=\"link\">${1:Hover me}</Button>", "    </HoverCardTrigger>", "    <HoverCardContent className=\"${2:w-80}\">", "        <div className=\"flex justify-between space-x-4\">", "            ${3:Content here}", "        </div>", "    </HoverCardContent>", "</HoverCard>"],
+        "description": "HoverCard with full component names",
+    },
+    "HoverCard Basic (full)": {
+        "prefix": ";fhovercardb",
+        "body": ["<HoverCard>", "    <HoverCardTrigger>${1:Hover}</HoverCardTrigger>", "    <HoverCardContent>$0</HoverCardContent>", "</HoverCard>"],
+        "description": "Basic HoverCard with full names",
+    },
+}

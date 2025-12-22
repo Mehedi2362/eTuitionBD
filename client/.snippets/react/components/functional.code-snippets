@@ -1,0 +1,49 @@
+{
+    "React Functional Component": {
+        "prefix": ";rfc",
+        "body": [
+            "const ${1:${TM_FILENAME_BASE}} = () => {",
+            "    return (",
+            "        <div>",
+            "            $0",
+            "        </div>",
+            "    )",
+            "}",
+            "",
+            "export default ${1:${TM_FILENAME_BASE}}"
+        ],
+        "description": "React Functional Component"
+    },
+    "React FC with Props": {
+        "prefix": ";rfcp",
+        "body": [
+            "interface ${1:${TM_FILENAME_BASE}}Props {",
+            "    $2",
+            "}",
+            "",
+            "const ${1:${TM_FILENAME_BASE}} = ({ $3 }: ${1:${TM_FILENAME_BASE}}Props) => {",
+            "    return (",
+            "        <div>",
+            "            $0",
+            "        </div>",
+            "    )",
+            "}",
+            "",
+            "export default ${1:${TM_FILENAME_BASE}}"
+        ],
+        "description": "React Functional Component with Props"
+    },
+    "React Arrow FC": {
+        "prefix": ";rafc",
+        "body": [
+            "export const ${1:${TM_FILENAME_BASE}} = () => {",
+            "    return (",
+            "        <div>",
+            "            $0",
+            "        </div>",
+            "    )",
+            "}"
+        ],
+        "description": "React Arrow Function Component (named export)"
+    }
+}

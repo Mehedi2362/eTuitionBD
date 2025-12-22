@@ -1,0 +1,58 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Chart (alias)": {
+        "prefix": "i;chart",
+        "body": ["import {", "    ChartContainer as Container,", "    ChartTooltip as Tooltip,", "    ChartTooltipContent as TooltipContent,", "    ChartLegend as Legend,", "    ChartLegendContent as LegendContent,", "    type ChartConfig,", "} from '@/components/ui/chart'"],
+        "description": "Import Chart components with aliases",
+    },
+    "Import Chart (full)": {
+        "prefix": "i;fchart",
+        "body": ["import {", "    ChartContainer,", "    ChartTooltip,", "    ChartTooltipContent,", "    ChartLegend,", "    ChartLegendContent,", "    type ChartConfig,", "} from '@/components/ui/chart'"],
+        "description": "Import Chart components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Chart Config": {
+        "prefix": ";chartconfig",
+        "body": ["const chartConfig = {", "    ${1:desktop}: {", "        label: '${2:Desktop}',", "        color: 'hsl(var(--chart-1))',", "    },", "    ${3:mobile}: {", "        label: '${4:Mobile}',", "        color: 'hsl(var(--chart-2))',", "    },", "} satisfies ChartConfig"],
+        "description": "Chart configuration object",
+    },
+    "Chart Container (alias)": {
+        "prefix": ";chart",
+        "body": ["<Container config={${1:chartConfig}} className=\"${2:min-h-[200px] w-full}\">", "    ${3:/* Recharts components */}", "</Container>"],
+        "description": "Chart container (aliased)",
+    },
+    "Chart Bar (alias)": {
+        "prefix": ";chartbar",
+        "body": ["<Container config={${1:chartConfig}}>", "    <BarChart data={${2:data}}>", "        <CartesianGrid strokeDasharray=\"3 3\" />", "        <XAxis dataKey=\"${3:name}\" />", "        <YAxis />", "        <Tooltip content={<TooltipContent />} />", "        <Bar dataKey=\"${4:value}\" fill=\"var(--color-${4:value})\" radius={4} />", "    </BarChart>", "</Container>"],
+        "description": "Bar chart (aliased)",
+    },
+    "Chart Line (alias)": {
+        "prefix": ";chartline",
+        "body": ["<Container config={${1:chartConfig}}>", "    <LineChart data={${2:data}}>", "        <CartesianGrid strokeDasharray=\"3 3\" />", "        <XAxis dataKey=\"${3:name}\" />", "        <YAxis />", "        <Tooltip content={<TooltipContent />} />", "        <Line type=\"monotone\" dataKey=\"${4:value}\" stroke=\"var(--color-${4:value})\" />", "    </LineChart>", "</Container>"],
+        "description": "Line chart (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Chart Container (full)": {
+        "prefix": ";fchart",
+        "body": ["<ChartContainer config={${1:chartConfig}} className=\"${2:min-h-[200px] w-full}\">", "    ${3:/* Recharts components */}", "</ChartContainer>"],
+        "description": "Chart container (full)",
+    },
+    "Chart Bar (full)": {
+        "prefix": ";fchartbar",
+        "body": ["<ChartContainer config={${1:chartConfig}}>", "    <BarChart data={${2:data}}>", "        <CartesianGrid strokeDasharray=\"3 3\" />", "        <XAxis dataKey=\"${3:name}\" />", "        <YAxis />", "        <ChartTooltip content={<ChartTooltipContent />} />", "        <Bar dataKey=\"${4:value}\" fill=\"var(--color-${4:value})\" radius={4} />", "    </BarChart>", "</ChartContainer>"],
+        "description": "Bar chart (full)",
+    },
+    "Chart Line (full)": {
+        "prefix": ";fchartline",
+        "body": ["<ChartContainer config={${1:chartConfig}}>", "    <LineChart data={${2:data}}>", "        <CartesianGrid strokeDasharray=\"3 3\" />", "        <XAxis dataKey=\"${3:name}\" />", "        <YAxis />", "        <ChartTooltip content={<ChartTooltipContent />} />", "        <Line type=\"monotone\" dataKey=\"${4:value}\" stroke=\"var(--color-${4:value})\" />", "    </LineChart>", "</ChartContainer>"],
+        "description": "Line chart (full)",
+    },
+}

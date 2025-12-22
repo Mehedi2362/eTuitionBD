@@ -1,0 +1,27 @@
+{
+    "Import Spinner": {
+        "prefix": "i;spinner",
+        "body": ["import { Spinner } from \"@/components/ui/spinner\""],
+        "description": "Import Spinner component",
+    },
+    "Spinner": {
+        "prefix": ";spinner",
+        "body": ["<Spinner className=\"${1:size-4}\" />$0"],
+        "description": "Spinner component",
+    },
+    "Spinner (basic)": {
+        "prefix": ";spinnerb",
+        "body": ["<Spinner />$0"],
+        "description": "Basic Spinner",
+    },
+    "Spinner with Text": {
+        "prefix": ";spinnertext",
+        "body": ["<div className=\"flex items-center gap-2\">", "  <Spinner />", "  <span>${1:Loading...}</span>", "</div>$0"],
+        "description": "Spinner with loading text",
+    },
+    "Button with Spinner": {
+        "prefix": ";btnspinner",
+        "body": ["<Button disabled={${1:isLoading}}>", "  {${1:isLoading} && <Spinner className=\"mr-2\" />}", "  ${2:Submit}", "</Button>$0"],
+        "description": "Button with loading spinner",
+    },
+}

@@ -1,0 +1,27 @@
+{
+    "useEffect": {
+        "prefix": ";ue",
+        "body": ["import { useEffect } from 'react'", "", "useEffect(() => {", "    $0", "}, [${1:deps}])"],
+        "description": "useEffect hook",
+    },
+    "useEffect Inline": {
+        "prefix": ";uei",
+        "body": ["useEffect(() => {", "    $0", "}, [${1:deps}])"],
+        "description": "useEffect inline (without import)",
+    },
+    "useEffect Cleanup": {
+        "prefix": ";uec",
+        "body": ["useEffect(() => {", "    $1", "", "    return () => {", "        $0", "    }", "}, [${2:deps}])"],
+        "description": "useEffect with cleanup",
+    },
+    "useEffect Fetch": {
+        "prefix": ";uef",
+        "body": ["useEffect(() => {", "    const fetchData = async () => {", "        try {", "            const response = await fetch('${1:url}')", "            const data = await response.json()", "            $0", "        } catch (error) {", "            console.error(error)", "        }", "    }", "", "    fetchData()", "}, [])"],
+        "description": "useEffect with fetch",
+    },
+    "useEffect Mount": {
+        "prefix": ";uem",
+        "body": ["useEffect(() => {", "    $0", "}, [])"],
+        "description": "useEffect on mount",
+    },
+}

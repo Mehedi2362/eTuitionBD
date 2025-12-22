@@ -1,0 +1,67 @@
+{
+    "Typography H1": {
+        "prefix": ";typh1",
+        "body": ["<h1 className=\"scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl\">", "  ${1:Heading 1}", "</h1>$0"],
+        "description": "Typography H1",
+    },
+    "Typography H2": {
+        "prefix": ";typh2",
+        "body": ["<h2 className=\"scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0\">", "  ${1:Heading 2}", "</h2>$0"],
+        "description": "Typography H2",
+    },
+    "Typography H3": {
+        "prefix": ";typh3",
+        "body": ["<h3 className=\"scroll-m-20 text-2xl font-semibold tracking-tight\">", "  ${1:Heading 3}", "</h3>$0"],
+        "description": "Typography H3",
+    },
+    "Typography H4": {
+        "prefix": ";typh4",
+        "body": ["<h4 className=\"scroll-m-20 text-xl font-semibold tracking-tight\">", "  ${1:Heading 4}", "</h4>$0"],
+        "description": "Typography H4",
+    },
+    "Typography Paragraph": {
+        "prefix": ";typp",
+        "body": ["<p className=\"leading-7 [&:not(:first-child)]:mt-6\">", "  ${1:Paragraph text}", "</p>$0"],
+        "description": "Typography paragraph",
+    },
+    "Typography Blockquote": {
+        "prefix": ";typblockquote",
+        "body": ["<blockquote className=\"mt-6 border-l-2 pl-6 italic\">", "  ${1:Quote text}", "</blockquote>$0"],
+        "description": "Typography blockquote",
+    },
+    "Typography List": {
+        "prefix": ";typlist",
+        "body": ["<ul className=\"my-6 ml-6 list-disc [&>li]:mt-2\">", "  <li>${1:Item 1}</li>", "  <li>${2:Item 2}</li>", "  <li>${3:Item 3}</li>", "</ul>$0"],
+        "description": "Typography unordered list",
+    },
+    "Typography Inline Code": {
+        "prefix": ";typcode",
+        "body": ["<code className=\"relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold\">", "  ${1:code}", "</code>$0"],
+        "description": "Typography inline code",
+    },
+    "Typography Lead": {
+        "prefix": ";typlead",
+        "body": ["<p className=\"text-xl text-muted-foreground\">", "  ${1:Lead paragraph text}", "</p>$0"],
+        "description": "Typography lead paragraph",
+    },
+    "Typography Large": {
+        "prefix": ";typlarge",
+        "body": ["<div className=\"text-lg font-semibold\">${1:Large text}</div>$0"],
+        "description": "Typography large text",
+    },
+    "Typography Small": {
+        "prefix": ";typsmall",
+        "body": ["<small className=\"text-sm font-medium leading-none\">${1:Small text}</small>$0"],
+        "description": "Typography small text",
+    },
+    "Typography Muted": {
+        "prefix": ";typmuted",
+        "body": ["<p className=\"text-sm text-muted-foreground\">${1:Muted text}</p>$0"],
+        "description": "Typography muted text",
+    },
+    "Typography Table": {
+        "prefix": ";typtable",
+        "body": ["<div className=\"my-6 w-full overflow-y-auto\">", "  <table className=\"w-full\">", "    <thead>", "      <tr className=\"m-0 border-t p-0 even:bg-muted\">", "        <th className=\"border px-4 py-2 text-left font-bold\">${1:Header 1}</th>", "        <th className=\"border px-4 py-2 text-left font-bold\">${2:Header 2}</th>", "      </tr>", "    </thead>", "    <tbody>", "      <tr className=\"m-0 border-t p-0 even:bg-muted\">", "        <td className=\"border px-4 py-2 text-left\">${3:Cell 1}</td>", "        <td className=\"border px-4 py-2 text-left\">${4:Cell 2}</td>", "      </tr>", "    </tbody>", "  </table>", "</div>$0"],
+        "description": "Typography table",
+    },
+}

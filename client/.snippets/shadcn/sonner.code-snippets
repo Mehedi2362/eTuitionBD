@@ -1,0 +1,68 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Toaster (Sonner)": {
+        "prefix": "i;sonner",
+        "body": ["import { Toaster } from '@/components/ui/sonner'"],
+        "description": "Import Toaster component (Sonner)",
+    },
+    "Import toast function": {
+        "prefix": "i;toast",
+        "body": ["import { toast } from 'sonner'"],
+        "description": "Import toast function from sonner",
+    },
+    "Import Sonner (full)": {
+        "prefix": "i;fsonner",
+        "body": ["import { Toaster } from '@/components/ui/sonner'", "import { toast } from 'sonner'"],
+        "description": "Import Toaster and toast from sonner",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Toaster (alias)": {
+        "prefix": ";sonner",
+        "body": ["<Toaster />"],
+        "description": "Toaster component (add to layout)",
+    },
+    "Toast (alias)": {
+        "prefix": ";toast",
+        "body": ["toast${1|(.success(.error(.warning(.info(.loading(|}('${2:Message}')"],
+        "description": "Toast notification",
+    },
+    "Toast with title (alias)": {
+        "prefix": ";toastt",
+        "body": ["toast${1|(.success(.error(.warning(.info(|}('${2:Title}', {", "    description: '${3:Description}',", "})"],
+        "description": "Toast with title and description",
+    },
+    "Toast with action (alias)": {
+        "prefix": ";toasta",
+        "body": ["toast('${1:Event has been created}', {", "    description: '${2:Sunday, December 03, 2023 at 9:00 AM}',", "    action: {", "        label: '${3:Undo}',", "        onClick: () => ${4:console.log('Undo')},", "    },", "})"],
+        "description": "Toast with action button",
+    },
+    "Toast promise (alias)": {
+        "prefix": ";toastp",
+        "body": ["toast.promise(${1:promise}, {", "    loading: '${2:Loading...}',", "    success: '${3:Success!}',", "    error: '${4:Error}',", "})"],
+        "description": "Toast promise",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Toaster (full)": {
+        "prefix": ";fsonner",
+        "body": ["<Toaster />"],
+        "description": "Toaster component (full)",
+    },
+    "Toast (full)": {
+        "prefix": ";ftoast",
+        "body": ["toast${1|(.success(.error(.warning(.info(.loading(|}('${2:Message}')"],
+        "description": "Toast notification (full)",
+    },
+    "Toast with title (full)": {
+        "prefix": ";ftoastt",
+        "body": ["toast${1|(.success(.error(.warning(.info(|}('${2:Title}', {", "    description: '${3:Description}',", "})"],
+        "description": "Toast with title and description (full)",
+    },
+}

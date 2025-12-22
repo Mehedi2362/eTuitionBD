@@ -1,0 +1,24 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import AspectRatio": {
+        "prefix": ["i;aspect", "i;faspect"],
+        "body": "import { AspectRatio } from '@/components/ui/aspect-ratio'",
+        "description": "Import AspectRatio",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE
+    // ─────────────────────────────────────────────────────────────────────────────
+    "AspectRatio": {
+        "prefix": [";aspect", ";faspect"],
+        "body": ["<AspectRatio ratio={${1:16 / 9}} className=\"${2:bg-muted rounded-lg}\">", "    <img", "        src=\"${3:url}\"", "        alt=\"${4:alt}\"", "        className=\"h-full w-full rounded-lg object-cover\"", "    />", "</AspectRatio>"],
+        "description": "AspectRatio with image",
+    },
+    "AspectRatio Basic": {
+        "prefix": [";aspectb", ";faspectb"],
+        "body": ["<AspectRatio ratio={${1:16 / 9}}>", "    $0", "</AspectRatio>"],
+        "description": "Basic AspectRatio",
+    },
+}

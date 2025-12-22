@@ -1,0 +1,17 @@
+{
+    "useRef": {
+        "prefix": ";ur",
+        "body": ["import { useRef } from 'react'", "", "const ${1:ref} = useRef<${2:HTMLDivElement}>(null)"],
+        "description": "useRef hook",
+    },
+    "useRef Inline": {
+        "prefix": ";uri",
+        "body": ["const ${1:ref} = useRef<${2:HTMLDivElement}>(null)"],
+        "description": "useRef inline (without import)",
+    },
+    "useRef Value": {
+        "prefix": ";urv",
+        "body": ["const ${1:ref} = useRef<${2:number}>(${3:0})"],
+        "description": "useRef for mutable value",
+    },
+}

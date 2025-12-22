@@ -1,0 +1,27 @@
+{
+    "Interface": {
+        "prefix": ";int",
+        "body": ["interface ${1:Name} {", "    $0", "}"],
+        "description": "TypeScript Interface"
+    },
+    "Type": {
+        "prefix": ";typ",
+        "body": ["type ${1:Name} = {", "    $0", "}"],
+        "description": "TypeScript Type"
+    },
+    "Type Alias": {
+        "prefix": ";typa",
+        "body": ["type ${1:Name} = ${2:string}"],
+        "description": "TypeScript Type Alias"
+    },
+    "Enum": {
+        "prefix": ";enum",
+        "body": ["enum ${1:Name} {", "    ${2:VALUE} = '${2:VALUE}',", "    $0", "}"],
+        "description": "TypeScript Enum"
+    },
+    "Generic Type": {
+        "prefix": ";typg",
+        "body": ["type ${1:Name}<T> = {", "    data: T", "    $0", "}"],
+        "description": "TypeScript Generic Type"
+    }
+}

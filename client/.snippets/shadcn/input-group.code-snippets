@@ -1,0 +1,78 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import InputGroup (alias)": {
+        "prefix": "i;inputgroup",
+        "body": ["import {", "    InputGroup,", "    InputGroupAddon as Addon,", "    InputGroupButton as Button,", "    InputGroupText as Text,", "    InputGroupInput as Input,", "    InputGroupTextarea as Textarea,", "} from '@/components/ui/input-group'"],
+        "description": "Import InputGroup components with aliases",
+    },
+    "Import InputGroup (full)": {
+        "prefix": "i;finputgroup",
+        "body": ["import {", "    InputGroup,", "    InputGroupAddon,", "    InputGroupButton,", "    InputGroupText,", "    InputGroupInput,", "    InputGroupTextarea,", "} from '@/components/ui/input-group'"],
+        "description": "Import InputGroup components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "InputGroup (alias)": {
+        "prefix": ";inputgroup",
+        "body": ["<InputGroup>", "    <Addon align=\"${1|inline-start,inline-end,block-start,block-end|}\">", "        ${2:<Icon />}", "    </Addon>", "    <Input placeholder=\"${3:Placeholder}\" />", "    <Addon align=\"inline-end\">", "        ${4:<Kbd>/</Kbd>}", "    </Addon>", "</InputGroup>$0"],
+        "description": "InputGroup with aliased JSX",
+    },
+    "InputGroup Basic (alias)": {
+        "prefix": ";inputgroupb",
+        "body": ["<InputGroup>", "    <Addon>", "        ${1:<Icon />}", "    </Addon>", "    <Input placeholder=\"${2:Placeholder}\" />", "</InputGroup>$0"],
+        "description": "Basic InputGroup (aliased)",
+    },
+    "InputGroup with Button (alias)": {
+        "prefix": ";inputgroupbtn",
+        "body": ["<InputGroup>", "    <Input placeholder=\"${1:Search...}\" />", "    <Addon align=\"inline-end\">", "        <Button>", "            ${2:<SearchIcon />}", "        </Button>", "    </Addon>", "</InputGroup>$0"],
+        "description": "InputGroup with button (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "InputGroup (full)": {
+        "prefix": ";finputgroup",
+        "body": ["<InputGroup>", "    <InputGroupAddon align=\"${1|inline-start,inline-end,block-start,block-end|}\">", "        ${2:<Icon />}", "    </InputGroupAddon>", "    <InputGroupInput placeholder=\"${3:Placeholder}\" />", "    <InputGroupAddon align=\"inline-end\">", "        ${4:<Kbd>/</Kbd>}", "    </InputGroupAddon>", "</InputGroup>$0"],
+        "description": "InputGroup with full component names",
+    },
+    "InputGroup Basic (full)": {
+        "prefix": ";finputgroupb",
+        "body": ["<InputGroup>", "    <InputGroupAddon>", "        ${1:<Icon />}", "    </InputGroupAddon>", "    <InputGroupInput placeholder=\"${2:Placeholder}\" />", "</InputGroup>$0"],
+        "description": "Basic InputGroup (full)",
+    },
+    "InputGroup with Button (full)": {
+        "prefix": ";finputgroupbtn",
+        "body": ["<InputGroup>", "    <InputGroupInput placeholder=\"${1:Search...}\" />", "    <InputGroupAddon align=\"inline-end\">", "        <InputGroupButton>", "            ${2:<SearchIcon />}", "        </InputGroupButton>", "    </InputGroupAddon>", "</InputGroup>$0"],
+        "description": "InputGroup with button (full)",
+    },
+    "InputGroupAddon (full)": {
+        "prefix": ";finputgroupaddon",
+        "body": ["<InputGroupAddon align=\"${1|inline-start,inline-end,block-start,block-end|}\">", "    ${0}", "</InputGroupAddon>"],
+        "description": "InputGroupAddon (full)",
+    },
+    "InputGroupInput (full)": {
+        "prefix": ";finputgroupinput",
+        "body": ["<InputGroupInput placeholder=\"${1:Placeholder}\" />$0"],
+        "description": "InputGroupInput (full)",
+    },
+    "InputGroupButton (full)": {
+        "prefix": ";finputgroupbutton",
+        "body": ["<InputGroupButton>${0}</InputGroupButton>"],
+        "description": "InputGroupButton (full)",
+    },
+    "InputGroupText (full)": {
+        "prefix": ";finputgrouptext",
+        "body": ["<InputGroupText>${1:Text}</InputGroupText>$0"],
+        "description": "InputGroupText (full)",
+    },
+    "InputGroupTextarea (full)": {
+        "prefix": ";finputgrouptextarea",
+        "body": ["<InputGroupTextarea placeholder=\"${1:Placeholder}\" />$0"],
+        "description": "InputGroupTextarea (full)",
+    },
+}

@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Alert (alias)": {
+        "prefix": "i;alert",
+        "body": ["import {", "    Alert,", "    AlertTitle as Title,", "    AlertDescription as Description,", "} from '@/components/ui/alert'"],
+        "description": "Import Alert components with aliases",
+    },
+    "Import Alert (full)": {
+        "prefix": "i;falert",
+        "body": ["import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'"],
+        "description": "Import Alert components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Alert (alias)": {
+        "prefix": ";alert",
+        "body": ["<Alert variant=\"${1|default,destructive|}\">", "    <${2:CheckCircle2Icon} />", "    <Title>${3:Heads up!}</Title>", "    <Description>${4:Description text here.}</Description>", "</Alert>"],
+        "description": "Alert with icon, title and description (aliased)",
+    },
+    "Alert Basic (alias)": {
+        "prefix": ";alertb",
+        "body": ["<Alert>", "    <Title>${1:Heads up!}</Title>", "</Alert>"],
+        "description": "Basic Alert with title only (aliased)",
+    },
+    "Alert Destructive (alias)": {
+        "prefix": ";alertd",
+        "body": ["<Alert variant=\"destructive\">", "    <${1:AlertCircleIcon} />", "    <Title>${2:Error}</Title>", "    <Description>${3:Something went wrong.}</Description>", "</Alert>"],
+        "description": "Destructive Alert (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Alert (full)": {
+        "prefix": ";falert",
+        "body": ["<Alert variant=\"${1|default,destructive|}\">", "    <${2:CheckCircle2Icon} />", "    <AlertTitle>${3:Heads up!}</AlertTitle>", "    <AlertDescription>${4:Description text here.}</AlertDescription>", "</Alert>"],
+        "description": "Alert with icon, title and description (full names)",
+    },
+    "Alert Basic (full)": {
+        "prefix": ";falertb",
+        "body": ["<Alert>", "    <AlertTitle>${1:Heads up!}</AlertTitle>", "</Alert>"],
+        "description": "Basic Alert with title only (full names)",
+    },
+    "Alert Destructive (full)": {
+        "prefix": ";falertd",
+        "body": ["<Alert variant=\"destructive\">", "    <${1:AlertCircleIcon} />", "    <AlertTitle>${2:Error}</AlertTitle>", "    <AlertDescription>${3:Something went wrong.}</AlertDescription>", "</Alert>"],
+        "description": "Destructive Alert (full names)",
+    },
+}

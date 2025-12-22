@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Dialog (alias)": {
+        "prefix": "i;dialog",
+        "body": ["import {", "    Dialog,", "    DialogTrigger as Trigger,", "    DialogContent as Content,", "    DialogHeader as Header,", "    DialogFooter as Footer,", "    DialogTitle as Title,", "    DialogDescription as Description,", "    DialogClose as Close,", "} from '@/components/ui/dialog'"],
+        "description": "Import Dialog components with aliases",
+    },
+    "Import Dialog (full)": {
+        "prefix": "i;fdialog",
+        "body": ["import {", "    Dialog,", "    DialogTrigger,", "    DialogContent,", "    DialogHeader,", "    DialogFooter,", "    DialogTitle,", "    DialogDescription,", "    DialogClose,", "} from '@/components/ui/dialog'"],
+        "description": "Import Dialog components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Dialog (alias)": {
+        "prefix": ";dialog",
+        "body": ["<Dialog>", "    <Trigger asChild>", "        <Button variant=\"outline\">${1:Open Dialog}</Button>", "    </Trigger>", "    <Content>", "        <Header>", "            <Title>${2:Title}</Title>", "            <Description>${3:Description}</Description>", "        </Header>", "        <div className=\"grid gap-4 py-4\">", "            $0", "        </div>", "        <Footer>", "            <Close asChild>", "                <Button variant=\"outline\">Cancel</Button>", "            </Close>", "            <Button type=\"submit\">Save</Button>", "        </Footer>", "    </Content>", "</Dialog>"],
+        "description": "Dialog with aliased JSX",
+    },
+    "Dialog Basic (alias)": {
+        "prefix": ";dialogb",
+        "body": ["<Dialog>", "    <Trigger asChild>", "        <Button>${1:Open}</Button>", "    </Trigger>", "    <Content>", "        <Header>", "            <Title>${2:Title}</Title>", "        </Header>", "        $0", "    </Content>", "</Dialog>"],
+        "description": "Basic Dialog (aliased)",
+    },
+    "Dialog Controlled (alias)": {
+        "prefix": ";dialogcontrolled",
+        "body": ["<Dialog open={${1:open}} onOpenChange={${2:setOpen}}>", "    <Content>", "        <Header>", "            <Title>${3:Title}</Title>", "            <Description>${4:Description}</Description>", "        </Header>", "        $0", "        <Footer>", "            <Button onClick={() => ${2:setOpen}(false)}>Close</Button>", "        </Footer>", "    </Content>", "</Dialog>"],
+        "description": "Controlled Dialog (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Dialog (full)": {
+        "prefix": ";fdialog",
+        "body": ["<Dialog>", "    <DialogTrigger asChild>", "        <Button variant=\"outline\">${1:Open Dialog}</Button>", "    </DialogTrigger>", "    <DialogContent>", "        <DialogHeader>", "            <DialogTitle>${2:Title}</DialogTitle>", "            <DialogDescription>${3:Description}</DialogDescription>", "        </DialogHeader>", "        <div className=\"grid gap-4 py-4\">", "            $0", "        </div>", "        <DialogFooter>", "            <DialogClose asChild>", "                <Button variant=\"outline\">Cancel</Button>", "            </DialogClose>", "            <Button type=\"submit\">Save</Button>", "        </DialogFooter>", "    </DialogContent>", "</Dialog>"],
+        "description": "Dialog with full names",
+    },
+    "Dialog Basic (full)": {
+        "prefix": ";fdialogb",
+        "body": ["<Dialog>", "    <DialogTrigger asChild>", "        <Button>${1:Open}</Button>", "    </DialogTrigger>", "    <DialogContent>", "        <DialogHeader>", "            <DialogTitle>${2:Title}</DialogTitle>", "        </DialogHeader>", "        $0", "    </DialogContent>", "</Dialog>"],
+        "description": "Basic Dialog (full names)",
+    },
+    "Dialog Controlled (full)": {
+        "prefix": ";fdialogcontrolled",
+        "body": ["<Dialog open={${1:open}} onOpenChange={${2:setOpen}}>", "    <DialogContent>", "        <DialogHeader>", "            <DialogTitle>${3:Title}</DialogTitle>", "            <DialogDescription>${4:Description}</DialogDescription>", "        </DialogHeader>", "        $0", "        <DialogFooter>", "            <Button onClick={() => ${2:setOpen}(false)}>Close</Button>", "        </DialogFooter>", "    </DialogContent>", "</Dialog>"],
+        "description": "Controlled Dialog (full names)",
+    },
+}

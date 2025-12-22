@@ -1,0 +1,50 @@
+{
+    "Custom Hook": {
+        "prefix": ";hook",
+        "body": [
+            "import { useState, useEffect } from 'react'",
+            "",
+            "export const use${1:HookName} = ($2) => {",
+            "    const [${3:state}, set${3/(.*)/${1:/capitalize}/}] = useState($4)",
+            "",
+            "    useEffect(() => {",
+            "        $0",
+            "    }, [])",
+            "",
+            "    return { ${3:state} }",
+            "}"
+        ],
+        "description": "Custom Hook template"
+    },
+    "Custom Hook Fetch": {
+        "prefix": ";hookfetch",
+        "body": [
+            "import { useState, useEffect } from 'react'",
+            "",
+            "export const use${1:FetchData} = (url: string) => {",
+            "    const [data, setData] = useState<${2:DataType} | null>(null)",
+            "    const [loading, setLoading] = useState(true)",
+            "    const [error, setError] = useState<Error | null>(null)",
+            "",
+            "    useEffect(() => {",
+            "        const fetchData = async () => {",
+            "            try {",
+            "                const res = await fetch(url)",
+            "                const json = await res.json()",
+            "                setData(json)",
+            "            } catch (err) {",
+            "                setError(err as Error)",
+            "            } finally {",
+            "                setLoading(false)",
+            "            }",
+            "        }",
+            "",
+            "        fetchData()",
+            "    }, [url])",
+            "",
+            "    return { data, loading, error }",
+            "}"
+        ],
+        "description": "Custom Fetch Hook"
+    }
+}

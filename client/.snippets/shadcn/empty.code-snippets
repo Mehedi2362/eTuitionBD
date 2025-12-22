@@ -1,0 +1,73 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Empty (alias)": {
+        "prefix": "i;empty",
+        "body": ["import {", "    Empty,", "    EmptyHeader as Header,", "    EmptyTitle as Title,", "    EmptyDescription as Description,", "    EmptyContent as Content,", "    EmptyMedia as Media,", "} from '@/components/ui/empty'"],
+        "description": "Import Empty components with aliases",
+    },
+    "Import Empty (full)": {
+        "prefix": "i;fempty",
+        "body": ["import {", "    Empty,", "    EmptyHeader,", "    EmptyTitle,", "    EmptyDescription,", "    EmptyContent,", "    EmptyMedia,", "} from '@/components/ui/empty'"],
+        "description": "Import Empty components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Empty (alias)": {
+        "prefix": ";empty",
+        "body": ["<Empty className=\"${1:}\">", "    <Header>", "        <Media variant=\"${2|default,icon|}\">", "            ${3:<Icon />}", "        </Media>", "        <Title>${4:Title}</Title>", "        <Description>${5:Description}</Description>", "    </Header>", "    <Content>", "        ${6:<Button>Action</Button>}", "    </Content>", "</Empty>$0"],
+        "description": "Empty state with aliased JSX",
+    },
+    "Empty Basic (alias)": {
+        "prefix": ";emptyb",
+        "body": ["<Empty>", "    <Header>", "        <Media variant=\"icon\">", "            <${1:Icon} />", "        </Media>", "        <Title>${2:No items found}</Title>", "        <Description>${3:Get started by adding your first item.}</Description>", "    </Header>", "    <Content>", "        <Button>${4:Add Item}</Button>", "    </Content>", "</Empty>$0"],
+        "description": "Basic Empty state (aliased)",
+    },
+    "Empty Header (alias)": {
+        "prefix": ";emptyheader",
+        "body": ["<Header>", "    <Media variant=\"icon\">", "        <${1:Icon} />", "    </Media>", "    <Title>${2:Title}</Title>", "    <Description>${3:Description}</Description>", "</Header>$0"],
+        "description": "Empty Header (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Empty (full)": {
+        "prefix": ";fempty",
+        "body": ["<Empty className=\"${1:}\">", "    <EmptyHeader>", "        <EmptyMedia variant=\"${2|default,icon|}\">", "            ${3:<Icon />}", "        </EmptyMedia>", "        <EmptyTitle>${4:Title}</EmptyTitle>", "        <EmptyDescription>${5:Description}</EmptyDescription>", "    </EmptyHeader>", "    <EmptyContent>", "        ${6:<Button>Action</Button>}", "    </EmptyContent>", "</Empty>$0"],
+        "description": "Empty state with full component names",
+    },
+    "Empty Basic (full)": {
+        "prefix": ";femptyb",
+        "body": ["<Empty>", "    <EmptyHeader>", "        <EmptyMedia variant=\"icon\">", "            <${1:Icon} />", "        </EmptyMedia>", "        <EmptyTitle>${2:No items found}</EmptyTitle>", "        <EmptyDescription>${3:Get started by adding your first item.}</EmptyDescription>", "    </EmptyHeader>", "    <EmptyContent>", "        <Button>${4:Add Item}</Button>", "    </EmptyContent>", "</Empty>$0"],
+        "description": "Basic Empty state (full)",
+    },
+    "Empty Header (full)": {
+        "prefix": ";femptyheader",
+        "body": ["<EmptyHeader>", "    <EmptyMedia variant=\"icon\">", "        <${1:Icon} />", "    </EmptyMedia>", "    <EmptyTitle>${2:Title}</EmptyTitle>", "    <EmptyDescription>${3:Description}</EmptyDescription>", "</EmptyHeader>$0"],
+        "description": "Empty Header (full)",
+    },
+    "Empty Media (full)": {
+        "prefix": ";femptymedia",
+        "body": ["<EmptyMedia variant=\"${1|default,icon|}\">", "    ${2:<Icon />}", "</EmptyMedia>$0"],
+        "description": "Empty Media (full)",
+    },
+    "Empty Title (full)": {
+        "prefix": ";femptytitle",
+        "body": ["<EmptyTitle>${1:Title}</EmptyTitle>$0"],
+        "description": "Empty Title (full)",
+    },
+    "Empty Description (full)": {
+        "prefix": ";femptydesc",
+        "body": ["<EmptyDescription>${1:Description}</EmptyDescription>$0"],
+        "description": "Empty Description (full)",
+    },
+    "Empty Content (full)": {
+        "prefix": ";femptycontent",
+        "body": ["<EmptyContent>", "    ${0}", "</EmptyContent>"],
+        "description": "Empty Content (full)",
+    },
+}

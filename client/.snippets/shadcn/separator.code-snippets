@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Separator": {
+        "prefix": "i;separator",
+        "body": ["import { Separator } from '@/components/ui/separator'"],
+        "description": "Import Separator component",
+    },
+    "Import Separator (full)": {
+        "prefix": "i;fseparator",
+        "body": ["import { Separator } from '@/components/ui/separator'"],
+        "description": "Import Separator component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Separator (alias)": {
+        "prefix": ";separator",
+        "body": ["<Separator orientation=\"${1|horizontal,vertical|}\" className=\"${2:my-4}\" />"],
+        "description": "Separator component",
+    },
+    "Separator Horizontal (alias)": {
+        "prefix": ";separatorh",
+        "body": ["<Separator className=\"${1:my-4}\" />"],
+        "description": "Horizontal Separator",
+    },
+    "Separator Vertical (alias)": {
+        "prefix": ";separatorv",
+        "body": ["<Separator orientation=\"vertical\" className=\"${1:mx-2 h-4}\" />"],
+        "description": "Vertical Separator",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Separator (full)": {
+        "prefix": ";fseparator",
+        "body": ["<Separator orientation=\"${1|horizontal,vertical|}\" className=\"${2:my-4}\" />"],
+        "description": "Separator component (full)",
+    },
+    "Separator Horizontal (full)": {
+        "prefix": ";fseparatorh",
+        "body": ["<Separator className=\"${1:my-4}\" />"],
+        "description": "Horizontal Separator (full)",
+    },
+    "Separator Vertical (full)": {
+        "prefix": ";fseparatorv",
+        "body": ["<Separator orientation=\"vertical\" className=\"${1:mx-2 h-4}\" />"],
+        "description": "Vertical Separator (full)",
+    },
+}

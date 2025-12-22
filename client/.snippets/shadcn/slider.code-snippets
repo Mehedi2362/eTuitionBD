@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Slider": {
+        "prefix": "i;slider",
+        "body": ["import { Slider } from '@/components/ui/slider'"],
+        "description": "Import Slider component",
+    },
+    "Import Slider (full)": {
+        "prefix": "i;fslider",
+        "body": ["import { Slider } from '@/components/ui/slider'"],
+        "description": "Import Slider component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Slider (alias)": {
+        "prefix": ";slider",
+        "body": ["<Slider", "    value={${1:value}}", "    onValueChange={${2:setValue}}", "    min={${3:0}}", "    max={${4:100}}", "    step={${5:1}}", "    className=\"${6:w-[60%]}\"", "/>"],
+        "description": "Slider component",
+    },
+    "Slider Basic (alias)": {
+        "prefix": ";sliderb",
+        "body": ["<Slider defaultValue={[${1:50}]} max={${2:100}} step={${3:1}} />"],
+        "description": "Basic Slider",
+    },
+    "Slider Range (alias)": {
+        "prefix": ";sliderr",
+        "body": ["<Slider", "    defaultValue={[${1:25}, ${2:75}]}", "    min={${3:0}}", "    max={${4:100}}", "    step={${5:1}}", "    className=\"${6:w-[60%]}\"", "/>"],
+        "description": "Range Slider with two thumbs",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Slider (full)": {
+        "prefix": ";fslider",
+        "body": ["<Slider", "    value={${1:value}}", "    onValueChange={${2:setValue}}", "    min={${3:0}}", "    max={${4:100}}", "    step={${5:1}}", "    className=\"${6:w-[60%]}\"", "/>"],
+        "description": "Slider component (full)",
+    },
+    "Slider Basic (full)": {
+        "prefix": ";fsliderb",
+        "body": ["<Slider defaultValue={[${1:50}]} max={${2:100}} step={${3:1}} />"],
+        "description": "Basic Slider (full)",
+    },
+    "Slider Range (full)": {
+        "prefix": ";fsliderr",
+        "body": ["<Slider", "    defaultValue={[${1:25}, ${2:75}]}", "    min={${3:0}}", "    max={${4:100}}", "    step={${5:1}}", "    className=\"${6:w-[60%]}\"", "/>"],
+        "description": "Range Slider with two thumbs (full)",
+    },
+}

@@ -1,0 +1,63 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Checkbox": {
+        "prefix": "i;checkbox",
+        "body": ["import { Checkbox } from '@/components/ui/checkbox'"],
+        "description": "Import Checkbox component",
+    },
+    "Import Checkbox (full)": {
+        "prefix": "i;fcheckbox",
+        "body": ["import { Checkbox } from '@/components/ui/checkbox'"],
+        "description": "Import Checkbox component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Checkbox (alias)": {
+        "prefix": ";checkbox",
+        "body": ["<Checkbox", "    id=\"${1:checkbox}\"", "    checked={${2:checked}}", "    onCheckedChange={${3:setChecked}}", "/>"],
+        "description": "Checkbox with controlled state",
+    },
+    "Checkbox Basic (alias)": {
+        "prefix": ";checkboxb",
+        "body": ["<Checkbox id=\"${1:checkbox}\" />"],
+        "description": "Basic Checkbox",
+    },
+    "Checkbox with Label (alias)": {
+        "prefix": ";checkboxl",
+        "body": ["<div className=\"flex items-center space-x-2\">", "    <Checkbox id=\"${1:checkbox}\" />", "    <label", "        htmlFor=\"$1\"", "        className=\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"", "    >", "        ${2:Label text}", "    </label>", "</div>"],
+        "description": "Checkbox with label",
+    },
+    "Checkbox Disabled (alias)": {
+        "prefix": ";checkboxd",
+        "body": ["<div className=\"flex items-center space-x-2\">", "    <Checkbox id=\"${1:checkbox}\" disabled />", "    <label htmlFor=\"$1\" className=\"text-sm font-medium leading-none opacity-70\">", "        ${2:Disabled}", "    </label>", "</div>"],
+        "description": "Disabled Checkbox with label",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Checkbox (full)": {
+        "prefix": ";fcheckbox",
+        "body": ["<Checkbox", "    id=\"${1:checkbox}\"", "    checked={${2:checked}}", "    onCheckedChange={${3:setChecked}}", "/>"],
+        "description": "Checkbox with controlled state (full)",
+    },
+    "Checkbox Basic (full)": {
+        "prefix": ";fcheckboxb",
+        "body": ["<Checkbox id=\"${1:checkbox}\" />"],
+        "description": "Basic Checkbox (full)",
+    },
+    "Checkbox with Label (full)": {
+        "prefix": ";fcheckboxl",
+        "body": ["<div className=\"flex items-center space-x-2\">", "    <Checkbox id=\"${1:checkbox}\" />", "    <label", "        htmlFor=\"$1\"", "        className=\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\"", "    >", "        ${2:Label text}", "    </label>", "</div>"],
+        "description": "Checkbox with label (full)",
+    },
+    "Checkbox Disabled (full)": {
+        "prefix": ";fcheckboxd",
+        "body": ["<div className=\"flex items-center space-x-2\">", "    <Checkbox id=\"${1:checkbox}\" disabled />", "    <label htmlFor=\"$1\" className=\"text-sm font-medium leading-none opacity-70\">", "        ${2:Disabled}", "    </label>", "</div>"],
+        "description": "Disabled Checkbox with label (full)",
+    },
+}

@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Tooltip (alias)": {
+        "prefix": "i;tooltip",
+        "body": ["import {", "    Tooltip,", "    TooltipTrigger as Trigger,", "    TooltipContent as Content,", "    TooltipProvider as Provider,", "} from '@/components/ui/tooltip'"],
+        "description": "Import Tooltip components with aliases",
+    },
+    "Import Tooltip (full)": {
+        "prefix": "i;ftooltip",
+        "body": ["import {", "    Tooltip,", "    TooltipContent,", "    TooltipProvider,", "    TooltipTrigger,", "} from '@/components/ui/tooltip'"],
+        "description": "Import Tooltip components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Tooltip (alias)": {
+        "prefix": ";tooltip",
+        "body": ["<Tooltip>", "    <Trigger asChild>", "        ${1:<Button variant=\"outline\">Hover</Button>}", "    </Trigger>", "    <Content>", "        <p>${2:Tooltip content}</p>", "    </Content>", "</Tooltip>"],
+        "description": "Tooltip with aliased JSX",
+    },
+    "Tooltip Basic (alias)": {
+        "prefix": ";tooltipb",
+        "body": ["<Tooltip>", "    <Trigger>$1</Trigger>", "    <Content>$2</Content>", "</Tooltip>"],
+        "description": "Basic Tooltip (aliased)",
+    },
+    "Tooltip with Side (alias)": {
+        "prefix": ";tooltips",
+        "body": ["<Tooltip>", "    <Trigger asChild>", "        ${1:<Button variant=\"outline\">Hover</Button>}", "    </Trigger>", "    <Content side=\"${2|top,right,bottom,left|}\">", "        <p>${3:Tooltip content}</p>", "    </Content>", "</Tooltip>"],
+        "description": "Tooltip with side position (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Tooltip (full)": {
+        "prefix": ";ftooltip",
+        "body": ["<Tooltip>", "    <TooltipTrigger asChild>", "        ${1:<Button variant=\"outline\">Hover</Button>}", "    </TooltipTrigger>", "    <TooltipContent>", "        <p>${2:Tooltip content}</p>", "    </TooltipContent>", "</Tooltip>"],
+        "description": "Tooltip with full component names",
+    },
+    "Tooltip Basic (full)": {
+        "prefix": ";ftooltipb",
+        "body": ["<Tooltip>", "    <TooltipTrigger>$1</TooltipTrigger>", "    <TooltipContent>$2</TooltipContent>", "</Tooltip>"],
+        "description": "Basic Tooltip (full)",
+    },
+    "Tooltip with Side (full)": {
+        "prefix": ";ftooltips",
+        "body": ["<Tooltip>", "    <TooltipTrigger asChild>", "        ${1:<Button variant=\"outline\">Hover</Button>}", "    </TooltipTrigger>", "    <TooltipContent side=\"${2|top,right,bottom,left|}\">", "        <p>${3:Tooltip content}</p>", "    </TooltipContent>", "</Tooltip>"],
+        "description": "Tooltip with side position (full)",
+    },
+}

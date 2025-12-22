@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Accordion (alias)": {
+        "prefix": "i;accordion",
+        "body": ["import {", "    Accordion,", "    AccordionItem as Item,", "    AccordionTrigger as Trigger,", "    AccordionContent as Content,", "} from '@/components/ui/accordion'"],
+        "description": "Import Accordion components with aliases",
+    },
+    "Import Accordion (full)": {
+        "prefix": "i;faccordion",
+        "body": ["import {", "    Accordion,", "    AccordionItem,", "    AccordionTrigger,", "    AccordionContent,", "} from '@/components/ui/accordion'"],
+        "description": "Import Accordion components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Accordion (alias)": {
+        "prefix": ";accordion",
+        "body": ["<Accordion type=\"${1|single,multiple|}\" ${2:collapsible} defaultValue=\"${3:item-1}\" className=\"${4:w-full}\">", "    <Item value=\"item-1\">", "        <Trigger>${5:First Item}</Trigger>", "        <Content>${6:First content}</Content>", "    </Item>", "    <Item value=\"item-2\">", "        <Trigger>${7:Second Item}</Trigger>", "        <Content>${8:Second content}</Content>", "    </Item>", "    <Item value=\"item-3\">", "        <Trigger>${9:Third Item}</Trigger>", "        <Content>$0</Content>", "    </Item>", "</Accordion>"],
+        "description": "Accordion with aliased JSX (Item, Trigger, Content)",
+    },
+    "Accordion Basic (alias)": {
+        "prefix": ";accordionb",
+        "body": ["<Accordion type=\"single\" collapsible className=\"${1:w-full}\">", "    <Item value=\"item-1\">", "        <Trigger>${2:Title}</Trigger>", "        <Content>$0</Content>", "    </Item>", "</Accordion>"],
+        "description": "Basic Accordion with aliased JSX",
+    },
+    "Accordion Item (alias)": {
+        "prefix": ";accordionitem",
+        "body": ["<Item value=\"${1:item-id}\">", "    <Trigger>${2:Title}</Trigger>", "    <Content>$0</Content>", "</Item>"],
+        "description": "Single Accordion Item (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Accordion (full)": {
+        "prefix": ";faccordion",
+        "body": ["<Accordion type=\"${1|single,multiple|}\" ${2:collapsible} defaultValue=\"${3:item-1}\" className=\"${4:w-full}\">", "    <AccordionItem value=\"item-1\">", "        <AccordionTrigger>${5:First Item}</AccordionTrigger>", "        <AccordionContent>${6:First content}</AccordionContent>", "    </AccordionItem>", "    <AccordionItem value=\"item-2\">", "        <AccordionTrigger>${7:Second Item}</AccordionTrigger>", "        <AccordionContent>${8:Second content}</AccordionContent>", "    </AccordionItem>", "    <AccordionItem value=\"item-3\">", "        <AccordionTrigger>${9:Third Item}</AccordionTrigger>", "        <AccordionContent>$0</AccordionContent>", "    </AccordionItem>", "</Accordion>"],
+        "description": "Accordion with full component names",
+    },
+    "Accordion Basic (full)": {
+        "prefix": ";faccordionb",
+        "body": ["<Accordion type=\"single\" collapsible className=\"${1:w-full}\">", "    <AccordionItem value=\"item-1\">", "        <AccordionTrigger>${2:Title}</AccordionTrigger>", "        <AccordionContent>$0</AccordionContent>", "    </AccordionItem>", "</Accordion>"],
+        "description": "Basic Accordion with full names",
+    },
+    "Accordion Item (full)": {
+        "prefix": ";faccordionitem",
+        "body": ["<AccordionItem value=\"${1:item-id}\">", "    <AccordionTrigger>${2:Title}</AccordionTrigger>", "    <AccordionContent>$0</AccordionContent>", "</AccordionItem>"],
+        "description": "Single Accordion Item (full names)",
+    },
+}

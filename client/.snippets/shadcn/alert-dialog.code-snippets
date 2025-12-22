@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import AlertDialog (alias)": {
+        "prefix": "i;alertdialog",
+        "body": ["import {", "    AlertDialog as Dialog,", "    AlertDialogTrigger as Trigger,", "    AlertDialogContent as Content,", "    AlertDialogHeader as Header,", "    AlertDialogFooter as Footer,", "    AlertDialogTitle as Title,", "    AlertDialogDescription as Description,", "    AlertDialogAction as Action,", "    AlertDialogCancel as Cancel,", "} from '@/components/ui/alert-dialog'"],
+        "description": "Import AlertDialog components with aliases",
+    },
+    "Import AlertDialog (full)": {
+        "prefix": "i;falertdialog",
+        "body": ["import {", "    AlertDialog,", "    AlertDialogTrigger,", "    AlertDialogContent,", "    AlertDialogHeader,", "    AlertDialogFooter,", "    AlertDialogTitle,", "    AlertDialogDescription,", "    AlertDialogAction,", "    AlertDialogCancel,", "} from '@/components/ui/alert-dialog'"],
+        "description": "Import AlertDialog components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "AlertDialog (alias)": {
+        "prefix": ";alertdialog",
+        "body": ["<Dialog>", "    <Trigger asChild>", "        <Button variant=\"outline\">${1:Open}</Button>", "    </Trigger>", "    <Content>", "        <Header>", "            <Title>${2:Are you absolutely sure?}</Title>", "            <Description>", "                ${3:This action cannot be undone.}", "            </Description>", "        </Header>", "        <Footer>", "            <Cancel>Cancel</Cancel>", "            <Action>Continue</Action>", "        </Footer>", "    </Content>", "</Dialog>"],
+        "description": "AlertDialog with aliased JSX",
+    },
+    "AlertDialog Basic (alias)": {
+        "prefix": ";alertdialogb",
+        "body": ["<Dialog>", "    <Trigger>${1:Open}</Trigger>", "    <Content>", "        <Header>", "            <Title>${2:Confirm}</Title>", "        </Header>", "        <Footer>", "            <Cancel>Cancel</Cancel>", "            <Action>OK</Action>", "        </Footer>", "    </Content>", "</Dialog>"],
+        "description": "Basic AlertDialog (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "AlertDialog (full)": {
+        "prefix": ";falertdialog",
+        "body": ["<AlertDialog>", "    <AlertDialogTrigger asChild>", "        <Button variant=\"outline\">${1:Open}</Button>", "    </AlertDialogTrigger>", "    <AlertDialogContent>", "        <AlertDialogHeader>", "            <AlertDialogTitle>${2:Are you absolutely sure?}</AlertDialogTitle>", "            <AlertDialogDescription>", "                ${3:This action cannot be undone.}", "            </AlertDialogDescription>", "        </AlertDialogHeader>", "        <AlertDialogFooter>", "            <AlertDialogCancel>Cancel</AlertDialogCancel>", "            <AlertDialogAction>Continue</AlertDialogAction>", "        </AlertDialogFooter>", "    </AlertDialogContent>", "</AlertDialog>"],
+        "description": "AlertDialog with full names",
+    },
+    "AlertDialog Basic (full)": {
+        "prefix": ";falertdialogb",
+        "body": ["<AlertDialog>", "    <AlertDialogTrigger>${1:Open}</AlertDialogTrigger>", "    <AlertDialogContent>", "        <AlertDialogHeader>", "            <AlertDialogTitle>${2:Confirm}</AlertDialogTitle>", "        </AlertDialogHeader>", "        <AlertDialogFooter>", "            <AlertDialogCancel>Cancel</AlertDialogCancel>", "            <AlertDialogAction>OK</AlertDialogAction>", "        </AlertDialogFooter>", "    </AlertDialogContent>", "</AlertDialog>"],
+        "description": "Basic AlertDialog (full names)",
+    },
+}

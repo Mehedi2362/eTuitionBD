@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Collapsible (alias)": {
+        "prefix": "i;collapsible",
+        "body": ["import {", "    Collapsible,", "    CollapsibleTrigger as Trigger,", "    CollapsibleContent as Content,", "} from '@/components/ui/collapsible'"],
+        "description": "Import Collapsible components with aliases",
+    },
+    "Import Collapsible (full)": {
+        "prefix": "i;fcollapsible",
+        "body": ["import {", "    Collapsible,", "    CollapsibleTrigger,", "    CollapsibleContent,", "} from '@/components/ui/collapsible'"],
+        "description": "Import Collapsible components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Collapsible (alias)": {
+        "prefix": ";collapsible",
+        "body": ["<Collapsible open={${1:isOpen}} onOpenChange={${2:setIsOpen}} className=\"${3:w-[350px] space-y-2}\">", "    <Trigger asChild>", "        <Button variant=\"ghost\" size=\"sm\">", "            ${4:Toggle}", "        </Button>", "    </Trigger>", "    <Content className=\"${5:space-y-2}\">", "        ${6:Content here}", "    </Content>", "</Collapsible>"],
+        "description": "Collapsible with aliased JSX (Trigger, Content)",
+    },
+    "Collapsible Basic (alias)": {
+        "prefix": ";collapsibleb",
+        "body": ["<Collapsible>", "    <Trigger>${1:Toggle}</Trigger>", "    <Content>$0</Content>", "</Collapsible>"],
+        "description": "Basic Collapsible with aliased JSX",
+    },
+    "Collapsible with State (alias)": {
+        "prefix": ";collapsibles",
+        "body": ["const [isOpen, setIsOpen] = React.useState(false)", "", "<Collapsible open={isOpen} onOpenChange={setIsOpen}>", "    <Trigger asChild>", "        <Button variant=\"ghost\" size=\"sm\">", "            {isOpen ? '${1:Close}' : '${2:Open}'}", "        </Button>", "    </Trigger>", "    <Content>", "        $0", "    </Content>", "</Collapsible>"],
+        "description": "Collapsible with useState hook",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Collapsible (full)": {
+        "prefix": ";fcollapsible",
+        "body": ["<Collapsible open={${1:isOpen}} onOpenChange={${2:setIsOpen}} className=\"${3:w-[350px] space-y-2}\">", "    <CollapsibleTrigger asChild>", "        <Button variant=\"ghost\" size=\"sm\">", "            ${4:Toggle}", "        </Button>", "    </CollapsibleTrigger>", "    <CollapsibleContent className=\"${5:space-y-2}\">", "        ${6:Content here}", "    </CollapsibleContent>", "</Collapsible>"],
+        "description": "Collapsible with full component names",
+    },
+    "Collapsible Basic (full)": {
+        "prefix": ";fcollapsibleb",
+        "body": ["<Collapsible>", "    <CollapsibleTrigger>${1:Toggle}</CollapsibleTrigger>", "    <CollapsibleContent>$0</CollapsibleContent>", "</Collapsible>"],
+        "description": "Basic Collapsible with full names",
+    },
+    "Collapsible with State (full)": {
+        "prefix": ";fcollapsibles",
+        "body": ["const [isOpen, setIsOpen] = React.useState(false)", "", "<Collapsible open={isOpen} onOpenChange={setIsOpen}>", "    <CollapsibleTrigger asChild>", "        <Button variant=\"ghost\" size=\"sm\">", "            {isOpen ? '${1:Close}' : '${2:Open}'}", "        </Button>", "    </CollapsibleTrigger>", "    <CollapsibleContent>", "        $0", "    </CollapsibleContent>", "</Collapsible>"],
+        "description": "Collapsible with useState hook (full)",
+    },
+}

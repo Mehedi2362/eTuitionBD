@@ -1,0 +1,53 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Avatar (alias)": {
+        "prefix": "i;avatar",
+        "body": ["import {", "    Avatar,", "    AvatarImage as Image,", "    AvatarFallback as Fallback,", "} from '@/components/ui/avatar'"],
+        "description": "Import Avatar components with aliases",
+    },
+    "Import Avatar (full)": {
+        "prefix": "i;favatar",
+        "body": "import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'",
+        "description": "Import Avatar components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Avatar (alias)": {
+        "prefix": ";avatar",
+        "body": ["<Avatar>", "    <Image src=\"${1:url}\" alt=\"${2:@user}\" />", "    <Fallback>${3:CN}</Fallback>", "</Avatar>"],
+        "description": "Avatar with image and fallback (aliased)",
+    },
+    "Avatar Basic (alias)": {
+        "prefix": ";avatarb",
+        "body": ["<Avatar>", "    <Fallback>${1:CN}</Fallback>", "</Avatar>"],
+        "description": "Avatar with fallback only (aliased)",
+    },
+    "Avatar Group (alias)": {
+        "prefix": ";avatargroup",
+        "body": ["<div className=\"*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2\">", "    <Avatar>", "        <Image src=\"${1:url1}\" alt=\"@user1\" />", "        <Fallback>U1</Fallback>", "    </Avatar>", "    <Avatar>", "        <Image src=\"${2:url2}\" alt=\"@user2\" />", "        <Fallback>U2</Fallback>", "    </Avatar>", "    <Avatar>", "        <Image src=\"${3:url3}\" alt=\"@user3\" />", "        <Fallback>U3</Fallback>", "    </Avatar>", "</div>"],
+        "description": "Stacked avatar group (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Avatar (full)": {
+        "prefix": ";favatar",
+        "body": ["<Avatar>", "    <AvatarImage src=\"${1:url}\" alt=\"${2:@user}\" />", "    <AvatarFallback>${3:CN}</AvatarFallback>", "</Avatar>"],
+        "description": "Avatar with image and fallback (full names)",
+    },
+    "Avatar Basic (full)": {
+        "prefix": ";favatarb",
+        "body": ["<Avatar>", "    <AvatarFallback>${1:CN}</AvatarFallback>", "</Avatar>"],
+        "description": "Avatar with fallback only (full names)",
+    },
+    "Avatar Group (full)": {
+        "prefix": ";favatargroup",
+        "body": ["<div className=\"*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2\">", "    <Avatar>", "        <AvatarImage src=\"${1:url1}\" alt=\"@user1\" />", "        <AvatarFallback>U1</AvatarFallback>", "    </Avatar>", "    <Avatar>", "        <AvatarImage src=\"${2:url2}\" alt=\"@user2\" />", "        <AvatarFallback>U2</AvatarFallback>", "    </Avatar>", "    <Avatar>", "        <AvatarImage src=\"${3:url3}\" alt=\"@user3\" />", "        <AvatarFallback>U3</AvatarFallback>", "    </Avatar>", "</div>"],
+        "description": "Stacked avatar group (full names)",
+    },
+}

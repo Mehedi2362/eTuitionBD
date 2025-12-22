@@ -1,0 +1,48 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import ButtonGroup (alias)": {
+        "prefix": "i;buttongroup",
+        "body": ["import {", "    ButtonGroup,", "    ButtonGroupText as Text,", "    ButtonGroupSeparator as Separator,", "} from '@/components/ui/button-group'"],
+        "description": "Import ButtonGroup components with aliases",
+    },
+    "Import ButtonGroup (full)": {
+        "prefix": "i;fbuttongroup",
+        "body": ["import {", "    ButtonGroup,", "    ButtonGroupText,", "    ButtonGroupSeparator,", "} from '@/components/ui/button-group'"],
+        "description": "Import ButtonGroup components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "ButtonGroup (alias)": {
+        "prefix": ";buttongroup",
+        "body": ["<ButtonGroup orientation=\"${1|horizontal,vertical|}\">", "    <Button variant=\"outline\">${2:First}</Button>", "    <Button variant=\"outline\">${3:Second}</Button>", "    <Button variant=\"outline\">${4:Third}</Button>", "</ButtonGroup>"],
+        "description": "ButtonGroup (aliased)",
+    },
+    "ButtonGroup Basic (alias)": {
+        "prefix": ";buttongroupb",
+        "body": ["<ButtonGroup>", "    <Button>$1</Button>", "    <Button>$2</Button>", "</ButtonGroup>"],
+        "description": "Basic ButtonGroup (aliased)",
+    },
+    "ButtonGroup with Text (alias)": {
+        "prefix": ";buttongrouptxt",
+        "body": ["<ButtonGroup>", "    <Text>${1:Label}</Text>", "    <Button variant=\"outline\">${2:Action}</Button>", "</ButtonGroup>"],
+        "description": "ButtonGroup with text (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "ButtonGroup (full)": {
+        "prefix": ";fbuttongroup",
+        "body": ["<ButtonGroup orientation=\"${1|horizontal,vertical|}\">", "    <Button variant=\"outline\">${2:First}</Button>", "    <Button variant=\"outline\">${3:Second}</Button>", "    <Button variant=\"outline\">${4:Third}</Button>", "</ButtonGroup>"],
+        "description": "ButtonGroup (full)",
+    },
+    "ButtonGroup with Text (full)": {
+        "prefix": ";fbuttongrouptxt",
+        "body": ["<ButtonGroup>", "    <ButtonGroupText>${1:Label}</ButtonGroupText>", "    <Button variant=\"outline\">${2:Action}</Button>", "</ButtonGroup>"],
+        "description": "ButtonGroup with text (full)",
+    },
+}

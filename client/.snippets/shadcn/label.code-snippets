@@ -1,0 +1,43 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Label": {
+        "prefix": "i;label",
+        "body": ["import { Label } from '@/components/ui/label'"],
+        "description": "Import Label component",
+    },
+    "Import Label (full)": {
+        "prefix": "i;flabel",
+        "body": ["import { Label } from '@/components/ui/label'"],
+        "description": "Import Label component (full)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Label (alias)": {
+        "prefix": ";label",
+        "body": ["<Label htmlFor=\"${1:id}\">${2:Label text}</Label>"],
+        "description": "Label component",
+    },
+    "Label with Input (alias)": {
+        "prefix": ";labeli",
+        "body": ["<div className=\"grid w-full max-w-sm items-center gap-1.5\">", "    <Label htmlFor=\"${1:input}\">${2:Label}</Label>", "    <Input type=\"${3:text}\" id=\"$1\" placeholder=\"${4:placeholder}\" />", "</div>"],
+        "description": "Label with Input",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Label (full)": {
+        "prefix": ";flabel",
+        "body": ["<Label htmlFor=\"${1:id}\">${2:Label text}</Label>"],
+        "description": "Label component (full)",
+    },
+    "Label with Input (full)": {
+        "prefix": ";flabeli",
+        "body": ["<div className=\"grid w-full max-w-sm items-center gap-1.5\">", "    <Label htmlFor=\"${1:input}\">${2:Label}</Label>", "    <Input type=\"${3:text}\" id=\"$1\" placeholder=\"${4:placeholder}\" />", "</div>"],
+        "description": "Label with Input (full)",
+    },
+}

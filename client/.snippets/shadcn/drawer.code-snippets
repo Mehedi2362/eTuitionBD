@@ -1,0 +1,58 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Drawer (alias)": {
+        "prefix": "i;drawer",
+        "body": ["import {", "    Drawer,", "    DrawerTrigger as Trigger,", "    DrawerContent as Content,", "    DrawerHeader as Header,", "    DrawerFooter as Footer,", "    DrawerTitle as Title,", "    DrawerDescription as Description,", "    DrawerClose as Close,", "} from '@/components/ui/drawer'"],
+        "description": "Import Drawer components with aliases",
+    },
+    "Import Drawer (full)": {
+        "prefix": "i;fdrawer",
+        "body": ["import {", "    Drawer,", "    DrawerPortal,", "    DrawerOverlay,", "    DrawerTrigger,", "    DrawerClose,", "    DrawerContent,", "    DrawerHeader,", "    DrawerFooter,", "    DrawerTitle,", "    DrawerDescription,", "} from '@/components/ui/drawer'"],
+        "description": "Import Drawer components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Drawer (alias)": {
+        "prefix": ";drawer",
+        "body": ["<Drawer>", "    <Trigger asChild>", "        <Button variant=\"outline\">${1:Open Drawer}</Button>", "    </Trigger>", "    <Content>", "        <Header>", "            <Title>${2:Drawer Title}</Title>", "            <Description>${3:Drawer description goes here.}</Description>", "        </Header>", "        <div className=\"p-4\">", "            ${4:Content}", "        </div>", "        <Footer>", "            <Close asChild>", "                <Button variant=\"outline\">${5:Cancel}</Button>", "            </Close>", "            <Button>${6:Submit}</Button>", "        </Footer>", "    </Content>", "</Drawer>"],
+        "description": "Drawer with aliased JSX",
+    },
+    "Drawer Basic (alias)": {
+        "prefix": ";drawerb",
+        "body": ["<Drawer>", "    <Trigger>${1:Open}</Trigger>", "    <Content>", "        <Header>", "            <Title>${2:Title}</Title>", "        </Header>", "        $0", "    </Content>", "</Drawer>"],
+        "description": "Basic Drawer with aliased JSX",
+    },
+    "Drawer Controlled (alias)": {
+        "prefix": ";drawerc",
+        "body": ["const [open, setOpen] = React.useState(false)", "", "<Drawer open={open} onOpenChange={setOpen}>", "    <Trigger asChild>", "        <Button variant=\"outline\">${1:Open Drawer}</Button>", "    </Trigger>", "    <Content>", "        <Header>", "            <Title>${2:Title}</Title>", "            <Description>${3:Description}</Description>", "        </Header>", "        <div className=\"p-4\">", "            $0", "        </div>", "        <Footer>", "            <Button onClick={() => setOpen(false)}>${4:Close}</Button>", "        </Footer>", "    </Content>", "</Drawer>"],
+        "description": "Controlled Drawer with useState (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Drawer (full)": {
+        "prefix": ";fdrawer",
+        "body": ["<Drawer>", "    <DrawerTrigger asChild>", "        <Button variant=\"outline\">${1:Open Drawer}</Button>", "    </DrawerTrigger>", "    <DrawerContent>", "        <DrawerHeader>", "            <DrawerTitle>${2:Drawer Title}</DrawerTitle>", "            <DrawerDescription>${3:Drawer description goes here.}</DrawerDescription>", "        </DrawerHeader>", "        <div className=\"p-4\">", "            ${4:Content}", "        </div>", "        <DrawerFooter>", "            <DrawerClose asChild>", "                <Button variant=\"outline\">${5:Cancel}</Button>", "            </DrawerClose>", "            <Button>${6:Submit}</Button>", "        </DrawerFooter>", "    </DrawerContent>", "</Drawer>"],
+        "description": "Drawer with full component names",
+    },
+    "Drawer Basic (full)": {
+        "prefix": ";fdrawerb",
+        "body": ["<Drawer>", "    <DrawerTrigger>${1:Open}</DrawerTrigger>", "    <DrawerContent>", "        <DrawerHeader>", "            <DrawerTitle>${2:Title}</DrawerTitle>", "        </DrawerHeader>", "        $0", "    </DrawerContent>", "</Drawer>"],
+        "description": "Basic Drawer with full names",
+    },
+    "Drawer Controlled (full)": {
+        "prefix": ";fdrawerc",
+        "body": ["const [open, setOpen] = React.useState(false)", "", "<Drawer open={open} onOpenChange={setOpen}>", "    <DrawerTrigger asChild>", "        <Button variant=\"outline\">${1:Open Drawer}</Button>", "    </DrawerTrigger>", "    <DrawerContent>", "        <DrawerHeader>", "            <DrawerTitle>${2:Title}</DrawerTitle>", "            <DrawerDescription>${3:Description}</DrawerDescription>", "        </DrawerHeader>", "        <div className=\"p-4\">", "            $0", "        </div>", "        <DrawerFooter>", "            <Button onClick={() => setOpen(false)}>${4:Close}</Button>", "        </DrawerFooter>", "    </DrawerContent>", "</Drawer>"],
+        "description": "Controlled Drawer with useState (full)",
+    },
+    "Drawer with Direction (full)": {
+        "prefix": ";fdrawerd",
+        "body": ["<Drawer direction=\"${1|bottom,top,left,right|}\">", "    <DrawerTrigger asChild>", "        <Button variant=\"outline\">${2:Open}</Button>", "    </DrawerTrigger>", "    <DrawerContent>", "        <DrawerHeader>", "            <DrawerTitle>${3:Title}</DrawerTitle>", "        </DrawerHeader>", "        $0", "    </DrawerContent>", "</Drawer>"],
+        "description": "Drawer with direction (full)",
+    },
+}

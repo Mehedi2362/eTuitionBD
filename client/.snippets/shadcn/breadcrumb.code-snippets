@@ -1,0 +1,63 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Breadcrumb (alias)": {
+        "prefix": "i;breadcrumb",
+        "body": ["import {", "    Breadcrumb,", "    BreadcrumbList as List,", "    BreadcrumbItem as Item,", "    BreadcrumbLink as Link,", "    BreadcrumbPage as Page,", "    BreadcrumbSeparator as Separator,", "    BreadcrumbEllipsis as Ellipsis,", "} from '@/components/ui/breadcrumb'"],
+        "description": "Import Breadcrumb components with aliases",
+    },
+    "Import Breadcrumb (full)": {
+        "prefix": "i;fbreadcrumb",
+        "body": ["import {", "    Breadcrumb,", "    BreadcrumbList,", "    BreadcrumbItem,", "    BreadcrumbLink,", "    BreadcrumbPage,", "    BreadcrumbSeparator,", "    BreadcrumbEllipsis,", "} from '@/components/ui/breadcrumb'"],
+        "description": "Import Breadcrumb components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Breadcrumb (alias)": {
+        "prefix": ";breadcrumb",
+        "body": ["<Breadcrumb>", "    <List>", "        <Item>", "            <Link href=\"${1:/}\">${2:Home}</Link>", "        </Item>", "        <Separator />", "        <Item>", "            <Link href=\"${3:/products}\">${4:Products}</Link>", "        </Item>", "        <Separator />", "        <Item>", "            <Page>${5:Current Page}</Page>", "        </Item>", "    </List>", "</Breadcrumb>"],
+        "description": "Breadcrumb with aliased JSX (List, Item, Link, Page, Separator)",
+    },
+    "Breadcrumb Basic (alias)": {
+        "prefix": ";breadcrumbb",
+        "body": ["<Breadcrumb>", "    <List>", "        <Item>", "            <Link href=\"/\">${1:Home}</Link>", "        </Item>", "        <Separator />", "        <Item>", "            <Page>${2:Current}</Page>", "        </Item>", "    </List>", "</Breadcrumb>"],
+        "description": "Basic Breadcrumb with aliased JSX",
+    },
+    "Breadcrumb Item (alias)": {
+        "prefix": ";breadcrumbitem",
+        "body": ["<Item>", "    <Link href=\"${1:#}\">${2:Label}</Link>", "</Item>", "<Separator />"],
+        "description": "Single Breadcrumb Item with Separator (aliased)",
+    },
+    "Breadcrumb with Ellipsis (alias)": {
+        "prefix": ";breadcrumbe",
+        "body": ["<Breadcrumb>", "    <List>", "        <Item>", "            <Link href=\"/\">${1:Home}</Link>", "        </Item>", "        <Separator />", "        <Item>", "            <Ellipsis />", "        </Item>", "        <Separator />", "        <Item>", "            <Link href=\"${2:#}\">${3:Category}</Link>", "        </Item>", "        <Separator />", "        <Item>", "            <Page>${4:Current}</Page>", "        </Item>", "    </List>", "</Breadcrumb>"],
+        "description": "Breadcrumb with Ellipsis (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Breadcrumb (full)": {
+        "prefix": ";fbreadcrumb",
+        "body": ["<Breadcrumb>", "    <BreadcrumbList>", "        <BreadcrumbItem>", "            <BreadcrumbLink href=\"${1:/}\">${2:Home}</BreadcrumbLink>", "        </BreadcrumbItem>", "        <BreadcrumbSeparator />", "        <BreadcrumbItem>", "            <BreadcrumbLink href=\"${3:/products}\">${4:Products}</BreadcrumbLink>", "        </BreadcrumbItem>", "        <BreadcrumbSeparator />", "        <BreadcrumbItem>", "            <BreadcrumbPage>${5:Current Page}</BreadcrumbPage>", "        </BreadcrumbItem>", "    </BreadcrumbList>", "</Breadcrumb>"],
+        "description": "Breadcrumb with full component names",
+    },
+    "Breadcrumb Basic (full)": {
+        "prefix": ";fbreadcrumbb",
+        "body": ["<Breadcrumb>", "    <BreadcrumbList>", "        <BreadcrumbItem>", "            <BreadcrumbLink href=\"/\">${1:Home}</BreadcrumbLink>", "        </BreadcrumbItem>", "        <BreadcrumbSeparator />", "        <BreadcrumbItem>", "            <BreadcrumbPage>${2:Current}</BreadcrumbPage>", "        </BreadcrumbItem>", "    </BreadcrumbList>", "</Breadcrumb>"],
+        "description": "Basic Breadcrumb with full names",
+    },
+    "Breadcrumb Item (full)": {
+        "prefix": ";fbreadcrumbitem",
+        "body": ["<BreadcrumbItem>", "    <BreadcrumbLink href=\"${1:#}\">${2:Label}</BreadcrumbLink>", "</BreadcrumbItem>", "<BreadcrumbSeparator />"],
+        "description": "Single Breadcrumb Item with Separator (full names)",
+    },
+    "Breadcrumb with Ellipsis (full)": {
+        "prefix": ";fbreadcrumbe",
+        "body": ["<Breadcrumb>", "    <BreadcrumbList>", "        <BreadcrumbItem>", "            <BreadcrumbLink href=\"/\">${1:Home}</BreadcrumbLink>", "        </BreadcrumbItem>", "        <BreadcrumbSeparator />", "        <BreadcrumbItem>", "            <BreadcrumbEllipsis />", "        </BreadcrumbItem>", "        <BreadcrumbSeparator />", "        <BreadcrumbItem>", "            <BreadcrumbLink href=\"${2:#}\">${3:Category}</BreadcrumbLink>", "        </BreadcrumbItem>", "        <BreadcrumbSeparator />", "        <BreadcrumbItem>", "            <BreadcrumbPage>${4:Current}</BreadcrumbPage>", "        </BreadcrumbItem>", "    </BreadcrumbList>", "</Breadcrumb>"],
+        "description": "Breadcrumb with Ellipsis (full names)",
+    },
+}

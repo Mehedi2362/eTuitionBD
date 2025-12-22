@@ -1,0 +1,73 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import NativeSelect (alias)": {
+        "prefix": "i;nativeselect",
+        "body": ["import {", "    NativeSelect,", "    NativeSelectOption as Option,", "    NativeSelectOptGroup as OptGroup,", "} from '@/components/ui/native-select'"],
+        "description": "Import NativeSelect components with aliases",
+    },
+    "Import NativeSelect (full)": {
+        "prefix": "i;fnativeselect",
+        "body": ["import {", "    NativeSelect,", "    NativeSelectOption,", "    NativeSelectOptGroup,", "} from '@/components/ui/native-select'"],
+        "description": "Import NativeSelect components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "NativeSelect (alias)": {
+        "prefix": ";nativeselect",
+        "body": ["<NativeSelect>", "    <Option value=\"\">${1:Select an option}</Option>", "    <Option value=\"${2:option1}\">${3:Option 1}</Option>", "    <Option value=\"${4:option2}\">${5:Option 2}</Option>", "    <Option value=\"${6:option3}\">${7:Option 3}</Option>", "</NativeSelect>$0"],
+        "description": "NativeSelect with aliased JSX",
+    },
+    "NativeSelect Basic (alias)": {
+        "prefix": ";nativeselectb",
+        "body": ["<NativeSelect>", "    <Option value=\"\">Select...</Option>", "    <Option value=\"${1:value}\">${2:Label}</Option>", "</NativeSelect>$0"],
+        "description": "Basic NativeSelect (aliased)",
+    },
+    "NativeSelect with Groups (alias)": {
+        "prefix": ";nativeselectg",
+        "body": ["<NativeSelect>", "    <Option value=\"\">${1:Select an option}</Option>", "    <OptGroup label=\"${2:Group 1}\">", "        <Option value=\"${3:item1}\">${4:Item 1}</Option>", "        <Option value=\"${5:item2}\">${6:Item 2}</Option>", "    </OptGroup>", "    <OptGroup label=\"${7:Group 2}\">", "        <Option value=\"${8:item3}\">${9:Item 3}</Option>", "        <Option value=\"${10:item4}\">${11:Item 4}</Option>", "    </OptGroup>", "</NativeSelect>$0"],
+        "description": "NativeSelect with option groups (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION
+    // ─────────────────────────────────────────────────────────────────────────────
+    "NativeSelect (full)": {
+        "prefix": ";fnativeselect",
+        "body": ["<NativeSelect>", "    <NativeSelectOption value=\"\">${1:Select an option}</NativeSelectOption>", "    <NativeSelectOption value=\"${2:option1}\">${3:Option 1}</NativeSelectOption>", "    <NativeSelectOption value=\"${4:option2}\">${5:Option 2}</NativeSelectOption>", "    <NativeSelectOption value=\"${6:option3}\">${7:Option 3}</NativeSelectOption>", "</NativeSelect>$0"],
+        "description": "NativeSelect with full component names",
+    },
+    "NativeSelect Basic (full)": {
+        "prefix": ";fnativeselectb",
+        "body": ["<NativeSelect>", "    <NativeSelectOption value=\"\">Select...</NativeSelectOption>", "    <NativeSelectOption value=\"${1:value}\">${2:Label}</NativeSelectOption>", "</NativeSelect>$0"],
+        "description": "Basic NativeSelect (full)",
+    },
+    "NativeSelect with Groups (full)": {
+        "prefix": ";fnativeselectg",
+        "body": ["<NativeSelect>", "    <NativeSelectOption value=\"\">${1:Select an option}</NativeSelectOption>", "    <NativeSelectOptGroup label=\"${2:Group 1}\">", "        <NativeSelectOption value=\"${3:item1}\">${4:Item 1}</NativeSelectOption>", "        <NativeSelectOption value=\"${5:item2}\">${6:Item 2}</NativeSelectOption>", "    </NativeSelectOptGroup>", "    <NativeSelectOptGroup label=\"${7:Group 2}\">", "        <NativeSelectOption value=\"${8:item3}\">${9:Item 3}</NativeSelectOption>", "        <NativeSelectOption value=\"${10:item4}\">${11:Item 4}</NativeSelectOption>", "    </NativeSelectOptGroup>", "</NativeSelect>$0"],
+        "description": "NativeSelect with option groups (full)",
+    },
+    "NativeSelectOption (full)": {
+        "prefix": ";fnativeselectopt",
+        "body": ["<NativeSelectOption value=\"${1:value}\"${2: disabled}>${3:Label}</NativeSelectOption>$0"],
+        "description": "NativeSelect option (full)",
+    },
+    "NativeSelectOptGroup (full)": {
+        "prefix": ";fnativeselectoptgroup",
+        "body": ["<NativeSelectOptGroup label=\"${1:Group Label}\">", "    ${0}", "</NativeSelectOptGroup>"],
+        "description": "NativeSelect option group (full)",
+    },
+    "NativeSelect Disabled": {
+        "prefix": ";nativeselectdisabled",
+        "body": ["<NativeSelect disabled>", "    <NativeSelectOption value=\"\">${1:Select...}</NativeSelectOption>", "    <NativeSelectOption value=\"${2:value}\">${3:Option}</NativeSelectOption>", "</NativeSelect>$0"],
+        "description": "Disabled NativeSelect",
+    },
+    "NativeSelect Invalid": {
+        "prefix": ";nativeselectinvalid",
+        "body": ["<NativeSelect aria-invalid=\"true\">", "    <NativeSelectOption value=\"\">${1:Select...}</NativeSelectOption>", "    <NativeSelectOption value=\"${2:value}\">${3:Option}</NativeSelectOption>", "</NativeSelect>$0"],
+        "description": "Invalid NativeSelect",
+    },
+}

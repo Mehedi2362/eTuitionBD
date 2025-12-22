@@ -1,0 +1,59 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Button": {
+        "prefix": ["i;btn", "i;fbtn"],
+        "body": "import { Button } from '@/components/ui/button'",
+        "description": "Import Button",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Button": {
+        "prefix": [";btn", ";fbtn"],
+        "body": "<Button variant=\"${1|default,destructive,outline,secondary,ghost,link|}\" size=\"${2|default,sm,lg,icon,icon-sm,icon-lg|}\">${3:Button}</Button>",
+        "description": "Button with all variants and sizes",
+    },
+    "Button Basic": {
+        "prefix": [";btnb", ";fbtnb"],
+        "body": "<Button>${1:Button}</Button>",
+        "description": "Basic Button",
+    },
+    "Button Outline": {
+        "prefix": [";btno", ";fbtno"],
+        "body": "<Button variant=\"outline\">${1:Button}</Button>",
+        "description": "Outline Button",
+    },
+    "Button Ghost": {
+        "prefix": [";btng", ";fbtng"],
+        "body": "<Button variant=\"ghost\">${1:Button}</Button>",
+        "description": "Ghost Button",
+    },
+    "Button Destructive": {
+        "prefix": [";btnd", ";fbtnd"],
+        "body": "<Button variant=\"destructive\">${1:Delete}</Button>",
+        "description": "Destructive Button",
+    },
+    "Button Icon": {
+        "prefix": [";btnicon", ";fbtnicon"],
+        "body": ["<Button variant=\"${1|outline,ghost,default|}\" size=\"${2|icon,icon-sm,icon-lg|}\" aria-label=\"${3:Action}\">", "    <${4:IconName} />", "</Button>"],
+        "description": "Icon Button",
+    },
+    "Button with Icon": {
+        "prefix": [";btnwithicon", ";fbtnwithicon"],
+        "body": ["<Button variant=\"${1|default,outline,ghost,secondary|}\" size=\"${2|default,sm,lg|}\">", "    <${3:IconName} />", "    ${4:Button}", "</Button>"],
+        "description": "Button with icon",
+    },
+    "Button Loading": {
+        "prefix": [";btnloading", ";fbtnloading"],
+        "body": ["<Button variant=\"${1|outline,default|}\" size=\"${2|default,sm,lg|}\" disabled>", "    <Spinner />", "    ${3:Loading...}", "</Button>"],
+        "description": "Loading Button with Spinner",
+    },
+    "Button as Link": {
+        "prefix": [";btnlink", ";fbtnlink"],
+        "body": ["<Button asChild>", "    <Link href=\"${1:/}\">${2:Link}</Link>", "</Button>"],
+        "description": "Button as Link",
+    },
+}

@@ -1,0 +1,63 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import ContextMenu (alias)": {
+        "prefix": "i;context",
+        "body": ["import {", "    ContextMenu,", "    ContextMenuTrigger as Trigger,", "    ContextMenuContent as Content,", "    ContextMenuItem as Item,", "    ContextMenuSeparator as Separator,", "    ContextMenuShortcut as Shortcut,", "} from '@/components/ui/context-menu'"],
+        "description": "Import ContextMenu components with aliases",
+    },
+    "Import ContextMenu (full)": {
+        "prefix": "i;fcontext",
+        "body": ["import {", "    ContextMenu,", "    ContextMenuTrigger,", "    ContextMenuContent,", "    ContextMenuItem,", "    ContextMenuCheckboxItem,", "    ContextMenuRadioItem,", "    ContextMenuLabel,", "    ContextMenuSeparator,", "    ContextMenuShortcut,", "    ContextMenuGroup,", "    ContextMenuSub,", "    ContextMenuSubContent,", "    ContextMenuSubTrigger,", "    ContextMenuRadioGroup,", "} from '@/components/ui/context-menu'"],
+        "description": "Import ContextMenu components with full names",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "ContextMenu (alias)": {
+        "prefix": ";context",
+        "body": ["<ContextMenu>", "    <Trigger className=\"${1:flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm}\">", "        ${2:Right click here}", "    </Trigger>", "    <Content className=\"${3:w-64}\">", "        <Item>${4:Back}<Shortcut>${5:⌘[}</Shortcut></Item>", "        <Item>${6:Forward}<Shortcut>${7:⌘]}</Shortcut></Item>", "        <Item>${8:Reload}<Shortcut>${9:⌘R}</Shortcut></Item>", "        <Separator />", "        <Item>${10:More Options}</Item>", "    </Content>", "</ContextMenu>"],
+        "description": "ContextMenu with aliased JSX",
+    },
+    "ContextMenu Basic (alias)": {
+        "prefix": ";contextb",
+        "body": ["<ContextMenu>", "    <Trigger>${1:Right click}</Trigger>", "    <Content>", "        <Item>$0</Item>", "    </Content>", "</ContextMenu>"],
+        "description": "Basic ContextMenu with aliased JSX",
+    },
+    "ContextMenu Item (alias)": {
+        "prefix": ";contextitem",
+        "body": ["<Item onSelect={() => ${1:console.log('selected')}}>", "    ${2:Item Label}", "    <Shortcut>${3:⌘K}</Shortcut>", "</Item>"],
+        "description": "ContextMenu Item (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "ContextMenu (full)": {
+        "prefix": ";fcontext",
+        "body": ["<ContextMenu>", "    <ContextMenuTrigger className=\"${1:flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm}\">", "        ${2:Right click here}", "    </ContextMenuTrigger>", "    <ContextMenuContent className=\"${3:w-64}\">", "        <ContextMenuItem>${4:Back}<ContextMenuShortcut>${5:⌘[}</ContextMenuShortcut></ContextMenuItem>", "        <ContextMenuItem>${6:Forward}<ContextMenuShortcut>${7:⌘]}</ContextMenuShortcut></ContextMenuItem>", "        <ContextMenuItem>${8:Reload}<ContextMenuShortcut>${9:⌘R}</ContextMenuShortcut></ContextMenuItem>", "        <ContextMenuSeparator />", "        <ContextMenuItem>${10:More Options}</ContextMenuItem>", "    </ContextMenuContent>", "</ContextMenu>"],
+        "description": "ContextMenu with full component names",
+    },
+    "ContextMenu Basic (full)": {
+        "prefix": ";fcontextb",
+        "body": ["<ContextMenu>", "    <ContextMenuTrigger>${1:Right click}</ContextMenuTrigger>", "    <ContextMenuContent>", "        <ContextMenuItem>$0</ContextMenuItem>", "    </ContextMenuContent>", "</ContextMenu>"],
+        "description": "Basic ContextMenu with full names",
+    },
+    "ContextMenu with Sub (full)": {
+        "prefix": ";fcontextsub",
+        "body": ["<ContextMenu>", "    <ContextMenuTrigger>${1:Right click}</ContextMenuTrigger>", "    <ContextMenuContent>", "        <ContextMenuItem>${2:Item 1}</ContextMenuItem>", "        <ContextMenuSub>", "            <ContextMenuSubTrigger>${3:More Tools}</ContextMenuSubTrigger>", "            <ContextMenuSubContent>", "                <ContextMenuItem>${4:Save Page As...}</ContextMenuItem>", "                <ContextMenuItem>${5:Create Shortcut...}</ContextMenuItem>", "            </ContextMenuSubContent>", "        </ContextMenuSub>", "        <ContextMenuSeparator />", "        <ContextMenuItem>${6:Settings}</ContextMenuItem>", "    </ContextMenuContent>", "</ContextMenu>"],
+        "description": "ContextMenu with Submenu (full)",
+    },
+    "ContextMenu Item (full)": {
+        "prefix": ";fcontextitem",
+        "body": ["<ContextMenuItem onSelect={() => ${1:console.log('selected')}}>", "    ${2:Item Label}", "    <ContextMenuShortcut>${3:⌘K}</ContextMenuShortcut>", "</ContextMenuItem>"],
+        "description": "ContextMenu Item (full)",
+    },
+    "ContextMenu Checkbox Item (full)": {
+        "prefix": ";fcontextcheckbox",
+        "body": ["<ContextMenuCheckboxItem checked={${1:checked}} onCheckedChange={${2:setChecked}}>", "    ${3:Show Bookmarks Bar}", "    <ContextMenuShortcut>${4:⌘⇧B}</ContextMenuShortcut>", "</ContextMenuCheckboxItem>"],
+        "description": "ContextMenu Checkbox Item (full)",
+    },
+}

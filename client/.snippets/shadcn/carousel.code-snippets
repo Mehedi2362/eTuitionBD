@@ -1,0 +1,78 @@
+{
+    // ─────────────────────────────────────────────────────────────────────────────
+    // IMPORTS
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Import Carousel (alias)": {
+        "prefix": "i;carousel",
+        "body": ["import {", "    Carousel,", "    CarouselContent as Content,", "    CarouselItem as Item,", "    CarouselPrevious as Previous,", "    CarouselNext as Next,", "} from '@/components/ui/carousel'"],
+        "description": "Import Carousel components with aliases",
+    },
+    "Import Carousel (full)": {
+        "prefix": "i;fcarousel",
+        "body": ["import {", "    Carousel,", "    CarouselContent,", "    CarouselItem,", "    CarouselPrevious,", "    CarouselNext,", "} from '@/components/ui/carousel'"],
+        "description": "Import Carousel components with full names",
+    },
+    "Import Carousel API": {
+        "prefix": "i;carouselapi",
+        "body": ["import { type CarouselApi } from '@/components/ui/carousel'"],
+        "description": "Import CarouselApi type",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - ALIAS VERSION (Short JSX names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Carousel (alias)": {
+        "prefix": ";carousel",
+        "body": ["<Carousel className=\"${1:w-full max-w-xs}\">", "    <Content>", "        <Item>${2:Slide 1}</Item>", "        <Item>${3:Slide 2}</Item>", "        <Item>${4:Slide 3}</Item>", "    </Content>", "    <Previous />", "    <Next />", "</Carousel>"],
+        "description": "Carousel with aliased JSX (Content, Item, Previous, Next)",
+    },
+    "Carousel Basic (alias)": {
+        "prefix": ";carouselb",
+        "body": ["<Carousel className=\"${1:w-full max-w-xs}\">", "    <Content>", "        <Item>$0</Item>", "    </Content>", "    <Previous />", "    <Next />", "</Carousel>"],
+        "description": "Basic Carousel with aliased JSX",
+    },
+    "Carousel Item (alias)": {
+        "prefix": ";carouselitem",
+        "body": ["<Item className=\"${1:basis-1/3}\">${2:Content}</Item>"],
+        "description": "Single Carousel Item (aliased)",
+    },
+    "Carousel with Options (alias)": {
+        "prefix": ";carouselo",
+        "body": ["<Carousel", "    opts={{", "        align: \"${1|start,center,end|}\",", "        loop: ${2|true,false|},", "    }}", "    className=\"${3:w-full max-w-xs}\"", ">", "    <Content>", "        <Item>${4:Slide 1}</Item>", "        <Item>${5:Slide 2}</Item>", "        <Item>${6:Slide 3}</Item>", "    </Content>", "    <Previous />", "    <Next />", "</Carousel>"],
+        "description": "Carousel with options (aliased)",
+    },
+    "Carousel Vertical (alias)": {
+        "prefix": ";carouselv",
+        "body": ["<Carousel orientation=\"vertical\" className=\"${1:w-full max-w-xs}\">", "    <Content className=\"-mt-1 h-[200px]\">", "        <Item className=\"pt-1\">${2:Slide 1}</Item>", "        <Item className=\"pt-1\">${3:Slide 2}</Item>", "        <Item className=\"pt-1\">${4:Slide 3}</Item>", "    </Content>", "    <Previous />", "    <Next />", "</Carousel>"],
+        "description": "Vertical Carousel (aliased)",
+    },
+
+    // ─────────────────────────────────────────────────────────────────────────────
+    // USAGE - FULL VERSION (Full component names)
+    // ─────────────────────────────────────────────────────────────────────────────
+    "Carousel (full)": {
+        "prefix": ";fcarousel",
+        "body": ["<Carousel className=\"${1:w-full max-w-xs}\">", "    <CarouselContent>", "        <CarouselItem>${2:Slide 1}</CarouselItem>", "        <CarouselItem>${3:Slide 2}</CarouselItem>", "        <CarouselItem>${4:Slide 3}</CarouselItem>", "    </CarouselContent>", "    <CarouselPrevious />", "    <CarouselNext />", "</Carousel>"],
+        "description": "Carousel with full component names",
+    },
+    "Carousel Basic (full)": {
+        "prefix": ";fcarouselb",
+        "body": ["<Carousel className=\"${1:w-full max-w-xs}\">", "    <CarouselContent>", "        <CarouselItem>$0</CarouselItem>", "    </CarouselContent>", "    <CarouselPrevious />", "    <CarouselNext />", "</Carousel>"],
+        "description": "Basic Carousel with full names",
+    },
+    "Carousel Item (full)": {
+        "prefix": ";fcarouselitem",
+        "body": ["<CarouselItem className=\"${1:basis-1/3}\">${2:Content}</CarouselItem>"],
+        "description": "Single Carousel Item (full names)",
+    },
+    "Carousel with Options (full)": {
+        "prefix": ";fcarouselo",
+        "body": ["<Carousel", "    opts={{", "        align: \"${1|start,center,end|}\",", "        loop: ${2|true,false|},", "    }}", "    className=\"${3:w-full max-w-xs}\"", ">", "    <CarouselContent>", "        <CarouselItem>${4:Slide 1}</CarouselItem>", "        <CarouselItem>${5:Slide 2}</CarouselItem>", "        <CarouselItem>${6:Slide 3}</CarouselItem>", "    </CarouselContent>", "    <CarouselPrevious />", "    <CarouselNext />", "</Carousel>"],
+        "description": "Carousel with options (full names)",
+    },
+    "Carousel Vertical (full)": {
+        "prefix": ";fcarouselv",
+        "body": ["<Carousel orientation=\"vertical\" className=\"${1:w-full max-w-xs}\">", "    <CarouselContent className=\"-mt-1 h-[200px]\">", "        <CarouselItem className=\"pt-1\">${2:Slide 1}</CarouselItem>", "        <CarouselItem className=\"pt-1\">${3:Slide 2}</CarouselItem>", "        <CarouselItem className=\"pt-1\">${4:Slide 3}</CarouselItem>", "    </CarouselContent>", "    <CarouselPrevious />", "    <CarouselNext />", "</Carousel>"],
+        "description": "Vertical Carousel (full names)",
+    },
+}
