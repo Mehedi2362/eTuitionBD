@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: etuitionbd-server
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: pnpm install && pnpm build
+    startCommand: pnpm start
+    
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DB_NAME
+        value: B12A11
+      - key: CLIENT_URL
+        value: https://Mehedi2362.github.io/eTuitionBD
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: PLATFORM_FEE_PERCENTAGE
+        value: 10
+      
+      # Sensitive keys - set in Render dashboard
+      - key: MONGODB_URI
+        fromDatabase:
+          name: mongodb
+      - key: JWT_SECRET
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: FIREBASE_ADMIN_SDK_JSON
+        sync: false
+    
+    rootDir: server
+
+databases:
+  - name: mongodb
+    databaseName: B12A11
+    version: latest
