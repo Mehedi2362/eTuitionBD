@@ -10,6 +10,7 @@ import { errorHandler, notFoundHandler } from './shared/middleware/index.js';
 import { paymentsRouter } from './features/payments/index.js';
 import { dashboardRouter } from './features/dashboard/index.js';
 import { publicRoutes } from './features/public/index.js';
+import { reviewRouter } from './features/reviews/index.js';
 import authRouter from './features/auth/routes.js';
 import { firebase } from './config/firebase.js';
 
@@ -54,6 +55,7 @@ const API_BASE = '/api/v1';
 app.use(API_BASE, authRouter);       // Auth (register, login, logout, etc.)
 app.use(API_BASE, publicRoutes);     // Public (tuitions, tutors browsing)
 app.use(API_BASE, dashboardRouter);  // Dashboard (admin, student, tutor)
+app.use(API_BASE, reviewRouter);     // Reviews (tutor reviews)
 app.use(API_BASE, paymentsRouter);   // Payments (Stripe)
 
 // ==================== Error Handling ====================
