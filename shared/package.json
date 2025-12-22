@@ -21,6 +21,10 @@
       "types": "./dist/payments/index.d.ts",
       "import": "./dist/payments/index.js"
     },
+    "./reviews": {
+      "types": "./dist/reviews/index.d.ts",
+      "import": "./dist/reviews/index.js"
+    },
     "./dashboard/admin": {
       "types": "./dist/dashboard/admin.d.ts",
       "import": "./dist/dashboard/admin.js"
