@@ -141,7 +141,7 @@ export class PublicController {
     // ==================== Get Tutor By ID ====================
     static async getTutorById(req: Request, res: Response) {
         const { id } = req.params;
-        const tutor = await UserModel.findByEmail(id);
+        const tutor = await UserModel.findById(id);
 
         if (!tutor || tutor.role !== "tutor") {
             res.status(404).json({
