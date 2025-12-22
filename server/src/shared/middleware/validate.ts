@@ -6,6 +6,7 @@ import { HTTP_STATUS } from "../constants/index.js";
 // ==================== Validate Request Body ====================
 export const validateBody = (schema: ZodSchema) => {
     return (req: Request, res: Response, next: NextFunction): void => {
+
         const result = schema.safeParse(req.body);
 
         if (!result.success) {
