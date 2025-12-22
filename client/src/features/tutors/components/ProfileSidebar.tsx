@@ -8,17 +8,24 @@ import { Mail, MapPin, MessageSquare, Phone, Star } from 'lucide-react'
 import type { TutorProfile } from './types'
 
 interface ProfileSidebarProps {
-    tutor: TutorProfile
+    tutor: Partial<TutorProfile>
     onSendMessage?: () => void
 }
 
 // Get initials for avatar fallback
-const getInitials = (name: string) => {
-    return name.split(' ').map((n) => n[0]).join('').toUpperCase().slice(0, 2)}
+const getInitials = (name?: string) => {
+    if (!name) return 'TU'
+    return name
+        .split(' ')
+        .map((n) => n[0])
+        .join('')
+        .toUpperCase()
+        .slice(0, 2)
+}
 
 // Get experience badge text
-const getExperienceText = (years: number) => {
-    if (years < 1) return 'New Tutor'
+const getExperienceText = (years?: number) => {
+    if (!years || years < 1) return 'New Tutor'
     if (years === 1) return '1 Year Experience'
     return `${years}+ Years Experience`
 }
@@ -32,17 +39,19 @@ const ProfileSidebar = ({ tutor, onSendMessage }: ProfileSidebarProps) => {
                         <AvatarImage src={tutor.photo} alt={tutor.name} />
                         <AvatarFallback className="text-3xl">{getInitials(tutor.name)}</AvatarFallback>
                     </Avatar>
-                    <h2 className="text-2xl font-bold mb-1">{tutor.name}</h2>
-                    <p className="text-muted-foreground mb-4">{tutor.title}</p>
+                    <h2 className="text-2xl font-bold mb-1">{tutor.name || 'Tutor'}</h2>
+                    {tutor.title && <p className="text-muted-foreground mb-4">{tutor.title}</p>}
 
                     {/* Rating */}
-                    <div className="flex items-center justify-center gap-1 mb-4">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                            <Star key={star} className={`h-5 w-5 ${star <= Math.round(tutor.rating) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} />
-                        ))}
-                        <span className="ml-2 font-medium">{tutor.rating.toFixed(1)}</span>
-                        <span className="text-muted-foreground">({tutor.reviewCount} reviews)</span>
-                    </div>
+                    {tutor.rating !== undefined && tutor.reviewCount !== undefined && (
+                        <div className="flex items-center justify-center gap-1 mb-4">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <Star key={star} className={`h-5 w-5 ${star <= Math.round(tutor.rating || 0) ? 'fill-yellow-400 text-yellow-400' : 'text-gray-300'}`} />
+                            ))}
+                            <span className="ml-2 font-medium">{(tutor.rating || 0).toFixed(1)}</span>
+                            <span className="text-muted-foreground">({tutor.reviewCount} reviews)</span>
+                        </div>
+                    )}
 
                     <div className="flex flex-wrap gap-2 justify-center mb-4">
                         {tutor.isVerified && (
@@ -50,21 +59,25 @@ const ProfileSidebar = ({ tutor, onSendMessage }: ProfileSidebarProps) => {
                                 Verified
                             </Badge>
                         )}
-                        <Badge variant="outline">{getExperienceText(tutor.experience)}</Badge>
+                        {tutor.experience !== undefined && <Badge variant="outline">{getExperienceText(tutor.experience)}</Badge>}
                     </div>
 
                     <Separator className="my-4" />
 
                     {/* Contact Info */}
                     <div className="space-y-3 text-left">
-                        <div className="flex items-center gap-2 text-sm">
-                            <MapPin className="h-4 w-4 text-muted-foreground" />
-                            <span>{tutor.location}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm">
-                            <Mail className="h-4 w-4 text-muted-foreground" />
-                            <span className="truncate">{tutor.email}</span>
-                        </div>
+                        {tutor.location && (
+                            <div className="flex items-center gap-2 text-sm">
+                                <MapPin className="h-4 w-4 text-muted-foreground" />
+                                <span>{tutor.location}</span>
+                            </div>
+                        )}
+                        {tutor.email && (
+                            <div className="flex items-center gap-2 text-sm">
+                                <Mail className="h-4 w-4 text-muted-foreground" />
+                                <span className="truncate">{tutor.email}</span>
+                            </div>
+                        )}
                         {tutor.phone && (
                             <div className="flex items-center gap-2 text-sm">
                                 <Phone className="h-4 w-4 text-muted-foreground" />
@@ -76,26 +89,34 @@ const ProfileSidebar = ({ tutor, onSendMessage }: ProfileSidebarProps) => {
                     <Separator className="my-4" />
 
                     {/* Quick Stats */}
-                    <div className="grid grid-cols-3 gap-4 text-center">
-                        <div>
-                            <p className="text-2xl font-bold">
-                                <AnimatedCounter value={tutor.studentsCount} suffix="+" duration={1.5} />
-                            </p>
-                            <p className="text-xs text-muted-foreground">Students</p>
+                    {(tutor.studentsCount !== undefined || tutor.experience !== undefined || tutor.classesCount !== undefined) && (
+                        <div className="grid grid-cols-3 gap-4 text-center">
+                            {tutor.studentsCount !== undefined && (
+                                <div>
+                                    <p className="text-2xl font-bold">
+                                        <AnimatedCounter value={tutor.studentsCount} suffix="+" duration={1.5} />
+                                    </p>
+                                    <p className="text-xs text-muted-foreground">Students</p>
+                                </div>
+                            )}
+                            {tutor.experience !== undefined && (
+                                <div>
+                                    <p className="text-2xl font-bold">
+                                        <AnimatedCounter value={tutor.experience} suffix="+" duration={1.5} />
+                                    </p>
+                                    <p className="text-xs text-muted-foreground">Years</p>
+                                </div>
+                            )}
+                            {tutor.classesCount !== undefined && (
+                                <div>
+                                    <p className="text-2xl font-bold">
+                                        <AnimatedCounter value={tutor.classesCount} suffix="+" duration={1.5} />
+                                    </p>
+                                    <p className="text-xs text-muted-foreground">Classes</p>
+                                </div>
+                            )}
                         </div>
-                        <div>
-                            <p className="text-2xl font-bold">
-                                <AnimatedCounter value={tutor.experience} suffix="+" duration={1.5} />
-                            </p>
-                            <p className="text-xs text-muted-foreground">Years</p>
-                        </div>
-                        <div>
-                            <p className="text-2xl font-bold">
-                                <AnimatedCounter value={tutor.classesCount} suffix="+" duration={1.5} />
-                            </p>
-                            <p className="text-xs text-muted-foreground">Classes</p>
-                        </div>
-                    </div>
+                    )}
                 </CardContent>
             </Card>
 
