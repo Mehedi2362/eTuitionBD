@@ -109,7 +109,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         refetch()
-    }, [refetch])
+    }, [])
 
     const value = useMemo(() => ({ user, setUser, loading, setLoading, refetch }), [user, loading, refetch])
 

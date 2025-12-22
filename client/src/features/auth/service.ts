@@ -13,7 +13,7 @@ const authService = {
 
     // Sign in with email (Firebase token sent to server, server sets cookies)
     signInWithEmail: async (creds: SignInCreds): Promise<User> =>
-        publicAxios.post(AUTH_ROUTES.SIGNIN, { creds }).then(res => res.data.data?.user),
+        publicAxios.post(AUTH_ROUTES.SIGNIN, creds).then(res => res.data.data?.user),
 
     // Sign in with Google
     signInWithGoogle: async (): Promise<User> => {
@@ -31,7 +31,7 @@ const authService = {
 
     // Register new user
     signUpWithEmail: async (creds: SignUpCreds): Promise<User> =>
-        publicAxios.post(AUTH_ROUTES.SIGNUP, { creds }).then(res => res.data.data?.user),
+        publicAxios.post(AUTH_ROUTES.SIGNUP, creds).then(res => res.data.data?.user),
 
 
     // Sign out (clears HTTP-only cookies)
