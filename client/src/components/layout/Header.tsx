@@ -22,6 +22,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/co
 import { BookOpen, GraduationCap, Info, LayoutDashboard, LogOut, Mail, Menu, MoonIcon, Settings, SunIcon, User, Users } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
+import authService from '@/features/auth/service'
 
 // ==================== Navigation Items ====================
 const navigationItems = [
@@ -59,7 +60,12 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     // Get user from auth context
-    const { user, isAuthenticated, signOut } = useAuth()
+    const { user, isAuthenticated, signOut } = useAuth({
+        signOutFn: async () => {
+            await authService.signOut()
+            return null
+        },
+    })
 
     // Get dashboard route based on role
     const getDashboardRoute = (role?: string): string => {
@@ -169,7 +175,6 @@ const Header = () => {
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                                         <Link to={getDashboardRoute(user.role)}>
-                                            <LayoutDashboard className="h-4 w-4 mr-1" />
                                             Dashboard
                                         </Link>
                                     </NavigationMenuLink>
